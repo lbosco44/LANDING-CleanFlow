@@ -5,42 +5,29 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { Phone } from "lucide-react";
 
-import { COMPANY, CONSENT_KEY, CONSENT_EVENT, OPEN_COOKIE_EVENT } from "@/lib/site";
+import { COMPANY } from "@/lib/site";
+import { useConsent } from "@/lib/use-consent";
 
 // CTA sticky solo mobile: barra in basso con "Prenota demo" + pulsante chiama.
 // Compare dopo un po' di scroll (non copre l'hero) e mai su /demo o /grazie.
-// Resta nascosta finché il banner cookie è aperto, per non sovrapporsi.
+// Resta nascosta finché il banner cookie è aperto, per non sovrapporsi
+// (consenso letto dallo stesso external store del banner).
 const HIDDEN_ON = ["/demo", "/grazie"];
 
 export function MobileCta() {
   const pathname = usePathname();
+  const consent = useConsent();
   const [scrolled, setScrolled] = useState(false);
-  const [consented, setConsented] = useState(false);
 
   useEffect(() => {
-    try {
-      setConsented(Boolean(localStorage.getItem(CONSENT_KEY)));
-    } catch {
-      setConsented(true); // storage bloccato: non lasciamo la CTA nascosta per sempre
-    }
-
     const onScroll = () => setScrolled(window.scrollY > 480);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-
-    const onConsent = () => setConsented(true);
-    const onReopen = () => setConsented(false);
-    window.addEventListener(CONSENT_EVENT, onConsent);
-    window.addEventListener(OPEN_COOKIE_EVENT, onReopen);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener(CONSENT_EVENT, onConsent);
-      window.removeEventListener(OPEN_COOKIE_EVENT, onReopen);
-    };
+    return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
   if (HIDDEN_ON.includes(pathname)) return null;
+  const consented = consent === "all" || consent === "necessary";
   if (!scrolled || !consented) return null;
 
   return (
