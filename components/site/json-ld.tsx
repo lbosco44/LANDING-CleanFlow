@@ -17,7 +17,7 @@ export function JsonLd() {
         legalName: COMPANY.legalName,
         url: SITE_URL,
         logo: `${SITE_URL}/cleanflow-mark.png`,
-        email: COMPANY.email,
+        email: COMPANY.publicEmail,
         telephone: COMPANY.phoneHref.replace("tel:", ""),
         vatID: COMPANY.vat,
         address: {

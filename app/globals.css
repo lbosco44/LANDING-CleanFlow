@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 /*
-  CleanFlow Landing — Design System "Sala di Controllo"
+  CleanFlow Landing — Design System v2 "Registro di controllo"
   Palette ancorata al logo: navy #00246C + teal #00B4B4 su tela chiara.
-  Fonti: Brief/DESIGN.md → "Scelte concrete approvate". Niente dark-mode totale.
+  v2 (Brief/DESIGN.md, 2026-07-02): tela chiara dominante, hairline tra sezioni,
+  navy solo in 2 momenti (pannello hero + CTA finale), teal come segnale,
+  mono per micro-etichette e dati, zero fade-in-on-scroll.
 */
 
 :root {
@@ -42,11 +44,17 @@
   --input: #e2e7f0;
   --ring: #00b4b4;
 
-  /* Àncore scure full-bleed (momenti di comando) */
+  /* Àncore scure (v2: solo pannello hero + CTA finale + footer) */
   --anchor: #00246c;
   --anchor-deep: #001a52;
   --on-dark: #eaf0ff;
   --on-dark-muted: #a7b0ce;
+
+  /* Tinte-tile dei 4 pilastri (ogni widget vive su una tinta diversa) */
+  --tile-entrate: #e7f4f4; /* teal ghiaccio */
+  --tile-clienti: #edf1f7; /* navy tenue */
+  --tile-strutture: #f7f1e6; /* sabbia calda */
+  --tile-operatori: #eaf0fa; /* azzurro carta */
 }
 
 @theme inline {
@@ -82,35 +90,27 @@
   --color-on-dark: var(--on-dark);
   --color-on-dark-muted: var(--on-dark-muted);
 
+  --color-tile-entrate: var(--tile-entrate);
+  --color-tile-clienti: var(--tile-clienti);
+  --color-tile-strutture: var(--tile-strutture);
+  --color-tile-operatori: var(--tile-operatori);
+
   --font-sans: var(--font-hanken);
   --font-display: var(--font-bricolage);
+  --font-mono: var(--font-jetbrains);
 
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
 
-  /* Marquee (componente già presente) */
-  --animate-marquee: marquee var(--duration) infinite linear;
-  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
-  @keyframes marquee {
-    from {
-      transform: translateX(0);
-    }
-    to {
-      transform: translateX(calc(-100% - var(--gap)));
-    }
-  }
-  @keyframes marquee-vertical {
-    from {
-      transform: translateY(0);
-    }
-    to {
-      transform: translateY(calc(-100% - var(--gap)));
-    }
-  }
+  /* Ombra morbida tinta-navy per card/widget (mai nero puro) */
+  --shadow-soft:
+    0 1px 2px rgb(14 20 48 / 0.05), 0 10px 30px -12px rgb(14 20 48 / 0.14);
+  --shadow-widget:
+    0 1px 2px rgb(14 20 48 / 0.06), 0 16px 40px -16px rgb(0 26 82 / 0.28);
 
-  /* Entrata morbida per banner cookie e CTA mobile */
+  /* Entrata morbida (banner cookie, CTA mobile, orchestrazione hero) */
   --animate-rise: rise 0.45s cubic-bezier(0.16, 1, 0.3, 1);
   @keyframes rise {
     from {
@@ -122,17 +122,26 @@
       transform: translateY(0);
     }
   }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .animate-rise {
-    animation: none;
+  /* Pallino "in servizio ora" */
+  --animate-live: live 2.4s ease-in-out infinite;
+  @keyframes live {
+    0%,
+    100% {
+      box-shadow: 0 0 0 0 rgb(0 180 180 / 0.45);
+    }
+    50% {
+      box-shadow: 0 0 0 5px rgb(0 180 180 / 0);
+    }
   }
 }
 
 @layer base {
   * {
     border-color: var(--border);
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
     background: var(--background);
@@ -146,5 +155,42 @@
   .tabular {
     font-feature-settings: "tnum" 1;
     font-variant-numeric: tabular-nums;
+  }
+}
+
+@layer utilities {
+  /* Eyebrow "da registro": mono, maiuscolo, tracking largo. Colore nel markup. */
+  .eyebrow {
+    font-family: var(--font-jetbrains), ui-monospace, monospace;
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+
+  /* Orchestrazione hero: unico momento animato al load (no fade-in-on-scroll) */
+  .hero-item {
+    animation: rise 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+    animation-delay: var(--d, 0ms);
+  }
+
+  /* Griglia a punti: firma "sala di controllo" — SOLO hero e CTA finale */
+  .dotgrid {
+    background-image: radial-gradient(
+      rgb(255 255 255 / 0.35) 1px,
+      transparent 1px
+    );
+    background-size: 26px 26px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .animate-rise,
+  .hero-item,
+  .animate-live {
+    animation: none;
   }
 }

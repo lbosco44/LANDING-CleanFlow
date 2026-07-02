@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
+import {
+  Bricolage_Grotesque,
+  Hanken_Grotesk,
+  JetBrains_Mono,
+} from "next/font/google";
 import "./globals.css";
 
 import { CookieBanner } from "@/components/site/cookie-banner";
@@ -16,6 +20,15 @@ const bricolage = Bricolage_Grotesque({
 const hanken = Hanken_Grotesk({
   variable: "--font-hanken",
   subsets: ["latin"],
+  display: "swap",
+});
+
+// Micro-etichette (eyebrow) e dati tabulari nei widget — MAI testo corrente.
+// Emendamento banlist v2 in Brief/DESIGN.md; stesso mono dell'app CleanFlow.
+const jetbrains = JetBrains_Mono({
+  variable: "--font-jetbrains",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -55,7 +68,7 @@ export default function RootLayout({
   return (
     <html
       lang="it"
-      className={`${bricolage.variable} ${hanken.variable} h-full antialiased`}
+      className={`${bricolage.variable} ${hanken.variable} ${jetbrains.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         {children}

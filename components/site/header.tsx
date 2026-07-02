@@ -7,10 +7,10 @@ import { useEffect, useState } from "react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
+// v2: 3 ancore secche — chi entra capisce la mappa della pagina dal menu.
 const NAV = [
+  { href: "/#pilastri", label: "Cosa fa" },
   { href: "/#come-funziona", label: "Come funziona" },
-  { href: "/#moduli", label: "I moduli" },
-  { href: "/#risultati", label: "Risultati" },
   { href: "/#domande", label: "Domande" },
 ];
 
@@ -27,11 +27,11 @@ export function SiteHeader() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-50 bg-background/80 backdrop-blur-md transition-shadow",
-        scrolled && "border-b border-border shadow-sm"
+        "sticky top-0 z-50 border-b bg-background/85 backdrop-blur-md transition-colors",
+        scrolled ? "border-border" : "border-transparent"
       )}
     >
-      <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
+      <div className="mx-auto flex h-16 max-w-[69rem] items-center justify-between gap-4 px-5 sm:px-8">
         <Link href="/" className="flex items-center gap-2.5">
           <Image
             src="/cleanflow-mark.png"
@@ -47,12 +47,12 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-8 md:flex">
           {NAV.map((n) => (
             <a
               key={n.href}
               href={n.href}
-              className="text-sm font-medium text-muted-foreground transition-colors hover:text-foreground"
+              className="text-sm font-medium text-muted-foreground transition-colors duration-150 hover:text-foreground"
             >
               {n.label}
             </a>

@@ -1,19 +1,18 @@
 import { SiteHeader } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
-import { TrustStrip } from "@/components/site/trust-strip";
 import { Problema } from "@/components/site/problema";
-import { Svolta } from "@/components/site/svolta";
+import { Pilastri } from "@/components/site/pilastri";
 import { ComeFunziona } from "@/components/site/come-funziona";
-import { Moduli } from "@/components/site/moduli";
-import { Intelligenza } from "@/components/site/intelligenza";
 import { Risultato } from "@/components/site/risultato";
 import { Faq } from "@/components/site/faq";
-import { Pilot } from "@/components/site/pilot";
-import { Prezzo } from "@/components/site/prezzo";
 import { CtaFinale } from "@/components/site/cta-finale";
 import { SiteFooter } from "@/components/site/footer";
 import { JsonLd } from "@/components/site/json-ld";
 
+// Home v2 "Registro di controllo" (Brief/WIREFRAME.md v2): 9 sezioni, era 14.
+// Trust-strip → riga nella hero · Svolta → lead dei pilastri · Moduli →
+// dentro i pilastri · Intelligenza → step 4 di Come funziona · Pilot e
+// Prezzo → FAQ.
 export default function Home() {
   return (
     <>
@@ -21,16 +20,11 @@ export default function Home() {
       <SiteHeader />
       <main className="flex-1">
         <Hero />
-        <TrustStrip />
         <Problema />
-        <Svolta />
+        <Pilastri />
         <ComeFunziona />
-        <Moduli />
-        <Intelligenza />
         <Risultato />
         <Faq />
-        <Pilot />
-        <Prezzo />
         <CtaFinale />
       </main>
       <SiteFooter />

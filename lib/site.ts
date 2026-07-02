@@ -7,6 +7,9 @@ export const COMPANY = {
   address: "Corso Vittorio Veneto 39, 07026 Olbia (SS)",
   pec: "jsdigitalsrls@pec.it",
   email: "serraonlinemarketing@gmail.com",
+  // Contatto pubblico in pagina: email di dominio (fiducia B2B). Il Gmail
+  // resta come recapito del titolare nelle pagine legali.
+  publicEmail: "marketing@cleanflowapp.it",
   phoneDisplay: "333 807 4768",
   phoneHref: "tel:+393338074768",
 } as const;

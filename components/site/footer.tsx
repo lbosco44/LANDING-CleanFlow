@@ -5,8 +5,8 @@ import { COMPANY } from "@/lib/site";
 import { CookiePreferencesLink } from "@/components/site/cookie-preferences-link";
 
 const NAV = [
+  { href: "/#pilastri", label: "Cosa fa" },
   { href: "/#come-funziona", label: "Come funziona" },
-  { href: "/#moduli", label: "I moduli" },
   { href: "/#risultati", label: "Risultati" },
   { href: "/#domande", label: "Domande" },
 ];
@@ -44,7 +44,9 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-16">
+          {/* 3 colonne solo da lg: a 768 l'email di dominio (26 char, senza wrap)
+              non ci sta e sfonderebbe il viewport — Contatti scende di riga */}
+          <div className="grid grid-cols-2 gap-10 sm:gap-12 lg:grid-cols-3 lg:gap-16">
             <nav className="flex flex-col gap-3 text-sm">
               <span className="font-semibold text-on-dark">Prodotto</span>
               {NAV.map((n) => (
@@ -78,10 +80,10 @@ export function SiteFooter() {
                 {COMPANY.phoneDisplay}
               </a>
               <a
-                href={`mailto:${COMPANY.email}`}
-                className="break-all transition-colors hover:text-on-dark"
+                href={`mailto:${COMPANY.publicEmail}`}
+                className="transition-colors hover:text-on-dark"
               >
-                {COMPANY.email}
+                {COMPANY.publicEmail}
               </a>
             </div>
           </div>
