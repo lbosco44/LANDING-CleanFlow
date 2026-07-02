@@ -12,10 +12,12 @@ import { Pilot } from "@/components/site/pilot";
 import { Prezzo } from "@/components/site/prezzo";
 import { CtaFinale } from "@/components/site/cta-finale";
 import { SiteFooter } from "@/components/site/footer";
+import { JsonLd } from "@/components/site/json-ld";
 
 export default function Home() {
   return (
     <>
+      <JsonLd />
       <SiteHeader />
       <main className="flex-1">
         <Hero />
