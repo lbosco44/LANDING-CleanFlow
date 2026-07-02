@@ -14,6 +14,10 @@ export const COMPANY = {
   phoneHref: "tel:+393338074768",
 } as const;
 
+// Area riservata: la SaaS vive su un sottodominio separato (vedi split dominio).
+// La root gestisce da sé login vs dashboard in base alla sessione.
+export const APP_URL = "https://app.cleanflowapp.it";
+
 // Consenso cookie: chiave localStorage + eventi per coordinare banner / CTA mobile.
 export const CONSENT_KEY = "cf-consent";
 export const CONSENT_EVENT = "cf:consent"; // scelta effettuata → mostra CTA mobile

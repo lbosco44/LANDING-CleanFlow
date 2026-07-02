@@ -5,6 +5,7 @@ import Image from "next/image";
 import { useEffect, useState } from "react";
 
 import { buttonVariants } from "@/components/ui/button";
+import { APP_URL } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 // v2: 3 ancore secche — chi entra capisce la mappa della pagina dal menu.
@@ -32,7 +33,7 @@ export function SiteHeader() {
       )}
     >
       <div className="mx-auto flex h-16 max-w-[69rem] items-center justify-between gap-4 px-5 sm:px-8">
-        <Link href="/" className="flex items-center gap-2.5">
+        <Link href="/" className="flex shrink-0 items-center gap-2.5">
           <Image
             src="/cleanflow-mark.png"
             alt="CleanFlow"
@@ -41,7 +42,8 @@ export function SiteHeader() {
             className="size-8"
             priority
           />
-          <span className="font-display text-lg font-semibold tracking-tight">
+          {/* Wordmark solo da sm: su mobile l'icona basta e lascia spazio ai due bottoni */}
+          <span className="hidden font-display text-lg font-semibold tracking-tight sm:inline">
             <span className="text-primary">Clean</span>
             <span className="text-accent-ink">Flow</span>
           </span>
@@ -59,9 +61,26 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <Link href="/demo" className={cn(buttonVariants({ size: "sm" }))}>
-          Prenota una demo
-        </Link>
+        <div className="flex shrink-0 items-center gap-2 sm:gap-2.5">
+          {/* Accesso alla SaaS (clienti già a bordo): bottone secondario outline
+              — chiaramente distinto dal logo. La demo resta l'azione dominante.
+              Sottodominio esterno → <a>, non <Link>. */}
+          <a
+            href={APP_URL}
+            className={cn(
+              buttonVariants({ variant: "outline", size: "sm" }),
+              "px-3 sm:px-4"
+            )}
+          >
+            Accedi
+          </a>
+          <Link
+            href="/demo"
+            className={cn(buttonVariants({ size: "sm" }), "px-3 sm:px-4")}
+          >
+            Prenota una demo
+          </Link>
+        </div>
       </div>
     </header>
   );
