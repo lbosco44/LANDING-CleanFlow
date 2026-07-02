@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Bricolage_Grotesque, Hanken_Grotesk } from "next/font/google";
 import "./globals.css";
 
+import { CookieBanner } from "@/components/site/cookie-banner";
+import { MobileCta } from "@/components/site/mobile-cta";
+
 // Display "di marca" — titoli/hero
 const bricolage = Bricolage_Grotesque({
   variable: "--font-bricolage",
@@ -56,6 +59,8 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col bg-background text-foreground font-sans">
         {children}
+        <MobileCta />
+        <CookieBanner />
       </body>
     </html>
   );

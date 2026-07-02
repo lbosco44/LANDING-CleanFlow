@@ -1,6 +1,9 @@
 import Link from "next/link";
 import Image from "next/image";
 
+import { COMPANY } from "@/lib/site";
+import { CookiePreferencesLink } from "@/components/site/cookie-preferences-link";
+
 const NAV = [
   { href: "/#come-funziona", label: "Come funziona" },
   { href: "/#moduli", label: "I moduli" },
@@ -41,7 +44,7 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <div className="grid grid-cols-2 gap-10 sm:gap-16">
+          <div className="grid grid-cols-2 gap-10 sm:grid-cols-3 sm:gap-16">
             <nav className="flex flex-col gap-3 text-sm">
               <span className="font-semibold text-on-dark">Prodotto</span>
               {NAV.map((n) => (
@@ -66,20 +69,38 @@ export function SiteFooter() {
                 </Link>
               ))}
             </nav>
+            <div className="flex flex-col gap-3 text-sm">
+              <span className="font-semibold text-on-dark">Contatti</span>
+              <a
+                href={COMPANY.phoneHref}
+                className="transition-colors hover:text-on-dark"
+              >
+                {COMPANY.phoneDisplay}
+              </a>
+              <a
+                href={`mailto:${COMPANY.email}`}
+                className="break-all transition-colors hover:text-on-dark"
+              >
+                {COMPANY.email}
+              </a>
+            </div>
           </div>
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-on-dark/10 pt-8 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>
-            © <span className="tabular">2026</span> CleanFlow · [Ragione
-            sociale] · P.IVA [—] · [Sede]
+            © <span className="tabular">2026</span> CleanFlow · {COMPANY.legalName}{" "}
+            · P.IVA {COMPANY.vat} · {COMPANY.address} · PEC {COMPANY.pec}
           </p>
-          <Link
-            href="/demo"
-            className="font-medium text-on-dark transition-colors hover:text-accent"
-          >
-            Prenota una demo →
-          </Link>
+          <div className="flex items-center gap-5">
+            <CookiePreferencesLink />
+            <Link
+              href="/demo"
+              className="font-medium text-on-dark transition-colors hover:text-accent"
+            >
+              Prenota una demo →
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
