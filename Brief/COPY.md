@@ -255,4 +255,59 @@ Grazie [Nome]. Ti scriviamo o chiamiamo entro [DA CONFERMARE: 24 ore / un giorno
 
 # Legali (`/privacy` · `/cookie` · `/termini`)
 
-> ⛔ Da redigere con i **dati reali dell'azienda** (ragione sociale, P.IVA, sede, titolare del trattamento, strumenti usati: hosting Vercel, Supabase, eventuale Cal.com/analytics). Non inventare clausole legali. Consigliato: testo base GDPR + revisione del cliente/consulente. Placeholder finché i dati non ci sono.
+> ✅ Redatte il 2026-07-02 con i dati reali (JS DIGITAL SRLS, P.IVA 03000200901, Olbia). Vivono nel codice.
+
+---
+
+# COPY v2 — Redesign "Registro di controllo" (2026-07-02)
+
+> Il redesign PRESERVA il copy v1 (giudicato buono dall'audit) e lo riorganizza su 9 sezioni.
+> Qui sotto SOLO il copy nuovo o cambiato. Dove non indicato, vale il v1.
+
+## Hero v2 (pannello navy)
+- **Eyebrow (mono):** GESTIONALE PER IMPRESE DI PULIZIE
+- **Headline:** invariata (opzione B approvata).
+- **Subhead NUOVA (nomina i 4 pilastri, parole chiave in evidenza):**
+  Entrate, clienti, strutture e operatori: tutto in ordine, in un posto solo. Senza più WhatsApp, Excel e telefonate.
+- **CTA secondaria:** `Guarda com'è fatto` → ancora a `#pilastri`.
+- **Riga trust (nella hero, la trust-strip sparisce):** In prova con le prime imprese di pulizie italiane.
+- **Widget ricostruiti (testi UI):** card "Agenda di oggi" (3 righe: B&B Le Magnolie · Camere 1-3 · Completato / Palestra FitZone · Sala pesi · In corso / Studio Legale Marino · Uffici · Programmato) + chip "Incassato a giugno € 4.280" + chip live "2 operatori in servizio ora".
+
+## Sezione 4 — I 4 pilastri "Tutto, al suo posto" (NUOVA: assorbe Svolta + Moduli + Intelligenza)
+- **Eyebrow:** IL GESTIONALE — **H2:** Tutto in un'unica sala di controllo.
+- **Lead (ex Svolta, aggiornata: immobili → strutture, + entrate):**
+  CleanFlow mette entrate, clienti, strutture e operatori nello stesso posto. Tu vedi tutto dall'alto. Chi è sul campo sa esattamente cosa fare. Niente più passaparola.
+
+**01 · ENTRATE — Sai quanto entra, senza aprire Excel.**
+Il fatturato del mese, diviso per servizio, si aggiorna da solo a ogni intervento completato. Apri CleanFlow e sai come sta andando l'azienda — smetti di chiedere «com'è andata?» a fine giornata.
+
+**02 · CLIENTI — Ogni cliente al suo posto, una volta sola.**
+Anagrafica, contatti e strutture collegate: inserisci il cliente una volta e lo ritrovi ovunque — nel calendario, negli interventi, nei report da inviare a fine lavoro. Basta cercare numeri su WhatsApp.
+
+**03 · STRUTTURE — Ogni struttura con indirizzo e note d'accesso.**
+Le camere del B&B, la sala pesi, l'ufficio: ogni struttura porta con sé indirizzo e note d'accesso, e ogni intervento è legato al posto giusto. Fine delle chiamate «non trovo il posto» e «come si entra?».
+
+**04 · OPERATORI — Chi lavora dove, e a che punto è.**
+Assegni l'intervento dal calendario e l'operatore riceve tutto sul telefono: indirizzo, checklist passo-passo, foto da caricare, check-in e check-out. Tu e il team leader vedete chi c'è, chi manca e a che punto è ogni lavoro — senza una raffica di telefonate.
+
+## Sezione 5 — Come funziona (compatta)
+Step 1-4 invariati dal v1 (§6). Lo **step 4 include il Quality Score**: testo v1 §8 accorciato — "CleanFlow legge le foto di fine lavoro e dà un punteggio di qualità: ti accorgi di un problema prima che lo faccia il cliente." + riga onestà invariata ("È un aiuto, non un giudice: l'ultima parola resta sempre tua."). Kicker "L'intelligenza" ELIMINATO (astratto per il target).
+
+## Sezione 6 — Il risultato (stat card su tela chiara, niente count-up)
+- `~10 ore` — a settimana che non passi più tra messaggi ed Excel *(stima, da tarare in demo)*
+- `Zero` — fogli Excel da tenere aggiornati
+- `1` — solo posto per entrate, clienti, strutture e operatori
+- Riga di chiusura invariata.
+
+## Sezione 7 — Domande (assorbe Prezzo §12 + Pilot §11)
+Le 6 FAQ v1 invariate, PIÙ:
+**Quanto costa?**
+Dipende da quanti operatori gestisci e da come lavori: per questo niente listino finto. Nella demo guardiamo la tua impresa e ti diciamo il prezzo in chiaro, senza sorprese. Chi entra nel programma pilota ha condizioni dedicate.
+
+E la voce "È un prodotto già pronto?" si estende con: "I posti del programma pilota sono limitati: chi entra ora ha una linea diretta con noi."
+
+> KILL v2: le 3 card testimonial placeholder (§11) spariscono del tutto; la sezione Prezzo autonoma (§12) sparisce (il contenuto vive nella FAQ "Quanto costa?"); il titolo v1 "Te lo diciamo in chiaro" era contraddittorio e viene abbandonato.
+
+## Footer v2
+- **Contatti:** marketing@cleanflowapp.it (email di dominio al posto del Gmail personale — fiducia B2B) · 333 807 4768.
+- Resto invariato.

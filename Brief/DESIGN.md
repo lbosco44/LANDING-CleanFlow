@@ -118,3 +118,30 @@ Sistema: **tela chiara dominante + navy di marca + teal accento misurato + ànco
 - **Animazione**: archetipo A 70% (CTA/hero che convertono) + scroll-driven C 30% (solo "Come funziona" + reveal numeri). Durate 150–300ms, ease-out in entrata, `prefers-reduced-motion` rispettato, niente fade-in su ogni elemento.
 - **Token shadcn**: mappare i ruoli sopra su `--primary/--accent/--background/--foreground/--border/--ring/--radius` in `globals.css` (oggi mancano).
 - **Accessibilità**: contrasto AA su ogni coppia, focus ring teal visibile, touch target ≥44px, `lang="it"`.
+
+---
+
+## Scelte concrete approvate — v2 "Registro di controllo" (2026-07-02)
+
+> Redesign strutturale approvato dal titolare (feedback: "la landing sembra AI slop, dev'essere chiara e fluida, chi entra deve capire tutto"). Riferimenti: Mintlify (precisione, hairline, gerarchia per peso), Framer ("il prodotto è la pagina": UI ricostruita in HTML), Weav (capitoli, crop di UI), PolicyPilot (hero-pannello, pilastri numerati), Curely (chip di risultato). Audit anti-slop della v1: 5.5/10.
+> **Questa sezione INTEGRA e dove indicato SOSTITUISCE le scelte v1 qui sopra.**
+
+### Cosa cambia (sostituzioni esplicite)
+- **Àncore navy**: da 4 bande full-bleed identiche → **2 momenti navy, diversi tra loro**: (1) hero come **pannello arrotondato dentro la tela chiara** (non full-bleed), (2) CTA finale full-bleed. Footer resta scuro. La sezione Risultato torna su tela chiara.
+- **Separazione sezioni**: non più cambi di sfondo → **hairline 1px** (`--border`) + ritmo verticale costante. La pagina si legge come un registro ordinato.
+- **Prova visiva del prodotto**: non più screenshot interi compressi (illeggibili) col fake browser chrome → **widget dell'app RICOSTRUITI in HTML** (KPI fatturato, agenda del giorno, checklist operatore, note d'accesso), sempre leggibili e sempre on-brand. Gli screenshot reali restano ammessi solo come crop parziali leggibili e mai riciclati tra sezioni. Vietato il chrome coi semafori macOS.
+- **Motion**: rimosso il fade-up whileInView a tappeto → **una sola orchestrazione al load della hero** + micro-interazioni funzionali (odometro sui numeri-widget, crossfade step, hover 120ms). `prefers-reduced-motion` rispettato.
+- **Emendamento banlist** (approvato col redesign): **JetBrains Mono** ammesso SOLO per micro-etichette (eyebrow) e dati tabulari nei widget — mai come tipografia di testo. **Numerazione 01–04** ammessa SOLO sui 4 pilastri (semantica: sono 4 cose contate, non decorazione di default).
+
+### Struttura v2 (9 sezioni, era 14)
+1. **Header** sticky chiaro, hairline, 3 ancore (Cosa fa · Come funziona · Domande) + CTA pill.
+2. **Hero** = pannello navy arrotondato nella tela: headline approvata + subhead che nomina i 4 pilastri (parole chiave in evidenza) + CTA + micro-rassicurazione + riga trust ("in prova con le prime imprese"). Prova visiva: cluster di widget HTML (agenda oggi, fatturato con odometro, operatori in servizio con pallino live) che sborda dal pannello verso la tela.
+3. **La giornata che conosci** (breve): copy attuale (buono) + artefatti realistici del caos (bolla WhatsApp verde, cella Excel, foglietto) in composizione volutamente disordinata — il caos deve VEDERSI.
+4. **I 4 pilastri "Tutto, al suo posto"** (cuore nuovo, assorbe Svolta + Moduli + Intelligenza): intro "sala di controllo" + 4 righe alternate numerate 01 ENTRATE / 02 CLIENTI / 03 STRUTTURE / 04 OPERATORI, ognuna con widget HTML dedicato e beneficio-per-ruolo nel copy. Quality Score vive dentro 04/step finale.
+5. **Come funziona** (compatto, 4 step senza sticky-scroll da 68vh): dal cliente al report; lo step 4 include il Quality Score ring + disclaimer "un aiuto, non un giudice". CTA inline a fine sezione.
+6. **Il risultato**: stat card oneste su tela chiara (numero grande statico + label; niente count-up su stime dichiarate) + riga "i tuoi numeri li vediamo in demo".
+7. **Domande** (assorbe Prezzo + Pilot): 8 voci — le 6 attuali + "Quanto costa?" + pilot esteso. Item aperto con sfondo tintato.
+8. **CTA finale** navy full-bleed differenziata (pattern a punti che chiude il cerchio con la hero, niente glow blur).
+9. **Footer** scuro con dati reali (email di dominio, non Gmail).
++ layer: bottom-bar mobile sticky (esistente) e cookie banner compattato su mobile.
+- **KILL definitivi**: le 3 card testimonial placeholder vuote; trust-strip come sezione (diventa una riga nella hero); sezioni Svolta/Moduli/Intelligenza/Pilot/Prezzo come sezioni autonome (assorbite come sopra).
