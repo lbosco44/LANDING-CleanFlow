@@ -1,3 +1,258 @@
-﻿# COPY — [Nome Cliente]
+# COPY — CleanFlow (Landing)
 
-_Generato dalla Chat 2 CONTENUTI del progetto web-design-2.0 su Claude.ai_
+> Bozza derivata dal **blueprint del founder** + messaging map dell'analisi (`_ANALISI.md` §6).
+> Voce: affermativa, sicura, **concreta e parlata**. Si vende il **risultato** (le ore, la calma), mai il software.
+> Decisioni recepite: **prezzo solo in demo** (niente listino in pagina) · stadio **pilot** (zero recensioni/loghi finti).
+> `[DA CONFERMARE]` = dato reale del founder da inserire. `[OPZIONE]` = scelta da approvare.
+> Banlist copy: niente inglese verso il titolare (churn, onboarding, booking…), niente "Get Started/Scopri di più/Inizia ora", niente "eccellenza/passione/rivoluzionario/Powered by AI", niente percentuali AI garantite o metriche-clienti inventate.
+
+---
+
+## Brand & basics
+
+- **Nome prodotto:** CleanFlow
+- **Riga di posizionamento (una frase):** Il gestionale che fa funzionare la tua impresa di pulizie senza WhatsApp, Excel e telefonate.
+- **Promessa madre (North Star):** ti riprendi le ore che oggi perdi a coordinare.
+
+---
+
+## 1. Header (sticky)
+
+- **Logo:** CleanFlow
+- **Nav (ancore):** Come funziona · I moduli · Risultati · Domande
+- **CTA header:** `Prenota una demo`
+
+---
+
+## 2. Hero — *àncora scura*
+
+**Headline (APPROVATA — opzione B):** La tua impresa di pulizie, finalmente sotto controllo.
+
+> Alternative scartate, tenute come candidate per A/B test futuro: A "Riprenditi 10 ore a settimana" · C "Basta gestire l'impresa dai messaggi".
+
+**Subhead (una riga):**
+Clienti, calendario, operatori sul campo e report: tutto in un'unica schermata. Senza più rincorrere messaggi e fogli Excel.
+
+**CTA primaria:** `Prenota una demo`
+**Micro-rassicurazione (sotto la CTA):** 20 minuti · nessuna carta · te lo mostriamo sui tuoi dati
+
+**CTA secondaria (leggera):** `Guarda com'è fatto` → ancora a `#come-funziona`
+
+*Visual: la dashboard reale del prodotto, con presenza scenica. Nessun video, nessuno stock.*
+
+---
+
+## 3. Trust strip — *chiaro, subito sotto l'hero*
+
+**Riga di fiducia (onesta, pilot):**
+In prova con le prime imprese di pulizie italiane.
+
+**Micro-prove [DA CONFERMARE con dati reali di sistema, altrimenti omettere]:**
+- Costruito con titolari veri, non in laboratorio.
+- Funziona da telefono e da computer.
+- I tuoi dati restano tuoi, su server europei.
+
+> A stadio pilot **niente loghi clienti, niente "as seen in", niente recensioni inventate.**
+
+---
+
+## 4. Il problema — "La giornata che conosci" — *inizio arco caos→controllo*
+
+**Titolo:** La giornata che conosci.
+
+**Testo:**
+Un cliente scrive su WhatsApp. Un operatore chiama perché non trova l'indirizzo. Cerchi su Excel chi è libero giovedì. Aggiorni il calendario cartaceo. E intanto non sai davvero come sta andando l'azienda.
+
+**Riga di chiusura:** Non è disorganizzazione. È che stai tenendo insieme tutto a mano.
+
+---
+
+## 5. La svolta — *transizione chiaro → scuro*
+
+**Titolo:** Tutto in un'unica sala di controllo.
+
+**Testo:**
+CleanFlow mette clienti, immobili, calendario, operatori e report nello stesso posto. Tu vedi tutto dall'alto. Chi è sul campo sa esattamente cosa fare. Niente più passaparola.
+
+---
+
+## 6. Come funziona — *cuore dello storytelling, scroll-driven*
+
+**Titolo:** Dal cliente al report, in un unico flusso.
+
+**Step 1 — Crei il cliente e i suoi immobili**
+Anagrafica, indirizzi, note di accesso. Una volta sola: poi è sempre lì.
+
+**Step 2 — Pianifichi sul calendario**
+Assegni l'intervento all'operatore giusto con il calendario. Lui lo riceve sul telefono.
+
+**Step 3 — L'operatore esegue dal telefono**
+Check-in sul posto, checklist guidata, foto prima e dopo. Sa sempre cosa fare, passo dopo passo.
+
+**Step 4 — Report e Quality Score, da soli**
+A fine lavoro il report è già pronto, con le foto e un punteggio di qualità. Lo invii al cliente in un tocco.
+
+**CTA inline (fine sezione):** `Te lo facciamo vedere sui tuoi interventi` → `Prenota una demo`
+
+---
+
+## 7. I moduli, per chi li usa — *blocchi per ruolo, mai tabella*
+
+**Titolo:** Uno strumento per ogni persona della tua squadra.
+
+**Per il titolare — "Vedi tutto senza chiedere niente"**
+Fatturato, interventi della settimana, qualità del lavoro: aggiornati da soli, sempre sott'occhio. Smetti di chiedere "com'è andata?" a fine giornata.
+
+**Per il team leader — "Niente più sorprese alle 8 del mattino"**
+Controlli checklist e foto di ogni intervento, gestisci ritardi e sostituzioni senza una raffica di telefonate. Sai chi c'è e chi manca prima che diventi un problema.
+
+**Per l'operatore — "Sa sempre cosa fare, dal telefono"**
+Gli interventi di oggi, l'indirizzo con la navigazione, la checklist passo-passo, le foto da caricare. Tutto in un'app semplice come WhatsApp.
+
+---
+
+## 8. L'intelligenza — Quality Score — *peso misurato, onesto*
+
+**Titolo:** Un occhio in più sulla qualità.
+
+**Testo:**
+CleanFlow legge le foto di fine lavoro e dà un punteggio di qualità all'intervento. Ti accorgi di un problema prima che lo faccia il cliente.
+
+**Riga onestà:** È un aiuto, non un giudice: l'ultima parola resta sempre tua.
+
+---
+
+## 9. Il risultato — *àncora scura · numeri grandi*
+
+**Titolo:** Meno tempo a coordinare. Più tempo per far crescere l'azienda.
+
+**Numeri (proiezioni oneste, personalizzate in demo — mai dati consolidati falsi):**
+- `~10 ore` a settimana che non passi più tra messaggi e fogli Excel `[stima, da tarare in demo]`
+- `meno errori` su indirizzi, orari e interventi dimenticati
+- `clienti più seguiti`, con report e foto di ogni lavoro
+
+**Riga di chiusura:** I tuoi numeri li vediamo insieme, sui tuoi dati, durante la demo.
+
+---
+
+## 10. Domande (FAQ) — *abbatte le obiezioni del titolare cauto*
+
+> Le domande devono essere identiche nel testo visibile e nello schema `FAQPage` (SEO).
+
+**I miei operatori non sono tecnologici. Riusciranno a usarlo?**
+Sì. L'app dell'operatore è semplice come WhatsApp: vede gli interventi di oggi, segue la checklist, scatta le foto. Niente da imparare a memoria.
+
+**I miei dati sono al sicuro?**
+Sì. I dati della tua impresa sono isolati e conservati su server europei. Sono tuoi e restano tuoi.
+
+**Quanto tempo ci metto a partire?**
+Pochi giorni. Si parte in affiancamento, sostituendo un pezzo alla volta — senza fermare il lavoro.
+
+**Funziona dal telefono?**
+Sì. Tu gestisci tutto dal computer o dal telefono; gli operatori lavorano direttamente dall'app sul loro telefono.
+
+**Posso vederlo prima di decidere?**
+Certo. In una demo di 20 minuti te lo mostriamo sui tuoi dati. Nessun impegno, nessuna carta.
+
+**È un prodotto già pronto?** *(onestà-pilot)*
+È operativo e lo stiamo affinando con le prime imprese a bordo. Entri presto, conti di più: ci dici cosa ti serve davvero.
+
+---
+
+## 11. Le prime imprese a bordo — *al posto delle testimonianze, onesto*
+
+**Titolo:** Le prime imprese a bordo.
+
+**Testo:**
+Stiamo lavorando con le prime imprese di pulizie italiane per costruire CleanFlow su problemi veri, non su idee da scrivania. Le loro parole — quelle vere — le trovi qui appena avranno i numeri per dirle.
+
+**[OPZIONE pilot]** Posti del programma pilota limitati: chi entra ora ha condizioni dedicate e una linea diretta con noi.
+
+---
+
+## 12. Prezzo — *trasparente, ma "solo in demo"*
+
+**Titolo:** Quanto costa? Te lo diciamo in chiaro.
+
+**Testo:**
+Il prezzo giusto dipende da quanti operatori gestisci e da come lavori. Per questo non te lo nascondiamo dietro un listino finto: nella demo guardiamo la tua impresa e te lo diciamo in chiaro, senza sorprese e senza impegno.
+
+**CTA:** `Prenota una demo` *(mai "compra")*
+**Micro-rassicurazione:** 20 minuti · nessuna carta
+
+---
+
+## 13. CTA finale — *àncora scura · full-bleed*
+
+**Titolo:** Riprenditi le tue ore.
+
+**Sottotitolo:** Ti mostriamo CleanFlow sui tuoi dati in 20 minuti. Se non fa per te, te lo diciamo noi.
+
+**CTA:** `Prenota una demo`
+**Micro-rassicurazione:** Nessuna carta · nessun impegno
+
+---
+
+## 14. Footer — *scuro*
+
+- **Riga brand:** CleanFlow — il gestionale per le imprese di pulizie.
+- **Nav:** Come funziona · I moduli · Risultati · Domande · Prenota una demo
+- **Contatti:** [DA CONFERMARE: email vendite] · [DA CONFERMARE: telefono/WhatsApp]
+- **Dati azienda (fiducia B2B):** [DA CONFERMARE: ragione sociale] · P.IVA [DA CONFERMARE] · [DA CONFERMARE: sede]
+- **Legali:** Privacy · Cookie · Termini
+- **Riga finale:** © CleanFlow [DA CONFERMARE: anno]
+
+---
+
+# Pagina `/demo`
+
+**Colonna sinistra — cosa aspettarsi**
+
+**Titolo:** Una demo di 20 minuti, sui tuoi dati.
+
+- Niente presentazione generica: guardiamo la **tua** impresa.
+- Ti mostriamo come spariscono messaggi e fogli Excel.
+- Capiamo insieme se CleanFlow fa per te. In caso, te lo diciamo noi.
+- Nessuna carta, nessun impegno.
+
+**[OPZIONE pilot]** Volto e nome del founder + riga: "Risponde direttamente [DA CONFERMARE: nome founder]."
+
+**Colonna destra — form qualificante**
+
+> Campi (✅ deviazione dal wireframe APPROVATA dal founder: 3 obbligatori + 2 opzionali):
+- **Nome** *(obbligatorio)*
+- **Telefono** *(obbligatorio, `type=tel`)*
+- **Quanti operatori siete?** *(obbligatorio — chip: `Solo io` · `2-5` · `6-15` · `15+`)*
+- **Nome dell'impresa** *(opzionale)*
+- **Cosa usi oggi?** *(opzionale — chip: `WhatsApp` · `Excel` · `Carta/agenda` · `Un altro software` · `Niente`)*
+
+**Checkbox GDPR:** Ho letto la [Privacy policy] e acconsento al trattamento dei dati per essere ricontattato. *(obbligatoria)*
+
+**CTA form:** `Prenota la demo` *(mai "Invia")*
+**Sotto la CTA:** Ti rispondiamo entro 24 ore. Nessun call center.
+
+*Al submit → `/grazie`.*
+
+---
+
+# Pagina `/grazie`
+
+**Titolo:** Ci siamo. Ti ricontattiamo a breve.
+
+**Testo:**
+Grazie [Nome]. Ti scriviamo o chiamiamo entro [DA CONFERMARE: 24 ore / un giorno lavorativo] per fissare la demo.
+
+**Intanto, per arrivare pronti:**
+- Pensa a quante ore a settimana passi a coordinare operatori e clienti.
+- Tieni a mente quanti interventi gestisci in una settimana tipo.
+- Se vuoi, prepara un paio di clienti reali: li usiamo come esempio nella demo.
+
+**[OPZIONE]** Canale diretto: scrivici su WhatsApp [DA CONFERMARE: numero] · oppure scegli tu l'orario [DA CONFERMARE: link Cal.com].
+
+> Pagina `noindex`. Ospita il tracking di conversione.
+
+---
+
+# Legali (`/privacy` · `/cookie` · `/termini`)
+
+> ⛔ Da redigere con i **dati reali dell'azienda** (ragione sociale, P.IVA, sede, titolare del trattamento, strumenti usati: hosting Vercel, Supabase, eventuale Cal.com/analytics). Non inventare clausole legali. Consigliato: testo base GDPR + revisione del cliente/consulente. Placeholder finché i dati non ci sono.
