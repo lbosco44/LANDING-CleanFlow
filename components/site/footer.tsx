@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-import { COMPANY } from "@/lib/site";
+import { APP_URL, COMPANY } from "@/lib/site";
 import { CookiePreferencesLink } from "@/components/site/cookie-preferences-link";
 
 const NAV = [
@@ -94,8 +94,14 @@ export function SiteFooter() {
             © <span className="tabular">2026</span> CleanFlow · {COMPANY.legalName}{" "}
             · P.IVA {COMPANY.vat} · {COMPANY.address} · PEC {COMPANY.pec}
           </p>
-          <div className="flex items-center gap-5">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <CookiePreferencesLink />
+            <a
+              href={APP_URL}
+              className="font-medium text-on-dark transition-colors hover:text-accent"
+            >
+              Accedi
+            </a>
             <Link
               href="/demo"
               className="font-medium text-on-dark transition-colors hover:text-accent"
