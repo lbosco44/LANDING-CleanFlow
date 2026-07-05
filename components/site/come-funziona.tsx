@@ -4,10 +4,16 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
 // v2: niente sticky-scroll da 68vh a passo — 4 step compatti che si leggono in
-// un viewport. Il Quality Score vive dentro lo step 4 (niente sezione "AI"
-// autonoma: è un aiuto, non il protagonista).
+// un viewport. Solo funzioni che esistono OGGI: niente report automatici,
+// niente punteggi qualità, niente AI (vincolo founder 2026-07-02).
 
-const STEPS = [
+const STEPS: {
+  n: string;
+  titolo: string;
+  testo: string;
+  href?: string;
+  hrefLabel?: string;
+}[] = [
   {
     n: "1",
     titolo: "Crei il cliente e le sue strutture",
@@ -19,55 +25,24 @@ const STEPS = [
     titolo: "Pianifichi sul calendario",
     testo:
       "Assegni l'intervento all'operatore giusto. Lui lo riceve sul telefono.",
+    href: "/funzioni/calendario",
+    hrefLabel: "Vedi il calendario",
   },
   {
     n: "3",
     titolo: "L'operatore esegue dal telefono",
     testo:
-      "Check-in sul posto, checklist guidata, foto prima e dopo. Passo dopo passo.",
+      "Check-in sul posto, checklist guidata, foto del lavoro. Passo dopo passo.",
+    href: "/funzioni/operatori",
+    hrefLabel: "Vedi l'app dell'operatore",
   },
   {
     n: "4",
-    titolo: "Report e punteggio qualità, da soli",
+    titolo: "Tu vedi tutto, in tempo reale",
     testo:
-      "A fine lavoro il report è pronto, con le foto e un punteggio di qualità. Lo invii al cliente in un tocco.",
-    score: true,
+      "Stato di ogni intervento, orari veri di check-in e check-out, storico per cliente. Sai cos'è stato fatto senza chiedere.",
   },
 ];
-
-function MiniScore() {
-  // Anello statico al 92: niente count-up (Brief v2 — niente animazioni sui dati)
-  const r = 15.5;
-  const circ = 2 * Math.PI * r;
-  return (
-    <span className="inline-flex items-center gap-2 rounded-full bg-accent-soft py-1 pl-1.5 pr-3">
-      <svg viewBox="0 0 38 38" className="size-7 -rotate-90" aria-hidden>
-        <circle
-          cx="19"
-          cy="19"
-          r={r}
-          fill="none"
-          stroke="var(--border)"
-          strokeWidth="4"
-        />
-        <circle
-          cx="19"
-          cy="19"
-          r={r}
-          fill="none"
-          stroke="var(--accent)"
-          strokeWidth="4"
-          strokeLinecap="round"
-          strokeDasharray={circ}
-          strokeDashoffset={circ * (1 - 0.92)}
-        />
-      </svg>
-      <span className="font-mono text-xs font-semibold text-accent-ink tabular">
-        Qualità 92
-      </span>
-    </span>
-  );
-}
 
 export function ComeFunziona() {
   return (
@@ -79,7 +54,7 @@ export function ComeFunziona() {
         <div className="max-w-2xl">
           <p className="eyebrow text-accent-ink">Come funziona</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Dal cliente al report, in un unico flusso.
+            Dal cliente al lavoro fatto, in un unico flusso.
           </h2>
         </div>
 
@@ -98,20 +73,17 @@ export function ComeFunziona() {
               <p className="mt-2 text-[15px] leading-relaxed text-muted-foreground">
                 {s.testo}
               </p>
-              {s.score && (
-                <div className="mt-3">
-                  <MiniScore />
-                </div>
+              {s.href && (
+                <Link
+                  href={s.href}
+                  className="mt-2.5 inline-block text-sm font-semibold text-accent-ink underline-offset-4 hover:underline"
+                >
+                  {s.hrefLabel} →
+                </Link>
               )}
             </li>
           ))}
         </ol>
-
-        <p className="mt-8 max-w-2xl rounded-lg border-l-2 border-accent bg-accent-soft px-4 py-3 text-[15px] font-medium text-foreground">
-          Il punteggio qualità legge le foto di fine lavoro: ti accorgi di un
-          problema prima che lo faccia il cliente. È un aiuto, non un giudice —
-          l&apos;ultima parola resta sempre tua.
-        </p>
 
         {/* CTA inline — picco di intenzione */}
         <div className="mt-12 flex flex-col items-start gap-4 rounded-2xl bg-secondary/60 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">

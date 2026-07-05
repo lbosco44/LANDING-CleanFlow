@@ -1,4 +1,6 @@
+import Link from "next/link";
 import {
+  ArrowRight,
   Building2,
   KeyRound,
   MapPin,
@@ -243,6 +245,7 @@ function WidgetOperatori() {
 const PILASTRI = [
   {
     n: "01",
+    href: "/funzioni/entrate",
     nome: "Entrate",
     titolo: "Sai quanto entra, senza aprire Excel.",
     testo:
@@ -252,15 +255,17 @@ const PILASTRI = [
   },
   {
     n: "02",
+    href: "/funzioni/clienti",
     nome: "Clienti",
     titolo: "Ogni cliente al suo posto, una volta sola.",
     testo:
-      "Anagrafica, contatti e strutture collegate: inserisci il cliente una volta e lo ritrovi ovunque — nel calendario, negli interventi, nei report da inviare a fine lavoro. Basta cercare numeri su WhatsApp.",
+      "Anagrafica, contatti e strutture collegate: inserisci il cliente una volta e lo ritrovi ovunque — nel calendario, negli interventi, nello storico dei lavori. Basta cercare numeri su WhatsApp.",
     tile: "bg-tile-clienti",
     widget: <WidgetClienti />,
   },
   {
     n: "03",
+    href: "/funzioni/strutture",
     nome: "Strutture",
     titolo: "Ogni struttura con indirizzo e note d'accesso.",
     testo:
@@ -270,6 +275,7 @@ const PILASTRI = [
   },
   {
     n: "04",
+    href: "/funzioni/operatori",
     nome: "Operatori",
     titolo: "Chi lavora dove, e a che punto è.",
     testo:
@@ -322,6 +328,13 @@ export function Pilastri() {
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
                   {p.testo}
                 </p>
+                <Link
+                  href={p.href}
+                  className="mt-4 inline-flex items-center gap-1.5 text-[15px] font-semibold text-accent-ink underline-offset-4 hover:underline"
+                >
+                  Vedi come funziona
+                  <ArrowRight className="size-4" />
+                </Link>
               </div>
 
               <div

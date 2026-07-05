@@ -291,7 +291,15 @@ Le camere del B&B, la sala pesi, l'ufficio: ogni struttura porta con sé indiriz
 Assegni l'intervento dal calendario e l'operatore riceve tutto sul telefono: indirizzo, checklist passo-passo, foto da caricare, check-in e check-out. Tu e il team leader vedete chi c'è, chi manca e a che punto è ogni lavoro — senza una raffica di telefonate.
 
 ## Sezione 5 — Come funziona (compatta)
-Step 1-4 invariati dal v1 (§6). Lo **step 4 include il Quality Score**: testo v1 §8 accorciato — "CleanFlow legge le foto di fine lavoro e dà un punteggio di qualità: ti accorgi di un problema prima che lo faccia il cliente." + riga onestà invariata ("È un aiuto, non un giudice: l'ultima parola resta sempre tua."). Kicker "L'intelligenza" ELIMINATO (astratto per il target).
+Step 1-3 invariati dal v1 (§6, step 3 senza "prima e dopo": solo "foto del lavoro").
+
+> ⛔ **VINCOLO FOUNDER (2026-07-02)**: MAI menzionare in tutto il sito — report automatici con foto, punteggio di qualità, AI che legge le foto (la v1 §8 "L'intelligenza" è ABROGATA: la funzione non esiste e non c'è architettura per farla). MAI menzionare la sezione HQ privata.
+
+**Titolo aggiornato:** Dal cliente al lavoro fatto, in un unico flusso.
+**Step 4 riscritto (solo funzioni reali):** "Tu vedi tutto, in tempo reale — Stato di ogni intervento, orari veri di check-in e check-out, storico per cliente. Sai cos'è stato fatto senza chiedere."
+
+## Pagina /demo — riquadro fiducia (placeholder risolto)
+"Ti risponde direttamente chi costruisce CleanFlow. Niente call center, niente commerciali." *(il nome/volto reale del founder può sostituirlo quando il founder lo conferma)*
 
 ## Sezione 6 — Il risultato (stat card su tela chiara, niente count-up)
 - `~10 ore` — a settimana che non passi più tra messaggi ed Excel *(stima, da tarare in demo)*

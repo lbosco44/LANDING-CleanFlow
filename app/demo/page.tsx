@@ -40,9 +40,9 @@ export default function DemoPage() {
             </ul>
             <div className="mt-10 rounded-2xl border border-border bg-secondary/50 p-6">
               <p className="text-sm text-muted-foreground">
-                Risponde direttamente il nostro team.{" "}
+                Ti risponde direttamente chi costruisce CleanFlow.{" "}
                 <span className="font-medium text-foreground">
-                  [Nome founder — da confermare]
+                  Niente call center, niente commerciali.
                 </span>
               </p>
             </div>

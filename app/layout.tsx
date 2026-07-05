@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     template: "%s | CleanFlow",
   },
   description:
-    "Clienti, calendario, operatori sul campo e report in un'unica schermata. Basta WhatsApp ed Excel. Prenota una demo di 20 minuti, nessun impegno.",
+    "Entrate, clienti, strutture e operatori: tutto in un'unica schermata. Basta WhatsApp ed Excel. Prenota una demo di 20 minuti, nessun impegno.",
   applicationName: "CleanFlow",
   openGraph: {
     type: "website",

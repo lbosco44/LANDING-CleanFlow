@@ -108,3 +108,29 @@ Layer: bottom-bar sticky mobile (esistente) · cookie banner compatto su mobile.
 
 ## Sezioni v1 eliminate/assorbite
 - Trust strip → riga nella hero. Svolta → lead dei pilastri. Moduli per ruolo → dentro i pilastri (benefici per ruolo nel copy). Intelligenza → step 4 di Come funziona. Pilot → FAQ "È un prodotto già pronto?". Prezzo → FAQ "Quanto costa?".
+
+---
+
+# WIREFRAME v2.1 — Pagine funzione (2026-07-02)
+
+> Richiesta founder: la landing resta corta, ma chi vuole approfondire clicca ed entra in una pagina dedicata con più schermate e spiegazione vera. Da landing → piccolo sito.
+
+## Nuove pagine `/funzioni/*` (registry in `lib/funzioni.ts`)
+1. `/funzioni/entrate` — Metriche (KPI per periodo, per servizio) + catalogo Servizi (prezzo/durata) + dashboard economica.
+2. `/funzioni/clienti` — anagrafica privati/aziende, cliente→strutture, il cliente ovunque (calendario/interventi/storico).
+3. `/funzioni/strutture` — schede con indirizzo, note d'accesso che viaggiano con l'intervento, colonna Struttura in calendario. (Unica senza screenshot reale: tutta a widget HTML.)
+4. `/funzioni/operatori` — squadra (contatti, lavori svolti, stato), assegnazione dal calendario con "Non assegnato", app operatore (giornata, chiama cliente, note, check-in/out, checklist, foto del lavoro), PWA senza store.
+5. `/funzioni/calendario` — mese a colpo d'occhio, riga intervento completa, stati (Programmato/In corso/Completato/Non assegnato/Annullato), settimana in dashboard.
+
+Template comune (`components/site/funzione-shell.tsx`): testata con eyebrow "Funzioni · NN — Nome" + H1 + lead + visual hero → FeatureRow alternate (testo/visual) → CTA demo → griglia "Vedi anche" con le altre 4 → footer. Screenshot reali SOLO quelli on-brand navy/teal (metriche, clienti, calendario, operatori, dashboard-2), in cornice pulita senza fake chrome; il resto widget HTML.
+
+## Aggancio dalla landing
+- Ogni pilastro → link "Vedi come funziona →" alla sua pagina.
+- Come funziona: step 2 → calendario, step 3 → operatori.
+- Footer: colonna "Funzioni" con le 5 pagine (le ancore restano nell'header).
+- Sitemap: 5 URL aggiunti (priority 0.7).
+
+## ⛔ Vincoli founder (2026-07-02) validi su TUTTO il sito
+- MAI: report automatici con foto, punteggio di qualità, AI che legge le foto (funzione inesistente, v1 §8 abrogata).
+- MAI nominare la sezione HQ privata.
+- Landing: v2 invariata come lunghezza; step 4 Come funziona riscritto su funzioni reali (stati, orari check-in/out, storico).

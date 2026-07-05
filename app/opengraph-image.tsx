@@ -122,7 +122,7 @@ export default async function OpengraphImage() {
           }}
         >
           <div style={{ display: "flex", color: "#a7b0ce", fontSize: 26 }}>
-            Clienti · Calendario · Operatori · Report
+            Entrate · Clienti · Strutture · Operatori
           </div>
           <div
             style={{

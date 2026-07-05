@@ -2,14 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 
 import { APP_URL, COMPANY } from "@/lib/site";
+import { FUNZIONI, funzioneHref } from "@/lib/funzioni";
 import { CookiePreferencesLink } from "@/components/site/cookie-preferences-link";
 
-const NAV = [
-  { href: "/#pilastri", label: "Cosa fa" },
-  { href: "/#come-funziona", label: "Come funziona" },
-  { href: "/#risultati", label: "Risultati" },
-  { href: "/#domande", label: "Domande" },
-];
+// La colonna "Funzioni" linka le pagine di approfondimento /funzioni/*
+// (le ancore di sezione restano nell'header).
+const NAV = FUNZIONI.map((f) => ({
+  href: funzioneHref(f.slug),
+  label: f.nome,
+}));
 
 const LEGAL = [
   { href: "/privacy", label: "Privacy" },
@@ -39,8 +40,8 @@ export function SiteFooter() {
               </span>
             </div>
             <p className="mt-4 text-sm leading-relaxed">
-              Il gestionale per le imprese di pulizie. Clienti, calendario,
-              operatori e report in un&apos;unica schermata.
+              Il gestionale per le imprese di pulizie. Entrate, clienti,
+              strutture e operatori in un&apos;unica schermata.
             </p>
           </div>
 
@@ -48,15 +49,15 @@ export function SiteFooter() {
               non ci sta e sfonderebbe il viewport — Contatti scende di riga */}
           <div className="grid grid-cols-2 gap-10 sm:gap-12 lg:grid-cols-3 lg:gap-16">
             <nav className="flex flex-col gap-3 text-sm">
-              <span className="font-semibold text-on-dark">Prodotto</span>
+              <span className="font-semibold text-on-dark">Funzioni</span>
               {NAV.map((n) => (
-                <a
+                <Link
                   key={n.href}
                   href={n.href}
                   className="transition-colors hover:text-on-dark"
                 >
                   {n.label}
-                </a>
+                </Link>
               ))}
             </nav>
             <nav className="flex flex-col gap-3 text-sm">

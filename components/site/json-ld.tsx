@@ -38,7 +38,7 @@ export function JsonLd() {
         url: SITE_URL,
         inLanguage: "it-IT",
         description:
-          "Gestionale per imprese di pulizie: clienti, calendario, operatori sul campo e report in un'unica schermata.",
+          "Gestionale per imprese di pulizie: entrate, clienti, strutture e operatori in un'unica schermata.",
         publisher: { "@id": `${SITE_URL}/#organization` },
       },
       {

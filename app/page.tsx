@@ -11,8 +11,9 @@ import { JsonLd } from "@/components/site/json-ld";
 
 // Home v2 "Registro di controllo" (Brief/WIREFRAME.md v2): 9 sezioni, era 14.
 // Trust-strip → riga nella hero · Svolta → lead dei pilastri · Moduli →
-// dentro i pilastri · Intelligenza → step 4 di Come funziona · Pilot e
-// Prezzo → FAQ.
+// dentro i pilastri · Pilot e Prezzo → FAQ. I pilastri linkano le pagine
+// /funzioni/* per chi vuole approfondire (v2.1). VIETATO in pagina: report
+// automatici, punteggi qualità, AI (vincolo founder 2026-07-02), sezione HQ.
 export default function Home() {
   return (
     <>
