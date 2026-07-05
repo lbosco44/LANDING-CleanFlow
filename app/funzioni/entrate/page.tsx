@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { FileText } from "lucide-react";
 
 import {
   FunzioneShell,
@@ -8,13 +9,53 @@ import {
 } from "@/components/site/funzione-shell";
 
 export const metadata: Metadata = {
-  title: "Entrate — sai quanto entra, senza aprire Excel",
+  title: "Entrate — dal preventivo all'incasso, senza fogli",
   description:
-    "Fatturato del periodo, valore medio per intervento e resa di ogni servizio: in CleanFlow le entrate si aggiornano da sole a ogni lavoro completato.",
+    "Preventivi, incassi, fatturato per servizio e riepilogo del periodo: in CleanFlow la parte economica dell'impresa di pulizie vive in un posto solo.",
 };
 
-// Contenuto ancorato alle schermate reali: Metriche (KPI + per servizio),
-// Servizi (catalogo con prezzi) e Dashboard (fatturato settimana + per mese).
+// Pagina delle funzioni ECONOMICHE: Preventivi → lavoro → Incassi →
+// Metriche/Riepilogo. Contenuto ancorato alle schermate reali dove le
+// abbiamo (Metriche, Dashboard); per Preventivi/Incassi/Riepilogo il copy
+// resta sul beneficio, senza inventare dettagli di interfaccia.
+
+function WidgetPreventivo() {
+  return (
+    <div className="rounded-xl bg-card p-5 shadow-(--shadow-soft) sm:p-6">
+      <div className="flex items-center justify-between gap-3">
+        <p className="flex items-center gap-2 text-sm font-semibold">
+          <FileText className="size-4 text-accent-ink" />
+          Preventivo · Palestra FitZone
+        </p>
+        <span className="rounded-full bg-secondary px-2.5 py-1 text-[11px] font-semibold text-secondary-foreground">
+          Giugno 2026
+        </span>
+      </div>
+      <ul className="mt-4 space-y-2 border-t border-border pt-4">
+        <li className="flex items-baseline justify-between gap-4 text-sm">
+          <span className="text-foreground">
+            Pulizia sala pesi · 4 volte al mese
+          </span>
+          <span className="font-mono text-primary tabular">€ 204</span>
+        </li>
+        <li className="flex items-baseline justify-between gap-4 text-sm">
+          <span className="text-foreground">
+            Sanificazione spogliatoi · 2 volte al mese
+          </span>
+          <span className="font-mono text-primary tabular">€ 102</span>
+        </li>
+      </ul>
+      <div className="mt-3 flex items-baseline justify-between border-t border-border pt-3">
+        <span className="text-sm font-semibold text-foreground">
+          Totale al mese
+        </span>
+        <span className="font-mono text-lg font-semibold text-primary tabular">
+          € 306
+        </span>
+      </div>
+    </div>
+  );
+}
 
 function WidgetKpiPeriodo() {
   return (
@@ -127,12 +168,77 @@ function WidgetServizi() {
   );
 }
 
+function WidgetIncassi() {
+  const RIGHE = [
+    {
+      chi: "Famiglia Conti",
+      cosa: "Pulizia settimanale · giugno",
+      importo: "72",
+      stato: "Incassato",
+      cls: "bg-accent-soft text-accent-ink",
+    },
+    {
+      chi: "Palestra FitZone",
+      cosa: "Pulizie sala pesi · giugno",
+      importo: "204",
+      stato: "Incassato",
+      cls: "bg-accent-soft text-accent-ink",
+    },
+    {
+      chi: "B&B Le Magnolie",
+      cosa: "Aree comuni · giugno",
+      importo: "143",
+      stato: "Da incassare",
+      cls: "bg-amber-100 text-amber-700",
+    },
+  ];
+  return (
+    <div className="space-y-3">
+      <div className="overflow-hidden rounded-xl bg-card shadow-(--shadow-soft)">
+        <ul className="divide-y divide-border">
+          {RIGHE.map((r) => (
+            <li
+              key={r.chi}
+              className="flex items-center gap-3 px-4 py-3 sm:px-5"
+            >
+              <span className="min-w-0 flex-1">
+                <span className="block truncate text-sm font-semibold">
+                  {r.chi}
+                </span>
+                <span className="block truncate text-xs text-muted-foreground">
+                  {r.cosa}
+                </span>
+              </span>
+              <span className="font-mono text-sm text-primary tabular">
+                € {r.importo}
+              </span>
+              <span
+                className={`shrink-0 rounded-full px-2.5 py-1 text-[11px] font-semibold ${r.cls}`}
+              >
+                {r.stato}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="flex items-center justify-between rounded-xl bg-card px-4 py-3 shadow-(--shadow-soft) sm:px-5">
+        <span className="text-sm font-medium text-muted-foreground">
+          Da incassare a giugno
+        </span>
+        <span className="font-mono text-base font-semibold text-amber-700 tabular">
+          € 143
+        </span>
+      </div>
+    </div>
+  );
+}
+
 export default function EntratePage() {
   return (
     <FunzioneShell
       slug="entrate"
-      titolo="Sai quanto entra, senza aprire Excel."
-      lead="Ogni intervento completato aggiorna il fatturato da solo. Tu apri CleanFlow e trovi il quadro già fatto: quanto è entrato, da quale servizio, a che valore medio. La pagina si chiama Metriche — e sostituisce il foglio di calcolo della domenica sera."
+      titolo="Dal preventivo all'incasso, senza fogli."
+      lead="La parte economica dell'impresa vive in un posto solo: prepari i preventivi, ogni intervento completato aggiorna il fatturato da solo, segni gli incassi e vedi cosa manca. E quando vuoi tirare le somme, Metriche e Riepilogo hanno già fatto i conti."
       hero={
         <Screenshot aspect="aspect-[16/10]" tile="bg-tile-entrate">
           <Image
@@ -149,6 +255,23 @@ export default function EntratePage() {
       <section className="border-b border-border">
         <FeatureRow
           first
+          eyebrow="Preventivi"
+          titolo="Il preventivo nasce dove stanno i tuoi prezzi."
+          visual={
+            <div className="rounded-[1.25rem] bg-tile-clienti p-5 sm:p-8">
+              <WidgetPreventivo />
+            </div>
+          }
+        >
+          <p>
+            Basta preventivi sul blocco note o persi in una chat: li prepari
+            in CleanFlow, col cliente e i servizi già in anagrafica, e restano
+            lì — pronti da ritrovare quando il cliente richiama dopo un mese.
+          </p>
+        </FeatureRow>
+
+        <FeatureRow
+          reverse
           eyebrow="Il periodo che vuoi"
           titolo="Il quadro del mese, dell'anno, o delle date che scegli tu."
           visual={
@@ -159,14 +282,13 @@ export default function EntratePage() {
         >
           <p>
             Quattro numeri, sempre aggiornati: fatturato, interventi
-            completati, durata media, valore medio per intervento. Cambi
-            periodo con un click — questo mese, gli ultimi 12, o le date che
-            decidi tu.
+            completati, durata media, valore medio per intervento. Ogni lavoro
+            completato li aggiorna da solo — la pagina Metriche sostituisce il
+            foglio di calcolo della domenica sera.
           </p>
         </FeatureRow>
 
         <FeatureRow
-          reverse
           eyebrow="Per servizio"
           titolo="Vedi quale servizio rende davvero."
           visual={
@@ -184,6 +306,7 @@ export default function EntratePage() {
         </FeatureRow>
 
         <FeatureRow
+          reverse
           eyebrow="I servizi hanno un prezzo"
           titolo="Ogni servizio ha prezzo e durata. Il conto si fa da solo."
           visual={
@@ -198,15 +321,32 @@ export default function EntratePage() {
             l&apos;importo è già lì: a fine mese non devi ricostruire niente.
           </p>
           <p className="text-base">
-            Sono i <strong className="font-semibold text-foreground">tuoi</strong>{" "}
+            Sono i{" "}
+            <strong className="font-semibold text-foreground">tuoi</strong>{" "}
             prezzi, per i tuoi clienti — li cambi quando vuoi.
           </p>
         </FeatureRow>
 
         <FeatureRow
+          eyebrow="Incassi"
+          titolo="Chi ha pagato e chi no: lo vedi, non lo insegui."
+          visual={
+            <div className="rounded-[1.25rem] bg-tile-entrate p-5 sm:p-8">
+              <WidgetIncassi />
+            </div>
+          }
+        >
+          <p>
+            Il lavoro fatto è metà della storia: nella sezione Incassi segni
+            quello che è entrato e vedi subito cosa resta da incassare. I
+            soldi da recuperare smettono di vivere nella tua memoria.
+          </p>
+        </FeatureRow>
+
+        <FeatureRow
           reverse
-          eyebrow="Ogni mattina"
-          titolo="Appena apri, la settimana è già sotto controllo."
+          eyebrow="Riepilogo"
+          titolo="Le somme del periodo, già tirate."
           visual={
             <Screenshot aspect="aspect-[16/11]" tile="bg-secondary/60">
               <Image
@@ -220,10 +360,10 @@ export default function EntratePage() {
           }
         >
           <p>
-            Anche senza aprire Metriche, la dashboard ti dà i numeri del
-            giorno: interventi di oggi, quanti completati, fatturato della
-            settimana e del mese per servizio. Un colpo d&apos;occhio mentre
-            bevi il caffè.
+            La dashboard ti dà i numeri del giorno appena apri — interventi,
+            completati, fatturato della settimana e del mese per servizio. E
+            il Riepilogo mette in fila il periodo, quando vuoi vedere tutto
+            insieme senza aprire dieci pagine.
           </p>
         </FeatureRow>
       </section>

@@ -319,3 +319,10 @@ E la voce "È un prodotto già pronto?" si estende con: "I posti del programma p
 ## Footer v2
 - **Contatti:** marketing@cleanflowapp.it (email di dominio al posto del Gmail personale — fiducia B2B) · 333 807 4768.
 - Resto invariato.
+
+## v2.2 — Funzioni economiche + ricorrenti (2026-07-05)
+Su richiesta founder (sidebar app aggiornata: Settimana, Ricorrenti, Incassi, Preventivi, Manuali, Riepilogo, Cestino...):
+- **/funzioni/entrate** diventa la pagina delle funzioni economiche: "Dal preventivo all'incasso, senza fogli" — sezioni Preventivi / Metriche per periodo / Per servizio / Servizi con prezzo / **Incassi** (incassato vs da incassare) / **Riepilogo**.
+- **/funzioni/calendario**: + sezione **Ricorrenti** (lavori ripetuti impostati una volta) e vista **Settimana**.
+- Pilastro 01 in home: aggiunta mezza frase su preventivi+incassi.
+- ⚠️ Preventivi/Incassi/Riepilogo/Ricorrenti descritti in modo PRUDENTE (solo nomi noti dal menu, niente screenshot): copy sul beneficio, zero dettagli di UI inventati. Da arricchire quando il founder passa gli screenshot. NON citati: Report (vincolo), Manuali, Cestino, HQ.

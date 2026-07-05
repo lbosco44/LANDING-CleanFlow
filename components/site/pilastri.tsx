@@ -249,7 +249,7 @@ const PILASTRI = [
     nome: "Entrate",
     titolo: "Sai quanto entra, senza aprire Excel.",
     testo:
-      "Il fatturato del mese, diviso per servizio, si aggiorna da solo a ogni intervento completato. Apri CleanFlow e sai come sta andando l'azienda — smetti di chiedere «com'è andata?» a fine giornata.",
+      "Il fatturato del mese, diviso per servizio, si aggiorna da solo a ogni intervento completato. E con preventivi e incassi nello stesso posto, sai anche cosa deve ancora entrare — smetti di chiedere «com'è andata?» a fine giornata.",
     tile: "bg-tile-entrate",
     widget: <WidgetEntrate />,
   },

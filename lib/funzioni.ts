@@ -7,7 +7,7 @@ export const FUNZIONI = [
     slug: "entrate",
     numero: "01",
     nome: "Entrate",
-    short: "Quanto entra, da quale servizio",
+    short: "Dal preventivo all'incasso",
   },
   {
     slug: "clienti",
