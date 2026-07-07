@@ -17,17 +17,17 @@ import { cn } from "@/lib/utils";
 
 function WidgetEntrate() {
   const SERVIZI = [
-    { nome: "Pulizia settimanale", importo: "1.430", w: "100%" },
-    { nome: "Uffici serali", importo: "980", w: "68%" },
-    { nome: "Sanificazioni", importo: "745", w: "52%" },
+    { nome: "Pulizia settimanale", importo: "8.850", w: "100%" },
+    { nome: "Uffici serali", importo: "6.060", w: "68%" },
+    { nome: "Sanificazioni", importo: "4.610", w: "52%" },
   ];
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
         {[
-          { label: "Fatturato del mese", value: "€ 4.280", wide: true },
+          { label: "Fatturato del mese", value: "€ 26.480", wide: true },
           { label: "Interventi completati", value: "132", wide: false },
-          { label: "Valore medio", value: "€ 58", wide: false },
+          { label: "Valore medio", value: "€ 200", wide: false },
         ].map((k) => (
           <div
             key={k.label}

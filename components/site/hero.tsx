@@ -142,7 +142,7 @@ export function Hero() {
                   Incassato a giugno
                 </p>
                 <p className="mt-1 font-mono text-2xl font-semibold tracking-tight text-primary tabular">
-                  € <KpiCounter to={4280} />
+                  € <KpiCounter to={26480} />
                 </p>
                 <span className="absolute inset-y-3 left-0 w-1 rounded-full bg-accent" />
               </div>

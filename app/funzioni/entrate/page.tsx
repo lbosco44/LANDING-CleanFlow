@@ -76,10 +76,10 @@ function WidgetKpiPeriodo() {
       </div>
       <div className="grid grid-cols-2 gap-3">
         {[
-          { label: "Fatturato", value: "€ 4.280" },
+          { label: "Fatturato", value: "€ 26.480" },
           { label: "Interventi completati", value: "132" },
           { label: "Durata media", value: "54 min" },
-          { label: "Valore medio", value: "€ 58" },
+          { label: "Valore medio", value: "€ 200" },
         ].map((k) => (
           <div
             key={k.label}
@@ -100,10 +100,10 @@ function WidgetKpiPeriodo() {
 
 function WidgetPerServizio() {
   const RIGHE = [
-    { nome: "Pulizia settimanale", fatt: "1.430", n: 24, medio: "72" },
-    { nome: "Pulizia uffici serale", fatt: "980", n: 18, medio: "54" },
-    { nome: "Sanificazione spogliatoi", fatt: "745", n: 9, medio: "51" },
-    { nome: "Pulizia domestica", fatt: "620", n: 12, medio: "48" },
+    { nome: "Pulizia settimanale", fatt: "8.850", n: 24, medio: "356" },
+    { nome: "Pulizia uffici serale", fatt: "6.060", n: 18, medio: "328" },
+    { nome: "Sanificazione spogliatoi", fatt: "4.610", n: 9, medio: "388" },
+    { nome: "Pulizia domestica", fatt: "3.840", n: 12, medio: "214" },
   ];
   return (
     <div className="overflow-hidden rounded-xl bg-card shadow-(--shadow-soft)">

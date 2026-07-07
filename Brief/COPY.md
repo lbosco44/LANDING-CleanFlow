@@ -271,7 +271,7 @@ Grazie [Nome]. Ti scriviamo o chiamiamo entro [DA CONFERMARE: 24 ore / un giorno
   Entrate, clienti, strutture e operatori: tutto in ordine, in un posto solo. Senza più WhatsApp, Excel e telefonate.
 - **CTA secondaria:** `Guarda com'è fatto` → ancora a `#pilastri`.
 - **Riga trust (nella hero, la trust-strip sparisce):** In prova con le prime imprese di pulizie italiane.
-- **Widget ricostruiti (testi UI):** card "Agenda di oggi" (3 righe: B&B Le Magnolie · Camere 1-3 · Completato / Palestra FitZone · Sala pesi · In corso / Studio Legale Marino · Uffici · Programmato) + chip "Incassato a giugno € 4.280" + chip live "2 operatori in servizio ora".
+- **Widget ricostruiti (testi UI):** card "Agenda di oggi" (3 righe: B&B Le Magnolie · Camere 1-3 · Completato / Palestra FitZone · Sala pesi · In corso / Studio Legale Marino · Uffici · Programmato) + chip "Incassato a giugno € 26.480" + chip live "2 operatori in servizio ora".
 
 ## Sezione 4 — I 4 pilastri "Tutto, al suo posto" (NUOVA: assorbe Svolta + Moduli + Intelligenza)
 - **Eyebrow:** IL GESTIONALE — **H2:** Tutto in un'unica sala di controllo.
