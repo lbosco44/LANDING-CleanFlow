@@ -26,7 +26,7 @@ export const FAQS = [
   },
   {
     q: "Quanto costa?",
-    a: "Dipende da quanti operatori gestisci e da come lavori: per questo niente listino finto. Nella demo guardiamo la tua impresa e ti diciamo il prezzo in chiaro, senza sorprese. Chi entra nel programma pilota ha condizioni dedicate.",
+    a: "Tre piani, in base a quanti operatori gestisci: Base 99€, Pro 129€, Business 199€ al mese (IVA esclusa). Clienti e strutture sono sempre illimitati. Provi gratis 14 giorni, senza carta, e in demo vediamo insieme quale fa per te.",
   },
   {
     q: "È un prodotto già pronto?",

@@ -4,6 +4,7 @@ import { Problema } from "@/components/site/problema";
 import { Pilastri } from "@/components/site/pilastri";
 import { ComeFunziona } from "@/components/site/come-funziona";
 import { Risultato } from "@/components/site/risultato";
+import { Prezzi } from "@/components/site/prezzi";
 import { Faq } from "@/components/site/faq";
 import { CtaFinale } from "@/components/site/cta-finale";
 import { SiteFooter } from "@/components/site/footer";
@@ -25,6 +26,7 @@ export default function Home() {
         <Pilastri />
         <ComeFunziona />
         <Risultato />
+        <Prezzi />
         <Faq />
         <CtaFinale />
       </main>

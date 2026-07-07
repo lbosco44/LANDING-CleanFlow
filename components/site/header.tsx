@@ -12,6 +12,7 @@ import { cn } from "@/lib/utils";
 const NAV = [
   { href: "/#pilastri", label: "Cosa fa" },
   { href: "/#come-funziona", label: "Come funziona" },
+  { href: "/#prezzi", label: "Prezzi" },
   { href: "/#domande", label: "Domande" },
 ];
 
