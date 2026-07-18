@@ -326,3 +326,39 @@ Su richiesta founder (sidebar app aggiornata: Settimana, Ricorrenti, Incassi, Pr
 - **/funzioni/calendario**: + sezione **Ricorrenti** (lavori ripetuti impostati una volta) e vista **Settimana**.
 - Pilastro 01 in home: aggiunta mezza frase su preventivi+incassi.
 - ⚠️ Preventivi/Incassi/Riepilogo/Ricorrenti descritti in modo PRUDENTE (solo nomi noti dal menu, niente screenshot): copy sul beneficio, zero dettagli di UI inventati. Da arricchire quando il founder passa gli screenshot. NON citati: Report (vincolo), Manuali, Cestino, HQ.
+
+## v2.5 — Team + Investitori (2026-07-16)
+
+Due sezioni nuove in home, **dopo le Domande e prima della CTA finale**: il prodotto ha già convinto e le obiezioni sono cadute, l'ultima cosa prima della richiesta è chi c'è dall'altra parte. Rendono vera una promessa che il copy faceva già altrove ("ti risponde direttamente chi costruisce CleanFlow, niente call center").
+
+### Sezione — Chi c'è dietro (team)
+**Occhiello:** Chi c'è dietro
+**Titolo:** Siamo in tre. Quando chiami, rispondiamo noi.
+**Intro:** Niente call center, niente commerciali a provvigione. CleanFlow lo costruiamo in tre, e le imprese con cui lavoriamo parlano con chi il prodotto lo decide e lo scrive.
+
+| Persona | Ruolo |
+|---|---|
+| Jacopo Serra | CEO · co-fondatore |
+| Lorenzo Bosco | CTO · co-fondatore |
+| Michele Raffone | Head of Sales · co-fondatore |
+
+**Chiusura:** Tutti e tre fondatori. Nessuno di noi ha un capo a cui rimandarti.
+
+⛔ **Niente righe descrittive per persona** (decisione founder 2026-07-16). Erano state proposte tre righe dedotte dai ruoli: bocciate e rimosse. La scheda è foto + nome + ruolo, punto. Non reintrodurle.
+
+### Sezione — Chi ci sostiene (investitori)
+**Occhiello:** Chi ci sostiene
+**Titolo:** C'è chi ha scommesso su di noi prima dei numeri.
+**Testo:** CleanFlow non è un progetto del weekend: c'è chi ci ha messo dei soldi suoi quando eravamo ancora all'inizio.
+**Voce:** Marco — Investitore, con foto *(ok a comparire dato dal diretto interessato, 2026-07-16)*
+
+- Vincolo `_ANALISI.md` rispettato: **nessun numero da investitore** in pagina (importi, valutazione, TAM). Si dice CHI, mai QUANTO.
+- ⛔ **Nessun secondo investitore** (decisione founder 2026-07-18): era stata ipotizzata una seconda voce anonima, scartata. La sezione resta con la sola voce Marco. Se un domani entra un investitore vero → una voce in più nell'array (`"Investitore privato"` se anonimo per sua scelta). **Solo se reale** — un investitore inventato per riempire la sezione è fuori discussione.
+
+### Foto
+✅ **Consegnate 2026-07-16**: headshot dei tre fondatori + Marco, originali in `References/headshots/*.png` (1122×1402, ~1.7–2MB) e copiati tali e quali in `public/team/*.png`.
+
+⚠️ **Non pre-comprimere le immagini a mano.** Primo tentativo: ridotte a 512×640 WebP (~15KB) → next/image le ricomprimeva una seconda volta partendo da un file già impoverito e i volti si impastavano ("sono distrutte", founder). Regola: **l'originale va dato intero a next/image**, che ridimensiona e comprime UNA volta sola alla misura richiesta (128×160 nella griglia team, 64×64 nel riquadro investitore). Nel progetto non ci sono `sharp` né imagemagick e non servono.
+
+- Le tre foto del team sono headshot su fondo chiaro, già in proporzione 4:5 → combaciano con lo slot senza crop. Hairline (`ring-1 ring-border`) sul ritratto, altrimenti il fondo bianco si fonde con la card.
+- La foto di Marco è invece **ambientata** (scrivania, mezzo busto, sfondo ufficio): in un riquadro quadrato un crop centrato gli taglierebbe la testa → `object-top`. Se un giorno si vuole coerenza visiva piena con gli altri tre, serve un headshot su fondo chiaro anche per lui.

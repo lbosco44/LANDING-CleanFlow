@@ -6,6 +6,8 @@ import { ComeFunziona } from "@/components/site/come-funziona";
 import { Risultato } from "@/components/site/risultato";
 import { Prezzi } from "@/components/site/prezzi";
 import { Faq } from "@/components/site/faq";
+import { Team } from "@/components/site/team";
+import { Investitori } from "@/components/site/investitori";
 import { CtaFinale } from "@/components/site/cta-finale";
 import { SiteFooter } from "@/components/site/footer";
 import { JsonLd } from "@/components/site/json-ld";
@@ -15,6 +17,10 @@ import { JsonLd } from "@/components/site/json-ld";
 // dentro i pilastri · Pilot e Prezzo → FAQ. I pilastri linkano le pagine
 // /funzioni/* per chi vuole approfondire (v2.1). VIETATO in pagina: report
 // automatici, punteggi qualità, AI (vincolo founder 2026-07-02), sezione HQ.
+//
+// v2.5: Team + Investitori entrano DOPO le Domande e prima della CTA finale —
+// il prodotto ha già convinto, le obiezioni sono cadute, l'ultima cosa che
+// resta prima della richiesta è chi c'è dall'altra parte.
 export default function Home() {
   return (
     <>
@@ -28,6 +34,8 @@ export default function Home() {
         <Risultato />
         <Prezzi />
         <Faq />
+        <Team />
+        <Investitori />
         <CtaFinale />
       </main>
       <SiteFooter />
