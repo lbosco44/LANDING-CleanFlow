@@ -2,7 +2,12 @@ import type { Metadata } from "next";
 
 import { LegalPage } from "@/components/site/legal-page";
 
-export const metadata: Metadata = { title: "Cookie Policy" };
+export const metadata: Metadata = {
+  title: "Cookie Policy",
+  description:
+    "Quali cookie usa il sito di CleanFlow, a cosa servono e come modificare in ogni momento le tue preferenze.",
+  alternates: { canonical: "/cookie" },
+};
 
 export default function CookiePage() {
   return (

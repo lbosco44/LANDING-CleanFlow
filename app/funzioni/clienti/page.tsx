@@ -9,9 +9,10 @@ import {
 } from "@/components/site/funzione-shell";
 
 export const metadata: Metadata = {
-  title: "Clienti — l'anagrafica che non devi più rincorrere",
+  title: "Gestione clienti per imprese di pulizie",
   description:
-    "Privati e aziende, contatti e strutture collegate: in CleanFlow inserisci il cliente una volta e lo ritrovi nel calendario, negli interventi e nello storico.",
+    "Privati e aziende, contatti e strutture collegate: inserisci il cliente una volta e lo ritrovi nel calendario, negli interventi e nello storico.",
+  alternates: { canonical: "/funzioni/clienti" },
 };
 
 // Contenuto ancorato alla schermata reale Clienti (anagrafica con tipo,

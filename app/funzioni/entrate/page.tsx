@@ -9,9 +9,10 @@ import {
 } from "@/components/site/funzione-shell";
 
 export const metadata: Metadata = {
-  title: "Entrate — dal preventivo all'incasso, senza fogli",
+  title: "Preventivi e incassi per imprese di pulizie",
   description:
-    "Preventivi, incassi, fatturato per servizio e riepilogo del periodo: in CleanFlow la parte economica dell'impresa di pulizie vive in un posto solo.",
+    "Preventivi, incassi, fatturato per servizio e riepilogo del periodo: la parte economica dell'impresa di pulizie vive in un posto solo.",
+  alternates: { canonical: "/funzioni/entrate" },
 };
 
 // Pagina delle funzioni ECONOMICHE: Preventivi → lavoro → Incassi →

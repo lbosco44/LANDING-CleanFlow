@@ -3,7 +3,12 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/site/legal-page";
 import { COMPANY } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Privacy Policy" };
+export const metadata: Metadata = {
+  title: "Privacy Policy",
+  description:
+    "Come CleanFlow tratta i dati personali di chi visita il sito e richiede una demo, ai sensi del GDPR.",
+  alternates: { canonical: "/privacy" },
+};
 
 export default function PrivacyPage() {
   return (

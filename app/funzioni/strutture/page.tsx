@@ -8,9 +8,10 @@ import {
 } from "@/components/site/funzione-shell";
 
 export const metadata: Metadata = {
-  title: "Strutture — ogni posto con indirizzo e note d'accesso",
+  title: "Gestione strutture per imprese di pulizie",
   description:
-    "Camere, uffici, palestre, appartamenti: in CleanFlow ogni struttura ha indirizzo e note d'accesso, e ogni intervento è legato al posto giusto.",
+    "Camere, uffici, palestre, appartamenti: ogni struttura ha indirizzo e note d'accesso, e ogni intervento è legato al posto giusto.",
+  alternates: { canonical: "/funzioni/strutture" },
 };
 
 // Contenuto ancorato al prodotto reale: voce "Strutture" nel menu, colonna

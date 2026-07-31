@@ -11,9 +11,10 @@ import {
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Operatori — chi lavora dove, e a che punto è",
+  title: "App operatori e turni per imprese di pulizie",
   description:
-    "Assegni gli interventi dal calendario e l'operatore riceve tutto sul telefono: indirizzo, note d'accesso, checklist, check-in e check-out. Senza installare niente.",
+    "Assegni gli interventi dal calendario e l'operatore riceve tutto sul telefono: indirizzo, note d'accesso, checklist, check-in e check-out.",
+  alternates: { canonical: "/funzioni/operatori" },
 };
 
 // Contenuto ancorato al prodotto reale: pagina Operatori (contatti, lavori

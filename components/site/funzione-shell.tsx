@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 import { SiteHeader } from "@/components/site/header";
 import { SiteFooter } from "@/components/site/footer";
+import { FunzioneJsonLd } from "@/components/site/json-ld";
 import { buttonVariants } from "@/components/ui/button";
 import { FUNZIONI, funzioneHref, type FunzioneSlug } from "@/lib/funzioni";
 import { cn } from "@/lib/utils";
@@ -31,6 +32,7 @@ export function FunzioneShell({
 
   return (
     <>
+      <FunzioneJsonLd slug={slug} />
       <SiteHeader />
       <main className="flex-1 bg-background">
         {/* Testata pagina */}

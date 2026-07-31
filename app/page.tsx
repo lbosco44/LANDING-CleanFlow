@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { SiteHeader } from "@/components/site/header";
 import { Hero } from "@/components/site/hero";
 import { Problema } from "@/components/site/problema";
@@ -11,6 +13,12 @@ import { Investitori } from "@/components/site/investitori";
 import { CtaFinale } from "@/components/site/cta-finale";
 import { SiteFooter } from "@/components/site/footer";
 import { JsonLd } from "@/components/site/json-ld";
+
+// Title/description ereditati dal layout (keyword madre "gestionale imprese di
+// pulizie"): qui serve solo il canonical, che Next non genera da solo.
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 // Home v2 "Registro di controllo" (Brief/WIREFRAME.md v2): 9 sezioni, era 14.
 // Trust-strip → riga nella hero · Svolta → lead dei pilastri · Moduli →

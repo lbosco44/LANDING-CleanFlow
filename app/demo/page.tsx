@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Prenota una demo — 20 minuti, nessun impegno",
   description:
     "Ti mostriamo CleanFlow sui tuoi dati in 20 minuti. Nessuna carta, nessun impegno.",
+  alternates: { canonical: "/demo" },
 };
 
 const POINTS = [

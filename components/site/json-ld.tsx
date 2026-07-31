@@ -1,5 +1,6 @@
 import { COMPANY } from "@/lib/site";
 import { FAQS } from "@/components/site/faq-data";
+import { FUNZIONI, funzioneHref, type FunzioneSlug } from "@/lib/funzioni";
 
 const SITE_URL = "https://cleanflowapp.it";
 
@@ -29,6 +30,17 @@ export function JsonLd() {
           addressRegion: "SS",
           addressCountry: "IT",
         },
+        // Paese servito: CleanFlow è un SaaS nazionale, NON una LocalBusiness
+        // (vedi Brief/SEO.md — niente areaServed di comuni, niente GBP).
+        areaServed: "IT",
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        name: "CleanFlow",
+        url: SITE_URL,
+        inLanguage: "it-IT",
+        publisher: { "@id": `${SITE_URL}/#organization` },
       },
       {
         "@type": "SoftwareApplication",
@@ -62,6 +74,38 @@ export function JsonLd() {
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
         })),
+      },
+    ],
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(data) }}
+    />
+  );
+}
+
+// Breadcrumb delle pagine /funzioni/*: dà a Google il percorso Home → funzione
+// (in SERP sostituisce l'URL nudo). Due livelli soli: "Funzioni" non è una
+// pagina reale ma un'ancora della home, e un breadcrumb deve puntare a URL veri.
+export function FunzioneJsonLd({ slug }: { slug: FunzioneSlug }) {
+  const f = FUNZIONI.find((x) => x.slug === slug)!;
+  const data = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "CleanFlow",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: f.nome,
+        item: `${SITE_URL}${funzioneHref(f.slug)}`,
       },
     ],
   };

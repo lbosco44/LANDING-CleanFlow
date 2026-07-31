@@ -3,7 +3,12 @@ import type { Metadata } from "next";
 import { LegalPage } from "@/components/site/legal-page";
 import { COMPANY } from "@/lib/site";
 
-export const metadata: Metadata = { title: "Termini di servizio" };
+export const metadata: Metadata = {
+  title: "Termini di servizio",
+  description:
+    "Condizioni d'uso del sito e del servizio CleanFlow, gestionale per imprese di pulizie.",
+  alternates: { canonical: "/termini" },
+};
 
 export default function TerminiPage() {
   return (

@@ -10,9 +10,10 @@ import {
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Calendario — pianifichi in minuti, non a telefonate",
+  title: "Calendario interventi per imprese di pulizie",
   description:
-    "Il mese a colpo d'occhio, ogni intervento con orario, cliente, struttura, servizio, stato e operatori. La pianificazione dell'impresa di pulizie in una schermata.",
+    "Il mese a colpo d'occhio: ogni intervento con orario, cliente, struttura, stato e operatori. La pianificazione dell'impresa di pulizie in una schermata.",
+  alternates: { canonical: "/funzioni/calendario" },
 };
 
 // Contenuto ancorato alla schermata reale Calendario: vista mese con conteggio
