@@ -4,6 +4,7 @@ import { CircleCheckBig } from "lucide-react";
 
 import { SiteHeader } from "@/components/site/header";
 import { SiteFooter } from "@/components/site/footer";
+import { LeadTracker } from "@/components/site/lead-tracker";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -21,6 +22,7 @@ const PREP = [
 export default function GraziePage() {
   return (
     <>
+      <LeadTracker />
       <SiteHeader />
       <main className="flex-1 bg-background">
         <div className="mx-auto max-w-2xl px-4 py-20 text-center sm:px-6 lg:py-28">

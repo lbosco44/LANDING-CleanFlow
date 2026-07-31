@@ -6,6 +6,9 @@ import {
 } from "next/font/google";
 import "./globals.css";
 
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
+
 import { CookieBanner } from "@/components/site/cookie-banner";
 import { MobileCta } from "@/components/site/mobile-cta";
 
@@ -74,6 +77,13 @@ export default function RootLayout({
         {children}
         <MobileCta />
         <CookieBanner />
+        {/* Misurazione: entrambi cookieless e senza dati personali, quindi
+            attivi senza attendere il consenso del banner (misurano il 100%
+            dei visitatori). Speed Insights riporta i Core Web Vitals REALI
+            degli utenti: è il dato che conta per il ranking, non il Lighthouse
+            di laboratorio. Baseline pre-redesign in Brief/SEO-LOCK.md §5. */}
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
