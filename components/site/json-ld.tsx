@@ -1,6 +1,7 @@
 import { COMPANY } from "@/lib/site";
 import { FAQS } from "@/components/site/faq-data";
 import { FUNZIONI, funzioneHref, type FunzioneSlug } from "@/lib/funzioni";
+import { PIANI } from "@/lib/piani";
 
 const SITE_URL = "https://cleanflowapp.it";
 
@@ -53,17 +54,14 @@ export function JsonLd() {
         description:
           "Gestionale per imprese di pulizie: entrate, clienti, strutture e operatori in un'unica schermata.",
         publisher: { "@id": `${SITE_URL}/#organization` },
-        offers: [
-          { name: "CleanFlow Base", price: "99" },
-          { name: "CleanFlow Pro", price: "129" },
-          { name: "CleanFlow Business", price: "199" },
-        ].map((o) => ({
+        offers: PIANI.map((p) => ({
           "@type": "Offer",
-          name: o.name,
-          price: o.price,
+          name: `CleanFlow ${p.nome}`,
+          price: p.prezzo,
           priceCurrency: "EUR",
           url: `${SITE_URL}/#prezzi`,
           availability: "https://schema.org/InStock",
+          description: p.per,
         })),
       },
       {

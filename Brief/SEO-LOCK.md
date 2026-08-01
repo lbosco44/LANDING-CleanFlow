@@ -101,6 +101,19 @@ Vincoli: title ≤ 60 caratteri **suffisso incluso**, description ≤ 155.
 
 ---
 
+## 4-bis. File machine-readable per le AI (Fase 2)
+
+| File | Generato da | Serve a |
+|---|---|---|
+| `/llms.txt` | `app/llms.txt/route.ts` | Dare a ChatGPT/Perplexity/Claude l'anagrafica del prodotto senza interpretare il layout |
+| `/pricing.md` | `app/pricing.md/route.ts` | Far entrare CleanFlow nei confronti fatti dagli assistenti AI per conto di chi compra |
+
+**Entrambi si generano da `lib/piani.ts`**, che è ora la **sorgente unica dei prezzi**. Prima gli stessi numeri erano ricopiati in tre punti (card dei prezzi, intestazione della tabella di confronto, `offers` del JSON-LD): bastava aggiornarne uno per far dichiarare a Google un prezzo diverso da quello mostrato in pagina.
+
+⛔ **Se il redesign riscrive la sezione Prezzi, deve continuare a leggere da `lib/piani.ts`.** Reintrodurre i numeri a mano nel JSX rompe in silenzio schema, `llms.txt` e `pricing.md` tutti insieme.
+
+Verificato il 01/08/2026: **GPTBot, OAI-SearchBot, PerplexityBot, ClaudeBot, Google-Extended e Bingbot accedono tutti al sito (200)**. Se un giorno le AI smettessero di citare il sito, ricontrollare qui per primo: un blocco bot lato Vercel o un `Disallow` in `robots.ts` renderebbe inutile ogni altra ottimizzazione.
+
 ## 5. Tecnica da non perdere nel redesign
 
 - `lang="it"` sull'`<html>` e `og:locale="it_IT"`.

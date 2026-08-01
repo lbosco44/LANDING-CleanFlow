@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Check, Minus, ChevronDown } from "lucide-react";
 
 import { buttonVariants } from "@/components/ui/button";
+import { GRUPPI, LIMITI, PIANI } from "@/lib/piani";
 import { cn } from "@/lib/utils";
 
 // v2.4 — Sezione PREZZI (pattern top-SaaS: Linear/Vercel/Dropbox). Card CORTE
@@ -11,96 +12,8 @@ import { cn } from "@/lib/utils";
 // accessibile. Value metric = operatori; clienti/strutture illimitati ovunque.
 // Prezzi netti (IVA esclusa). CTA sempre "Prenota una demo" (demo-first).
 
-type Key = "base" | "pro" | "business";
-
-const PIANI: {
-  key: Key;
-  nome: string;
-  prezzo: string;
-  operatori: string;
-  per: string;
-  piu?: string;
-  punti: string[];
-  evidenza: boolean;
-}[] = [
-  {
-    key: "base",
-    nome: "Base",
-    prezzo: "99",
-    operatori: "fino a 8 operatori",
-    per: "Per chi parte e vuole smettere di gestire tutto sui messaggi.",
-    punti: [
-      "Agenda, clienti e strutture, tutto collegato",
-      "App operatore con checklist e foto",
-      "Storico dei lavori sempre a portata",
-    ],
-    evidenza: false,
-  },
-  {
-    key: "pro",
-    nome: "Pro",
-    prezzo: "129",
-    operatori: "fino a 18 operatori",
-    per: "Per l'impresa strutturata che vuole vedere anche i numeri.",
-    piu: "Tutto di Base, più",
-    punti: ["Preventivi e incassi", "Metriche: sai quanto entra", "Ruolo caposquadra"],
-    evidenza: true,
-  },
-  {
-    key: "business",
-    nome: "Business",
-    prezzo: "199",
-    operatori: "operatori illimitati",
-    per: "Per la squadra grande, con una mano in più quando serve.",
-    piu: "Tutto di Pro, più",
-    punti: ["Onboarding assistito", "Supporto prioritario", "Storico esteso ed export"],
-    evidenza: false,
-  },
-];
-
-const GRUPPI: {
-  nome: string;
-  voci: { t: string; base: boolean; pro: boolean; business: boolean }[];
-}[] = [
-  {
-    nome: "Operativo",
-    voci: [
-      { t: "Calendario e agenda", base: true, pro: true, business: true },
-      { t: "Clienti e strutture", base: true, pro: true, business: true },
-      { t: "Servizi e listino", base: true, pro: true, business: true },
-      { t: "Checklist e template", base: true, pro: true, business: true },
-      { t: "Interventi ricorrenti", base: true, pro: true, business: true },
-      { t: "App operatore (mobile)", base: true, pro: true, business: true },
-      { t: "Foto a corredo dell'intervento", base: true, pro: true, business: true },
-      { t: "Storico e cestino", base: true, pro: true, business: true },
-      { t: "Manuali e guide", base: true, pro: true, business: true },
-    ],
-  },
-  {
-    nome: "Gestione economica",
-    voci: [
-      { t: "Preventivi", base: false, pro: true, business: true },
-      { t: "Incassi", base: false, pro: true, business: true },
-      { t: "Metriche e dashboard", base: false, pro: true, business: true },
-      { t: "Riepilogo mensile", base: false, pro: true, business: true },
-    ],
-  },
-  {
-    nome: "Squadra e supporto",
-    voci: [
-      { t: "Ruolo caposquadra", base: false, pro: true, business: true },
-      { t: "Onboarding assistito", base: false, pro: false, business: true },
-      { t: "Supporto prioritario", base: false, pro: false, business: true },
-      { t: "Export e storico esteso", base: false, pro: false, business: true },
-    ],
-  },
-];
-
-const LIMITI: { t: string; base: string; pro: string; business: string }[] = [
-  { t: "Operatori", base: "8", pro: "18", business: "∞" },
-  { t: "Clienti", base: "∞", pro: "∞", business: "∞" },
-  { t: "Strutture", base: "∞", pro: "∞", business: "∞" },
-];
+// PIANI, GRUPPI e LIMITI vivono in lib/piani.ts: stessa sorgente per le card,
+// per lo schema JSON-LD e per i file /llms.txt e /pricing.md letti dalle AI.
 
 // Griglia condivisa header+righe → colonne allineate anche tra <details> diversi.
 const GRID =
@@ -273,22 +186,18 @@ export function Prezzi() {
             )}
           >
             <span />
-            {[
-              { n: "Base", p: "99", hi: false },
-              { n: "Pro", p: "129", hi: true },
-              { n: "Business", p: "199", hi: false },
-            ].map((c) => (
-              <div key={c.n} className="text-center">
+            {PIANI.map((c) => (
+              <div key={c.key} className="text-center">
                 <span
                   className={cn(
                     "block font-display text-[13px] font-bold sm:text-base",
-                    c.hi ? "text-accent-ink" : "text-foreground"
+                    c.evidenza ? "text-accent-ink" : "text-foreground"
                   )}
                 >
-                  {c.n}
+                  {c.nome}
                 </span>
                 <span className="block font-mono text-xs text-muted-foreground">
-                  €{c.p}
+                  €{c.prezzo}
                 </span>
               </div>
             ))}
