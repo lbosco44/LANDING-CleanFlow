@@ -41,3 +41,12 @@ yarn-error.log*
 next-env.d.ts
 .claude/settings.local.json
 .claude/launch.json
+
+# --- Riservato: mai su repo pubblico (viaggia via canale privato) ---
+CleanFlow-Proiezioni-Investitori.pdf
+CleanFlow-Script-Prezzo.pdf
+PROIEZIONI-INVESTITORI.csv
+DEMO-PREZZO.md
+_ANALISI.md
+References/headshots/
+
