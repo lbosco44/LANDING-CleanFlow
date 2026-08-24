@@ -46,7 +46,7 @@ export function Prezzi() {
         <div className="max-w-2xl">
           <p className="eyebrow text-accent-ink">Piani</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Scegli il piano su misura per te.
+            Tre piani, un solo criterio.
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
             Il prezzo dipende da una cosa sola: quanti operatori gestisci.
