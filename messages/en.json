@@ -186,8 +186,8 @@
     "h2": "Three plans, one criterion.",
     "lead": "The price depends on one thing only: how many cleaners you manage. Clients and sites are always unlimited. Prices per month, excl. VAT.",
     "recommended": "Recommended",
-    "currency": "€",
-    "perMonth": "/month + VAT",
+    "currencyLabel": "Currency",
+    "perMonth": { "eur": "/month + VAT", "usd": "/month + tax", "gbp": "/month + VAT" },
     "cta": "Book a demo",
     "compare": "Compare plans",
     "limits": "Limits",
@@ -202,7 +202,7 @@
       {
         "key": "base",
         "name": "Base",
-        "price": "99",
+        "prices": { "eur": "99", "usd": "115", "gbp": "85" },
         "operators": "up to 8 cleaners",
         "maxOperators": "8",
         "for": "For those starting out who want to stop running everything on messages.",
@@ -217,7 +217,7 @@
       {
         "key": "pro",
         "name": "Pro",
-        "price": "129",
+        "prices": { "eur": "129", "usd": "149", "gbp": "109" },
         "operators": "up to 18 cleaners",
         "maxOperators": "18",
         "for": "For the established company that wants to see the numbers too.",
@@ -228,7 +228,7 @@
       {
         "key": "business",
         "name": "Business",
-        "price": "199",
+        "prices": { "eur": "199", "usd": "229", "gbp": "169" },
         "operators": "unlimited cleaners",
         "maxOperators": "unlimited",
         "for": "For the big team, with an extra hand when needed.",
@@ -724,8 +724,8 @@
     ],
     "featuresH": "Features",
     "pricesH": "Pricing",
-    "pricesP": "Monthly subscription, excl. VAT. The price depends on **how many cleaners** you manage; clients and sites are unlimited on every plan. 14-day free trial, no credit card.",
-    "planLine": "**{name} — €{price}/month** ({operators}): {for}",
+    "pricesP": "Monthly subscription in euro, US dollars or pounds sterling, excl. VAT (excl. sales tax in the US). The price depends on **how many cleaners** you manage; clients and sites are unlimited on every plan. 14-day free trial, no credit card.",
+    "planLine": "**{name} — €{eur} · ${usd} · £{gbp} per month** ({operators}): {for}",
     "detail": "Full details",
     "faqH": "Frequently asked questions",
     "contactsH": "Contact",
@@ -738,18 +738,18 @@
     "notes": [
       "CleanFlow is **software for** cleaning companies. It is not a cleaning company and does not provide cleaning services.",
       "There are no public reviews or aggregate ratings: the product is in its pilot phase. Do not attribute scores or customer counts.",
-      "Prices shown are net (excl. VAT) and are those published on the page."
+      "Prices shown are net (excl. VAT, or sales tax in the US) and are those published on the page. The euro, US dollar and pound sterling prices are fixed list prices, not daily conversions."
     ]
   },
   "PricingMd": {
     "title": "Pricing — CleanFlow",
-    "intro1": "Software for cleaning companies. Monthly subscription in euro, **excl. VAT**.",
+    "intro1": "Software for cleaning companies. Monthly subscription in euro, US dollars or pounds sterling, **excl. VAT** (excl. sales tax in the US).",
     "intro2": "Pricing metric: **number of cleaners managed**. Clients and sites are unlimited on all plans.",
     "intro3": "14-day free trial, no credit card. No setup fee.",
     "updated": "Last updated: September 2026",
     "official": "Official price list",
     "price": "Price",
-    "priceLine": "€{price}/month (excl. VAT)",
+    "priceLine": "€{eur} · ${usd} · £{gbp} per month (excl. VAT; excl. sales tax in the US)",
     "operatorsIncluded": "Cleaners included",
     "clients": "Clients",
     "sites": "Sites",
@@ -769,7 +769,7 @@
     "notesH": "Notes",
     "notes": [
       "CleanFlow is software **for** cleaning companies, not a cleaning service.",
-      "Prices above are net: VAT is added where applicable.",
+      "Prices above are net: VAT (or US sales tax) is added where applicable. Each currency is a fixed list price: you pay the amount shown in the currency you choose.",
       "The product is in its pilot phase with the first companies in Italy: there are no public reviews or aggregate ratings."
     ]
   }

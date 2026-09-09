@@ -3,7 +3,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { getPathname } from "@/i18n/navigation";
 import type { Locale } from "@/i18n/routing";
 import { FUNZIONI, funzioneHref, type FunzioneSlug } from "@/lib/funzioni";
-import { readPiani } from "@/lib/piani";
+import { CURRENCIES, CURRENCY_CODE, readPiani, type Currency } from "@/lib/piani";
 import { LANG, SITE_URL } from "@/lib/seo";
 import { COMPANY } from "@/lib/site";
 
@@ -32,6 +32,10 @@ export function JsonLd() {
   const faqs = tq.raw("items") as { q: string; a: string }[];
   const { piani } = readPiani(tp.raw);
   const base = baseFor(locale);
+  // Un'offerta per valuta sulla versione inglese (UK, Irlanda, USA pagano in
+  // tre valute diverse). Quella italiana resta al solo euro: il suo structured
+  // data è identico a prima (SEO-LOCK §1), il selettore in pagina non lo tocca.
+  const offerCurrencies: readonly Currency[] = locale === "it" ? ["eur"] : CURRENCIES;
 
   const data = {
     "@context": "https://schema.org",
@@ -74,15 +78,17 @@ export function JsonLd() {
         inLanguage: LANG[locale].schema,
         description: t("softwareDescription"),
         publisher: { "@id": `${SITE_URL}/#organization` },
-        offers: piani.map((p) => ({
-          "@type": "Offer",
-          name: `CleanFlow ${p.name}`,
-          price: p.price,
-          priceCurrency: "EUR",
-          url: `${base}/#prezzi`,
-          availability: "https://schema.org/InStock",
-          description: p.for,
-        })),
+        offers: piani.flatMap((p) =>
+          offerCurrencies.map((c) => ({
+            "@type": "Offer",
+            name: `CleanFlow ${p.name}`,
+            price: p.prices[c],
+            priceCurrency: CURRENCY_CODE[c],
+            url: `${base}/#prezzi`,
+            availability: "https://schema.org/InStock",
+            description: p.for,
+          }))
+        ),
       },
       {
         "@type": "FAQPage",

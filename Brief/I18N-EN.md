@@ -19,10 +19,14 @@
   I percorsi interni restano le cartelle italiane: `/en/funzioni/operatori`
   fa 307 su `/en/features/staff`, `/features/staff` senza prefisso su
   `/funzioni/operatori`, `/it/*` su `/*`.
-- **Valuta**: finché non arriva il punto 3(b), la versione EN mostra i prezzi
-  in **euro** (99/129/199 €) e i widget in € con formato inglese («€26,480»).
-  Il selettore valuta li cambierà entrambi. Prezzi USD/GBP: convertiti e
-  arrotondati, da confermare a Lorenzo.
+- **Valuta** (punto 3(b), branch `feat/multivaluta`, 09/09/2026): selettore
+  EUR | USD | GBP nella sezione Prezzi, in entrambe le lingue (lingua e valuta
+  indipendenti). Default € in italiano, **£ in inglese**. Prezzi fissi decisi
+  da Lorenzo (cambio BCE 8/9 arrotondato): 99/129/199 € · 115/149/229 $ ·
+  85/109/169 £. JSON-LD inglese con un'offerta per valuta; italiano invariato.
+  `/llms.txt` e `/pricing.md` italiani byte-identici; le versioni `/en/`
+  elencano le tre valute. I widget restano in € (coerenti con gli screenshot).
+  Registro completo: `docs/MULTIVALUTA.md` nel repo dell'app.
 - **Machine-readable**: `/llms.txt` e `/pricing.md` restano italiani alla root
   (byte-identici a prima); le versioni inglesi stanno su `/en/llms.txt` e
   `/en/pricing.md`. Generatore unico in `lib/machine-readable.ts`.

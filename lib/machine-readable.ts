@@ -3,7 +3,7 @@ import { getTranslations } from "next-intl/server";
 import { getPathname } from "@/i18n/navigation";
 import type { Locale, Pathname } from "@/i18n/routing";
 import { FUNZIONI, funzioneHref } from "@/lib/funzioni";
-import { readPiani } from "@/lib/piani";
+import { readPiani, type Piano } from "@/lib/piani";
 import { SITE_URL } from "@/lib/seo";
 import { COMPANY } from "@/lib/site";
 
@@ -27,6 +27,19 @@ const url = (locale: Locale, href: Pathname) =>
 
 /** Radice dei file di lingua: "" per l'italiano, "/en" per l'inglese. */
 const prefix = (locale: Locale) => (locale === "it" ? "" : `/${locale}`);
+
+/**
+ * Variabili di prezzo per le stringhe `planLine` / `priceLine`. L'italiano usa
+ * solo `{price}` (euro: i file alla root restano byte-identici a prima), l'inglese
+ * elenca le tre valute con `{eur}` `{usd}` `{gbp}`. Passarle tutte è innocuo: ICU
+ * ignora gli argomenti che il messaggio non nomina.
+ */
+const priceVars = (p: Piano) => ({
+  price: p.prices.eur,
+  eur: p.prices.eur,
+  usd: p.prices.usd,
+  gbp: p.prices.gbp,
+});
 
 export async function llmsTxt(locale: Locale) {
   const t = await getTranslations({ locale, namespace: "Llms" });
@@ -63,7 +76,7 @@ ${t("pricesP")}
 ${piani
   .map(
     (p) =>
-      `- ${t("planLine", { name: p.name, price: p.price, operators: p.operators, for: p.for })}`
+      `- ${t("planLine", { name: p.name, ...priceVars(p), operators: p.operators, for: p.for })}`
   )
   .join("\n")}
 
@@ -107,7 +120,7 @@ ${piani
   .map(
     (p) => `## ${p.name}
 
-- ${t("price")}: ${t("priceLine", { price: p.price })}
+- ${t("price")}: ${t("priceLine", priceVars(p))}
 - ${t("operatorsIncluded")}: ${p.maxOperators}
 - ${t("clients")}: ${t("unlimitedM")}
 - ${t("sites")}: ${t("unlimitedF")}

@@ -190,8 +190,8 @@
     "h2": "Tre piani, un solo criterio.",
     "lead": "Il prezzo dipende da una cosa sola: quanti operatori gestisci. Clienti e strutture sono sempre illimitati. Prezzi al mese, IVA esclusa.",
     "recommended": "Consigliato",
-    "currency": "€",
-    "perMonth": "/mese + IVA",
+    "currencyLabel": "Valuta",
+    "perMonth": { "eur": "/mese + IVA", "usd": "/mese + tasse", "gbp": "/mese + IVA" },
     "cta": "Prenota una demo",
     "compare": "Confronta i piani",
     "limits": "Limiti",
@@ -206,7 +206,7 @@
       {
         "key": "base",
         "name": "Base",
-        "price": "99",
+        "prices": { "eur": "99", "usd": "115", "gbp": "85" },
         "operators": "fino a 8 operatori",
         "maxOperators": "8",
         "for": "Per chi parte e vuole smettere di gestire tutto sui messaggi.",
@@ -221,7 +221,7 @@
       {
         "key": "pro",
         "name": "Pro",
-        "price": "129",
+        "prices": { "eur": "129", "usd": "149", "gbp": "109" },
         "operators": "fino a 18 operatori",
         "maxOperators": "18",
         "for": "Per l'impresa strutturata che vuole vedere anche i numeri.",
@@ -232,7 +232,7 @@
       {
         "key": "business",
         "name": "Business",
-        "price": "199",
+        "prices": { "eur": "199", "usd": "229", "gbp": "169" },
         "operators": "operatori illimitati",
         "maxOperators": "illimitati",
         "for": "Per la squadra grande, con una mano in più quando serve.",
