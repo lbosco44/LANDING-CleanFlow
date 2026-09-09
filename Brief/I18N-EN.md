@@ -68,7 +68,7 @@
       tenuti i contrasti e le chiuse che sono struttura del copy approvato)
 - [x] Header a 375px: logo + toggle + Log in + Book a demo su una riga
 - [ ] `/qa-mobile` completo sulla preview Vercel (dopo l'OK sul copy)
-- [ ] Lista sostituzioni Italia-centriche approvata da Lorenzo
+- [x] Lista sostituzioni Italia-centriche approvata da Lorenzo («ok tutte», 09/09/2026)
 - [ ] Deploy preview Vercel → OK esplicito → merge in main
 
 ## Sostituzioni Italia-centriche proposte (da approvare)
