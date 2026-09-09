@@ -53,9 +53,16 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "Meta" });
+  // L'immagine OG della lingua (logo + nome su navy), dichiarata anche come
+  // `thumbnail`: i servizi di anteprima che non leggono og:image (o l'hanno in
+  // cache rotta) altrimenti scelgono da soli l'immagine "più rappresentativa"
+  // della pagina, e con quattro volti in Team scelgono un volto. NON si passa
+  // `icons` qui: sovrascriverebbe le icone da file (icon.png, apple-icon.png).
+  const ogImage = `${SITE_URL}/${locale}/opengraph-image`;
 
   return {
     metadataBase: new URL(SITE_URL),
+    other: { thumbnail: ogImage },
     title: {
       default: t("title"),
       template: "%s | CleanFlow",

@@ -328,6 +328,10 @@
       {
         "q": "È un prodotto già pronto?",
         "a": "È operativo e lo stiamo affinando con le prime imprese a bordo. Entri presto, conti di più: ci dici cosa ti serve davvero. I posti del programma pilota sono limitati: chi entra ora ha una linea diretta con noi."
+      },
+      {
+        "q": "Posso pagare in dollari o in sterline?",
+        "a": "Sì. Quando attivi l'abbonamento scegli la valuta: euro, dollari USA o sterline. Ogni valuta ha il suo listino fisso, quello che vedi qui sopra, e non segue il cambio del giorno. La valuta si sceglie una volta sola: dopo il primo abbonamento resta quella. Prezzi al netto di IVA o imposte locali."
       }
     ]
   },

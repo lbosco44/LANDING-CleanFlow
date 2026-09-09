@@ -36,6 +36,9 @@ export function JsonLd() {
   // tre valute diverse). Quella italiana resta al solo euro: il suo structured
   // data è identico a prima (SEO-LOCK §1), il selettore in pagina non lo tocca.
   const offerCurrencies: readonly Currency[] = locale === "it" ? ["eur"] : CURRENCIES;
+  // Immagine rappresentativa del sito e del prodotto (la stessa OG con il
+  // logo): senza, chi costruisce anteprime sceglie un'immagine della pagina.
+  const image = `${SITE_URL}/${locale}/opengraph-image`;
 
   const data = {
     "@context": "https://schema.org",
@@ -65,6 +68,7 @@ export function JsonLd() {
         "@id": `${base}/#website`,
         name: "CleanFlow",
         url: base,
+        image,
         inLanguage: LANG[locale].schema,
         publisher: { "@id": `${SITE_URL}/#organization` },
       },
@@ -75,6 +79,7 @@ export function JsonLd() {
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web, iOS, Android (PWA)",
         url: base,
+        image,
         inLanguage: LANG[locale].schema,
         description: t("softwareDescription"),
         publisher: { "@id": `${SITE_URL}/#organization` },

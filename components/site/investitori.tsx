@@ -50,9 +50,14 @@ export function Investitori() {
                     <Image
                       src={i.foto}
                       alt={`${i.nome}, ${etichetta.toLowerCase()}`}
-                      fill
-                      sizes="4rem"
-                      className="object-cover object-top"
+                      // Dimensione fissa (2× del riquadro da 4rem) invece di
+                      // `fill` + `sizes`, per la stessa ragione di team.tsx:
+                      // con fill il `src` era la variante da 3840px, la più
+                      // grande della pagina, e i servizi di anteprima la
+                      // preferivano al logo.
+                      width={128}
+                      height={128}
+                      className="h-full w-full object-cover object-top"
                     />
                   ) : (
                     <span

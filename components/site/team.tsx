@@ -61,9 +61,17 @@ export function Team() {
                       <Image
                         src={m.foto}
                         alt={`${m.nome}, ${ruolo}`}
-                        fill
-                        sizes="(min-width: 640px) 8rem, 4rem"
-                        className="object-cover"
+                        // Dimensione fissa (2× del riquadro da 8rem) invece di
+                        // `fill` + `sizes`: così Next metteva in `src` la
+                        // variante da 3840px e queste diventavano le immagini
+                        // più grandi della pagina, quelle che i servizi di
+                        // anteprima (segnalibri Chrome, Google) scelgono al
+                        // posto del logo. Senza `sizes` lo srcset è 256/512.
+                        // Il riquadro resta a governare la resa: object-cover
+                        // riempie sia il 4:5 che il quadrato.
+                        width={256}
+                        height={320}
+                        className="h-full w-full object-cover"
                       />
                     ) : (
                       <span

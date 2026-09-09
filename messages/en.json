@@ -324,6 +324,10 @@
       {
         "q": "Is it a finished product?",
         "a": "It's up and running and we're refining it with the first companies on board. Join early and you count for more: you tell us what you really need. Pilot programme places are limited: whoever joins now has a direct line to us."
+      },
+      {
+        "q": "Can I pay in dollars or pounds?",
+        "a": "Yes. When you subscribe you pick your currency: euro, US dollars or pounds sterling. Each currency has its own fixed price list, the one shown above, and it doesn't follow the daily exchange rate. You choose once: after your first subscription the currency stays. Prices exclude VAT or local sales tax."
       }
     ]
   },
