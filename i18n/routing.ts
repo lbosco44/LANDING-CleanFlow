@@ -13,6 +13,12 @@ export const routing = defineRouting({
   locales: ["it", "en"],
   defaultLocale: "it",
   localePrefix: "as-needed",
+  // Niente redirect automatico in base ad Accept-Language o cookie: "/" è
+  // SEMPRE l'italiano (SEO-LOCK §1) e "/en" sempre l'inglese. Scoperto in QA:
+  // con la rilevazione attiva un browser in inglese che apre "/" veniva
+  // rimandato su /en, e Google sconsiglia i redirect per lingua (usa gli
+  // hreflang, che ci sono). Si cambia lingua col toggle nella testata.
+  localeDetection: false,
   pathnames: {
     "/": "/",
     "/demo": "/demo",

@@ -33,7 +33,9 @@ export function LanguageToggle() {
               if (!active) router.replace(pathname, { locale: l });
             }}
             className={cn(
-              "h-8 rounded-full px-2.5 text-[11px] font-semibold uppercase tracking-wide transition-colors duration-150",
+              // Area di tocco allargata (≥44px) senza ingrandire il pill:
+              // il pulsante resta 32px alto, lo pseudo-elemento intercetta il tap.
+              "relative h-8 rounded-full px-2.5 text-[11px] font-semibold uppercase tracking-wide transition-colors duration-150 before:absolute before:-inset-x-1 before:-inset-y-1.5 before:content-['']",
               active
                 ? "bg-primary text-primary-foreground"
                 : "text-muted-foreground hover:text-foreground"

@@ -76,7 +76,16 @@
 - [x] Inglese: `no-ai-slop` sul copy (14 trattini lunghi tolti dalla prosa;
       tenuti i contrasti e le chiuse che sono struttura del copy approvato)
 - [x] Header a 375px: logo + toggle + Log in + Book a demo su una riga
-- [ ] `/qa-mobile` completo sulla preview Vercel (dopo l'OK sul copy)
+- [x] `/qa-mobile` in locale sul commit finale (09/09): 375×812 Chromium su
+      home EN (tutte le sezioni), /en/demo, /en/features/staff, /en/thank-you,
+      /en/terms, home IT · nessun overflow orizzontale · 1 H1 per pagina · alt
+      su tutte le immagini · WebKit 375 (playwright 1.61 + webkit-2311) su /en e
+      /en/demo: header blur, hero, banner puliti · tutte le 22 rotte IT/EN + 6
+      file machine-readable rispondono 200 · toggle lingua in entrambe le
+      direzioni · sticky CTA mobile dopo il consenso · form demo con chip da
+      36-40px (invariati dall'italiano). Fix emersi: area di tocco del toggle
+      allargata a ≥44px con pseudo-elemento; `localeDetection: false` perché
+      un browser in inglese che apriva `/` veniva reindirizzato su /en.
 - [x] Lista sostituzioni Italia-centriche approvata da Lorenzo («ok tutte», 09/09/2026)
 - [ ] Deploy preview Vercel → OK esplicito → merge in main
 
