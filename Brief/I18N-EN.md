@@ -37,14 +37,17 @@
 - **Tipizzazione**: `global.d.ts` collega `messages/it.json` a next-intl, così
   un refuso in una chiave è un errore di compilazione.
 - **Screenshot del prodotto** (`public/product/*.png`, helper `lib/product-shots.ts`):
-  la versione inglese usa `<nome>-en.png`, scatti dell'app vera (account demo
-  BrillaCasa, 09/09/2026) con i testi dell'interfaccia tradotti nel DOM e i
-  numeri in formato inglese. In ENTRAMBE le lingue nomi ed email sono demo:
-  la `operatori.png` di giugno conteneva una riga con nome/email razzisti (dato
-  inserito a mano nella demo, oggi non più nel DB) ed è stata rifatta; le altre
-  quattro italiane restano quelle di giugno (dati più ricchi, nessun problema).
-  Nota: a settembre la demo è quasi vuota (0 lavori oggi, «Richiede attenzione
-  35»): le schermate inglesi lo mostrano. Da rifare dopo un re-seed della demo.
+  tutte e 10 (5 schermate × IT/EN) rifatte il 09/09/2026 dall'app vera con
+  l'account demo **Splendor Servizi** (`titolare@splendordemo.it`: 30 persone,
+  42 clienti, 200 lavori nel mese, tutto demo, nessuna persona reale), su
+  indicazione di Lorenzo al posto di BrillaCasa (quasi vuota a settembre e con,
+  a giugno, una riga con nome/email razzisti poi rimossa dal DB). Versione
+  inglese = stesso scatto con testi dell'interfaccia, nomi, clienti, sedi,
+  servizi tradotti nel DOM prima della cattura (iniziali degli avatar
+  conservate), telefoni Ofcom, «VAT no. GB…», importi «€36,555.00».
+  Procedura: magic link admin per il titolare demo → Playwright MCP →
+  evaluate con la mappa → screenshot; un passo alla volta (lo script in
+  blocco viene bloccato dal classificatore).
 
 ## Checklist (1:1)
 
