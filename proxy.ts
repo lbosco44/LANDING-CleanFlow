@@ -17,8 +17,10 @@ export const config = {
     // /en/opengraph-image/…, e il redirect che toglie "/it" ai crawler social
     // (WhatsApp, LinkedIn) fa perdere l'anteprima. Servita così com'è.
     "/(it|en)/((?!opengraph-image).*)",
-    // Tutto il resto tranne api, asset interni e file con estensione
-    // (favicon, og image, /llms.txt e /pricing.md della root restano italiani)
-    "/((?!api|_next|_vercel|.*\\..*).*)",
+    // Tutto il resto tranne api, asset interni, file con estensione
+    // (favicon, /llms.txt e /pricing.md della root restano italiani) e, di
+    // nuovo, l'immagine OG: senza questa esclusione anche /it/opengraph-image
+    // ricadrebbe qui e verrebbe redirezionata.
+    "/((?!api|_next|_vercel|.*\\..*|.*opengraph-image).*)",
   ],
 };
