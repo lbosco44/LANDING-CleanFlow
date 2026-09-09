@@ -13,10 +13,14 @@ import { createClient } from "@supabase/supabase-js";
 //  - LEAD_NOTIFY_TO        (destinatario/i notifiche, separati da virgola)
 //  - LEAD_FROM             (mittente verificato, default noreply@cleanflowapp.it)
 //  - N8N_WEBHOOK_URL       (facoltativo)
+//
+// Lingua: il form manda `lingua` ("it" | "en"). Un lead arrivato dalla landing
+// inglese finisce in HQ con source "landing-demo-en" (nessuna colonna nuova
+// sulla tabella) e la notifica lo dice in chiaro: va ricontattato in inglese.
 export async function POST(req: Request) {
   try {
     const data = await req.json();
-    const { nome, email, telefono, operatori, azienda, tools, website } =
+    const { nome, email, telefono, operatori, azienda, tools, website, lingua } =
       data ?? {};
 
     // Honeypot: se il campo invisibile è valorizzato, è un bot. Rispondiamo ok
@@ -31,6 +35,8 @@ export async function POST(req: Request) {
     }
 
     const toolsArr = Array.isArray(tools) ? tools : [];
+    const isEnglish = lingua === "en";
+    const source = isEnglish ? "landing-demo-en" : "landing-demo";
 
     // 1) Salvataggio in Supabase (best-effort: se fallisce, la mail resta la rete).
     const supabaseUrl = process.env.SUPABASE_URL;
@@ -45,7 +51,7 @@ export async function POST(req: Request) {
           operatori: operatori || null,
           azienda: azienda || null,
           tools: toolsArr,
-          source: "landing-demo",
+          source,
         });
         if (error) console.error("Supabase lead insert error:", error.message);
       } catch (e) {
@@ -69,13 +75,17 @@ export async function POST(req: Request) {
         ["Impresa", azienda || "—"],
         ["Usa oggi", usati],
       ];
+      if (isEnglish) rows.push(["Lingua", "INGLESE — landing /en"]);
+      const origine = isEnglish
+        ? "Arrivata dalla landing CleanFlow in INGLESE: il lead va ricontattato in inglese."
+        : "Arrivata dalla landing CleanFlow.";
       const text =
-        `Nuova richiesta di demo dalla landing CleanFlow.\n\n` +
+        `Nuova richiesta di demo dalla landing CleanFlow${isEnglish ? " (INGLESE)" : ""}.\n\n` +
         rows.map(([k, v]) => `${k}: ${v}`).join("\n");
       const html = `
         <div style="font-family:system-ui,sans-serif;color:#0e1430">
-          <h2 style="margin:0 0 12px">Nuova richiesta di demo</h2>
-          <p style="margin:0 0 16px;color:#5a6478">Arrivata dalla landing CleanFlow.</p>
+          <h2 style="margin:0 0 12px">Nuova richiesta di demo${isEnglish ? " (inglese)" : ""}</h2>
+          <p style="margin:0 0 16px;color:#5a6478">${origine}</p>
           <table style="border-collapse:collapse;font-size:15px">
             ${rows
               .map(
@@ -92,7 +102,7 @@ export async function POST(req: Request) {
           to: to.split(",").map((s) => s.trim()),
           // Se il lead ha lasciato l'email, rispondere alla notifica scrive a lui.
           replyTo: email || undefined,
-          subject: `Nuovo lead demo — ${nome || "Sconosciuto"}${
+          subject: `Nuovo lead demo${isEnglish ? " EN" : ""} — ${nome || "Sconosciuto"}${
             azienda ? ` (${azienda})` : ""
           }`,
           text,
@@ -114,7 +124,8 @@ export async function POST(req: Request) {
           operatori,
           azienda,
           tools: toolsArr,
-          source: "landing-demo",
+          source,
+          lingua: isEnglish ? "en" : "it",
           receivedAt: new Date().toISOString(),
         }),
       }).catch(() => {});

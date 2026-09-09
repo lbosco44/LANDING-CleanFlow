@@ -1,8 +1,9 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Check, Minus, ChevronDown } from "lucide-react";
 
+import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
-import { GRUPPI, LIMITI, PIANI } from "@/lib/piani";
+import { readPiani } from "@/lib/piani";
 import { cn } from "@/lib/utils";
 
 // v2.4 — Sezione PREZZI (pattern top-SaaS: Linear/Vercel/Dropbox). Card CORTE
@@ -12,21 +13,29 @@ import { cn } from "@/lib/utils";
 // accessibile. Value metric = operatori; clienti/strutture illimitati ovunque.
 // Prezzi netti (IVA esclusa). CTA sempre "Prenota una demo" (demo-first).
 
-// PIANI, GRUPPI e LIMITI vivono in lib/piani.ts: stessa sorgente per le card,
-// per lo schema JSON-LD e per i file /llms.txt e /pricing.md letti dalle AI.
+// PIANI, GRUPPI e LIMITI vivono nel dizionario (lib/piani.ts li legge): stessa
+// sorgente per le card, per lo schema JSON-LD e per /llms.txt e /pricing.md.
 
 // Griglia condivisa header+righe → colonne allineate anche tra <details> diversi.
 const GRID =
   "grid grid-cols-[minmax(0,1fr)_3.75rem_3.75rem_3.75rem] items-center sm:grid-cols-[minmax(0,1fr)_7rem_7rem_7rem]";
 
-function Val({ v }: { v: boolean | string }) {
+function Val({
+  v,
+  included,
+  notIncluded,
+}: {
+  v: boolean | string;
+  included: string;
+  notIncluded: string;
+}) {
   if (v === true)
-    return <Check className="mx-auto size-4 text-accent-ink" aria-label="incluso" />;
+    return <Check className="mx-auto size-4 text-accent-ink" aria-label={included} />;
   if (v === false)
     return (
       <Minus
         className="mx-auto size-4 text-muted-foreground/40"
-        aria-label="non incluso"
+        aria-label={notIncluded}
       />
     );
   return (
@@ -37,6 +46,11 @@ function Val({ v }: { v: boolean | string }) {
 }
 
 export function Prezzi() {
+  const t = useTranslations("Prezzi");
+  const tp = useTranslations("Piani");
+  const { piani, gruppi, limiti } = readPiani(tp.raw);
+  const labels = { included: t("included"), notIncluded: t("notIncluded") };
+
   return (
     <section
       id="prezzi"
@@ -44,21 +58,19 @@ export function Prezzi() {
     >
       <div className="mx-auto max-w-[69rem] px-5 sm:px-8">
         <div className="max-w-2xl">
-          <p className="eyebrow text-accent-ink">Piani</p>
+          <p className="eyebrow text-accent-ink">{t("eyebrow")}</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Tre piani, un solo criterio.
+            {t("h2")}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            Il prezzo dipende da una cosa sola: quanti operatori gestisci.
-            Clienti e strutture sono sempre illimitati. Prezzi al mese, IVA
-            esclusa.
+            {t("lead")}
           </p>
         </div>
 
         {/* Card corte */}
         <div className="mt-10 grid gap-5 lg:grid-cols-3 lg:items-stretch">
-          {PIANI.map((p) => {
-            const dark = p.evidenza;
+          {piani.map((p) => {
+            const dark = p.highlight;
             return (
               <div
                 key={p.key}
@@ -77,7 +89,7 @@ export function Prezzi() {
                 )}
                 {dark && (
                   <span className="absolute right-5 top-6 rounded-full bg-accent px-3 py-1 text-xs font-semibold text-accent-foreground">
-                    Consigliato
+                    {t("recommended")}
                   </span>
                 )}
 
@@ -88,7 +100,7 @@ export function Prezzi() {
                       dark ? "text-on-dark" : "text-foreground"
                     )}
                   >
-                    {p.nome}
+                    {p.name}
                   </p>
                   <p
                     className={cn(
@@ -96,7 +108,7 @@ export function Prezzi() {
                       dark ? "text-on-dark-muted" : "text-muted-foreground"
                     )}
                   >
-                    {p.operatori}
+                    {p.operators}
                   </p>
                   <div className="mt-5 flex items-baseline gap-1.5">
                     <span
@@ -105,8 +117,8 @@ export function Prezzi() {
                         dark ? "text-on-dark" : "text-primary"
                       )}
                     >
-                      <span className="text-accent">€</span>
-                      {p.prezzo}
+                      <span className="text-accent">{t("currency")}</span>
+                      {p.price}
                     </span>
                     <span
                       className={cn(
@@ -114,7 +126,7 @@ export function Prezzi() {
                         dark ? "text-on-dark-muted" : "text-muted-foreground"
                       )}
                     >
-                      /mese + IVA
+                      {t("perMonth")}
                     </span>
                   </div>
                   <p
@@ -123,21 +135,21 @@ export function Prezzi() {
                       dark ? "text-on-dark-muted" : "text-muted-foreground"
                     )}
                   >
-                    {p.per}
+                    {p.for}
                   </p>
 
-                  {p.piu && (
+                  {p.plus && (
                     <p
                       className={cn(
                         "mt-6 text-xs font-semibold uppercase tracking-wide",
                         dark ? "text-on-dark-muted" : "text-muted-foreground"
                       )}
                     >
-                      {p.piu}
+                      {p.plus}
                     </p>
                   )}
-                  <ul className={cn("space-y-2.5", p.piu ? "mt-3" : "mt-6")}>
-                    {p.punti.map((punto) => (
+                  <ul className={cn("space-y-2.5", p.plus ? "mt-3" : "mt-6")}>
+                    {p.points.map((punto) => (
                       <li key={punto} className="flex items-start gap-2.5">
                         <Check
                           className={cn(
@@ -164,7 +176,7 @@ export function Prezzi() {
                       "mt-auto w-full"
                     )}
                   >
-                    Prenota una demo
+                    {t("cta")}
                   </Link>
                 </div>
               </div>
@@ -175,7 +187,7 @@ export function Prezzi() {
         {/* Confronto a fisarmonica per gruppo */}
         <div className="mx-auto mt-14 max-w-3xl">
           <p className="eyebrow text-center text-muted-foreground">
-            Confronta i piani
+            {t("compare")}
           </p>
 
           {/* Intestazione colonne, resta in vista mentre scorri i gruppi */}
@@ -186,38 +198,39 @@ export function Prezzi() {
             )}
           >
             <span />
-            {PIANI.map((c) => (
+            {piani.map((c) => (
               <div key={c.key} className="text-center">
                 <span
                   className={cn(
                     "block font-display text-[13px] font-bold sm:text-base",
-                    c.evidenza ? "text-accent-ink" : "text-foreground"
+                    c.highlight ? "text-accent-ink" : "text-foreground"
                   )}
                 >
-                  {c.nome}
+                  {c.name}
                 </span>
                 <span className="block font-mono text-xs text-muted-foreground">
-                  €{c.prezzo}
+                  {t("currency")}
+                  {c.price}
                 </span>
               </div>
             ))}
           </div>
 
-          {GRUPPI.map((g) => (
-            <details key={g.nome} className="group border-b border-border">
+          {gruppi.map((g) => (
+            <details key={g.name} className="group border-b border-border">
               <summary className="flex cursor-pointer list-none items-center justify-between py-4 [&::-webkit-details-marker]:hidden">
-                <span className="eyebrow text-accent-ink">{g.nome}</span>
+                <span className="eyebrow text-accent-ink">{g.name}</span>
                 <ChevronDown className="size-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180" />
               </summary>
               <div className="pb-3">
-                {g.voci.map((v) => (
+                {g.items.map((v) => (
                   <div key={v.t} className={cn(GRID, "border-t border-border/70 py-2.5")}>
                     <span className="pr-3 text-sm leading-snug text-foreground">
                       {v.t}
                     </span>
-                    <Val v={v.base} />
-                    <Val v={v.pro} />
-                    <Val v={v.business} />
+                    <Val v={v.base} {...labels} />
+                    <Val v={v.pro} {...labels} />
+                    <Val v={v.business} {...labels} />
                   </div>
                 ))}
               </div>
@@ -226,34 +239,34 @@ export function Prezzi() {
 
           <details className="group border-b border-border">
             <summary className="flex cursor-pointer list-none items-center justify-between py-4 [&::-webkit-details-marker]:hidden">
-              <span className="eyebrow text-accent-ink">Limiti</span>
+              <span className="eyebrow text-accent-ink">{t("limits")}</span>
               <ChevronDown className="size-4 text-muted-foreground transition-transform duration-200 group-open:rotate-180" />
             </summary>
             <div className="pb-3">
-              {LIMITI.map((l) => (
+              {limiti.map((l) => (
                 <div key={l.t} className={cn(GRID, "border-t border-border/70 py-2.5")}>
                   <span className="pr-3 text-sm leading-snug text-foreground">
                     {l.t}
                   </span>
-                  <Val v={l.base} />
-                  <Val v={l.pro} />
-                  <Val v={l.business} />
+                  <Val v={l.base} {...labels} />
+                  <Val v={l.pro} {...labels} />
+                  <Val v={l.business} {...labels} />
                 </div>
               ))}
             </div>
           </details>
 
           <p className="mt-4 text-center font-mono text-xs text-muted-foreground">
-            ✓ incluso · — non incluso · ∞ illimitati
+            {t("legend")}
           </p>
         </div>
 
         <p className="mt-10 text-center text-sm leading-relaxed text-muted-foreground">
-          <span className="font-semibold text-foreground">
-            14 giorni di prova gratuita
-          </span>
-          , nessuna carta. In demo vediamo insieme quale piano fa per te — sui
-          tuoi numeri, senza impegno.
+          {t.rich("trial", {
+            s: (chunks) => (
+              <span className="font-semibold text-foreground">{chunks}</span>
+            ),
+          })}
         </p>
       </div>
     </section>

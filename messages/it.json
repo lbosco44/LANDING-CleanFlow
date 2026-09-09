@@ -1,0 +1,780 @@
+{
+  "Meta": {
+    "title": "Gestionale per imprese di pulizie | CleanFlow",
+    "description": "Entrate, clienti, strutture e operatori: tutto in un'unica schermata. Basta WhatsApp ed Excel. Prenota una demo di 20 minuti, nessun impegno.",
+    "ogDescription": "La tua impresa di pulizie, finalmente sotto controllo. Prenota una demo di 20 minuti."
+  },
+  "Common": {
+    "cta": "Prenota una demo",
+    "status": {
+      "scheduled": "Programmato",
+      "inProgress": "In corso",
+      "completed": "Completato",
+      "unassigned": "Non assegnato",
+      "cancelled": "Annullato",
+      "paid": "Incassato",
+      "outstanding": "Da incassare",
+      "active": "Attivo"
+    }
+  },
+  "Demo": {
+    "magnolie": "B&B Le Magnolie",
+    "rooms": "Camere 1-3",
+    "common": "Aree comuni",
+    "fitzone": "Palestra FitZone",
+    "weights": "Sala pesi",
+    "marino": "Studio Legale Marino",
+    "offices": "Uffici",
+    "conti": "Famiglia Conti",
+    "contiFlat": "Appartamento Conti",
+    "lombardi": "Sig.ra Lombardi",
+    "lombardiHouse": "Villetta Lombardi",
+    "lombardiAddress": "Via delle Rose 3, Sesto San Giovanni",
+    "lombardiStreet": "Via delle Rose 3",
+    "op1": "Elena Bianchi",
+    "op1First": "Elena",
+    "op2": "Ahmed Haddad",
+    "op3": "Michele Negrone",
+    "accessNotes": "Note d'accesso",
+    "accessText": "Suonare due volte e attendere. Cane piccolo in giardino, innocuo.",
+    "callClient": "Chiama il cliente",
+    "domesticClean": "Pulizia domestica",
+    "typeCompany": "Azienda",
+    "typePrivate": "Privato",
+    "sites": "{count, plural, one {# struttura} other {# strutture}}"
+  },
+  "Header": {
+    "nav": {
+      "what": "Cosa fa",
+      "how": "Come funziona",
+      "pricing": "Prezzi",
+      "faq": "Domande"
+    },
+    "login": "Accedi",
+    "cta": "Prenota una demo",
+    "langLabel": "Lingua"
+  },
+  "Hero": {
+    "eyebrow": "Gestionale per imprese di pulizie",
+    "h1": "La tua impresa di pulizie, finalmente sotto controllo.",
+    "subhead": "<s>Entrate</s>, <s>clienti</s>, <s>strutture</s> e <s>operatori</s>: tutto in ordine, in un posto solo. Senza più WhatsApp, Excel e telefonate.",
+    "cta": "Prenota una demo",
+    "ctaSecondary": "Guarda com'è fatto",
+    "reassurance": "20 minuti · nessuna carta · te lo mostriamo sui tuoi dati",
+    "trust": "In prova con le prime imprese di pulizie italiane",
+    "kpiLabel": "Incassato a giugno",
+    "currency": "€ ",
+    "agendaTitle": "Agenda di oggi",
+    "agendaCount": "3 interventi",
+    "liveChip": "2 operatori in servizio ora"
+  },
+  "Problema": {
+    "eyebrow": "La giornata che conosci",
+    "h2": "Tieni insieme tutto a mano.",
+    "text": "Un cliente scrive su WhatsApp. Un operatore chiama perché non trova l'indirizzo. Cerchi su Excel chi è libero giovedì. Aggiorni il calendario cartaceo. E intanto non sai davvero come sta andando l'azienda.",
+    "closing": "Non è disorganizzazione. È che stai tenendo insieme tutto a mano.",
+    "chatIn": "Capo non trovo l'indirizzo della palestra 🙏",
+    "chatInTime": "7:58",
+    "chatOut": "aspetta che controllo sul quaderno",
+    "chatOutTime": "8:12",
+    "excelDay7": "GIOVEDÌ",
+    "excelCell7": "elena?? ahmed?",
+    "excelDay8": "VENERDÌ",
+    "excelCell8": "???",
+    "note1": "richiamare sig.ra Lombardi!!",
+    "note2": "chiavi B&B → chiedere a Elena"
+  },
+  "Pilastri": {
+    "eyebrow": "Il gestionale",
+    "h2": "Tutto in un'unica sala di controllo.",
+    "lead": "CleanFlow mette entrate, clienti, strutture e operatori nello stesso posto. Tu vedi tutto dall'alto. Chi è sul campo sa esattamente cosa fare. Niente più passaparola.",
+    "more": "Vedi come funziona",
+    "items": {
+      "entrate": {
+        "title": "Sai quanto entra, senza aprire Excel.",
+        "text": "Il fatturato del mese, diviso per servizio, si aggiorna da solo a ogni intervento completato. E con preventivi e incassi nello stesso posto, sai anche cosa deve ancora entrare — smetti di chiedere «com'è andata?» a fine giornata."
+      },
+      "clienti": {
+        "title": "Ogni cliente al suo posto, una volta sola.",
+        "text": "Anagrafica, contatti e strutture collegate: inserisci il cliente una volta e lo ritrovi ovunque — nel calendario, negli interventi, nello storico dei lavori. Basta cercare numeri su WhatsApp."
+      },
+      "strutture": {
+        "title": "Ogni struttura con indirizzo e note d'accesso.",
+        "text": "Le camere del B&B, la sala pesi, l'ufficio: ogni struttura porta con sé indirizzo e note d'accesso, e ogni intervento è legato al posto giusto. Fine delle chiamate «non trovo il posto» e «come si entra?»."
+      },
+      "operatori": {
+        "title": "Chi lavora dove, e a che punto è.",
+        "text": "Assegni l'intervento dal calendario e l'operatore riceve tutto sul telefono: indirizzo, checklist passo-passo, foto da caricare, check-in e check-out. Tu e il team leader vedete chi c'è, chi manca e a che punto è ogni lavoro — senza una raffica di telefonate."
+      }
+    },
+    "wEntrate": {
+      "kpis": [
+        { "label": "Fatturato del mese", "value": "€ 26.480" },
+        { "label": "Interventi completati", "value": "132" },
+        { "label": "Valore medio", "value": "€ 200" }
+      ],
+      "perService": "Per servizio",
+      "services": [
+        { "name": "Pulizia settimanale", "amount": "€ 8.850" },
+        { "name": "Uffici serali", "amount": "€ 6.060" },
+        { "name": "Sanificazioni", "amount": "€ 4.610" }
+      ]
+    },
+    "wClienti": {
+      "title": "Clienti",
+      "count": "6 in anagrafica",
+      "tel1": "349 123 4003",
+      "tel2": "348 123 4001",
+      "tel3": "02 555 0005",
+      "tel4": "02 555 0002"
+    },
+    "wOperatori": {
+      "greeting": "Ciao,",
+      "checkin": "Check-in 17:07",
+      "checklist": [
+        "Spolverare le superfici",
+        "Aspirare e lavare i pavimenti",
+        "Sanificare i bagni"
+      ],
+      "progress": "1 di 3 voci completate",
+      "op1Status": "In servizio ora",
+      "op2Status": "2 interventi oggi · alle 14:00"
+    }
+  },
+  "ComeFunziona": {
+    "eyebrow": "Come funziona",
+    "h2": "Dal cliente al lavoro fatto, in un unico flusso.",
+    "steps": [
+      {
+        "title": "Crei il cliente e le sue strutture",
+        "text": "Anagrafica, indirizzi, note di accesso. Una volta sola: poi è sempre lì."
+      },
+      {
+        "title": "Pianifichi sul calendario",
+        "text": "Assegni l'intervento all'operatore giusto. Lui lo riceve sul telefono.",
+        "link": "Vedi il calendario"
+      },
+      {
+        "title": "L'operatore esegue dal telefono",
+        "text": "Check-in sul posto, checklist guidata, foto del lavoro. Passo dopo passo.",
+        "link": "Vedi l'app dell'operatore"
+      },
+      {
+        "title": "Tu vedi tutto, in tempo reale",
+        "text": "Stato di ogni intervento, orari veri di check-in e check-out, storico per cliente. Sai cos'è stato fatto senza chiedere."
+      }
+    ],
+    "ctaText": "Te lo facciamo vedere sui tuoi interventi.",
+    "cta": "Prenota una demo"
+  },
+  "Risultato": {
+    "eyebrow": "Il risultato",
+    "h2": "Meno tempo a coordinare. Più tempo per far crescere l'azienda.",
+    "stats": [
+      {
+        "value": "~10 ore",
+        "label": "a settimana che non passi più tra messaggi ed Excel",
+        "note": "stima, da tarare in demo"
+      },
+      { "value": "Zero", "label": "fogli Excel da tenere aggiornati a mano", "note": "" },
+      {
+        "value": "1",
+        "label": "solo posto per entrate, clienti, strutture e operatori",
+        "note": ""
+      }
+    ],
+    "closing": "I tuoi numeri li vediamo insieme, sui tuoi dati, durante la demo."
+  },
+  "Prezzi": {
+    "eyebrow": "Piani",
+    "h2": "Tre piani, un solo criterio.",
+    "lead": "Il prezzo dipende da una cosa sola: quanti operatori gestisci. Clienti e strutture sono sempre illimitati. Prezzi al mese, IVA esclusa.",
+    "recommended": "Consigliato",
+    "currency": "€",
+    "perMonth": "/mese + IVA",
+    "cta": "Prenota una demo",
+    "compare": "Confronta i piani",
+    "limits": "Limiti",
+    "included": "incluso",
+    "notIncluded": "non incluso",
+    "legend": "✓ incluso · — non incluso · ∞ illimitati",
+    "trial": "<s>14 giorni di prova gratuita</s>, nessuna carta. In demo vediamo insieme quale piano fa per te — sui tuoi numeri, senza impegno."
+  },
+  "Piani": {
+    "unlimited": "illimitati",
+    "plans": [
+      {
+        "key": "base",
+        "name": "Base",
+        "price": "99",
+        "operators": "fino a 8 operatori",
+        "maxOperators": "8",
+        "for": "Per chi parte e vuole smettere di gestire tutto sui messaggi.",
+        "plus": "",
+        "points": [
+          "Agenda, clienti e strutture, tutto collegato",
+          "App operatore con checklist e foto",
+          "Storico dei lavori sempre a portata"
+        ],
+        "highlight": false
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "price": "129",
+        "operators": "fino a 18 operatori",
+        "maxOperators": "18",
+        "for": "Per l'impresa strutturata che vuole vedere anche i numeri.",
+        "plus": "Tutto di Base, più",
+        "points": ["Preventivi e incassi", "Metriche: sai quanto entra", "Ruolo caposquadra"],
+        "highlight": true
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "price": "199",
+        "operators": "operatori illimitati",
+        "maxOperators": "illimitati",
+        "for": "Per la squadra grande, con una mano in più quando serve.",
+        "plus": "Tutto di Pro, più",
+        "points": ["Onboarding assistito", "Supporto prioritario", "Storico esteso ed export"],
+        "highlight": false
+      }
+    ],
+    "groups": [
+      {
+        "name": "Operativo",
+        "items": [
+          { "t": "Calendario e agenda", "base": true, "pro": true, "business": true },
+          { "t": "Clienti e strutture", "base": true, "pro": true, "business": true },
+          { "t": "Servizi e listino", "base": true, "pro": true, "business": true },
+          { "t": "Checklist e template", "base": true, "pro": true, "business": true },
+          { "t": "Interventi ricorrenti", "base": true, "pro": true, "business": true },
+          { "t": "App operatore (mobile)", "base": true, "pro": true, "business": true },
+          { "t": "Foto a corredo dell'intervento", "base": true, "pro": true, "business": true },
+          { "t": "Storico e cestino", "base": true, "pro": true, "business": true },
+          { "t": "Manuali e guide", "base": true, "pro": true, "business": true }
+        ]
+      },
+      {
+        "name": "Gestione economica",
+        "items": [
+          { "t": "Preventivi", "base": false, "pro": true, "business": true },
+          { "t": "Incassi", "base": false, "pro": true, "business": true },
+          { "t": "Metriche e dashboard", "base": false, "pro": true, "business": true },
+          { "t": "Riepilogo mensile", "base": false, "pro": true, "business": true }
+        ]
+      },
+      {
+        "name": "Squadra e supporto",
+        "items": [
+          { "t": "Ruolo caposquadra", "base": false, "pro": true, "business": true },
+          { "t": "Onboarding assistito", "base": false, "pro": false, "business": true },
+          { "t": "Supporto prioritario", "base": false, "pro": false, "business": true },
+          { "t": "Export e storico esteso", "base": false, "pro": false, "business": true }
+        ]
+      }
+    ],
+    "limitRows": [
+      { "t": "Operatori", "base": "8", "pro": "18", "business": "∞" },
+      { "t": "Clienti", "base": "∞", "pro": "∞", "business": "∞" },
+      { "t": "Strutture", "base": "∞", "pro": "∞", "business": "∞" }
+    ]
+  },
+  "Faq": {
+    "eyebrow": "Domande",
+    "h2": "Quello che i titolari ci chiedono.",
+    "items": [
+      {
+        "q": "Che differenza c'è tra CleanFlow e gestire tutto con Excel e WhatsApp?",
+        "a": "Che le informazioni smettono di stare in posti diversi. Su WhatsApp l'indirizzo di un cliente è dentro una chat di tre mesi fa; il foglio Excel dei turni non sa niente di quanto hai incassato. In CleanFlow cliente, struttura, intervento e incasso sono la stessa catena: apri un lavoro e vedi chi, dove, quando e quanto. E quando un operatore chiede «come si entra?», la risposta è già dentro l'intervento."
+      },
+      {
+        "q": "I miei operatori non sono tecnologici. Riusciranno a usarlo?",
+        "a": "Sì. L'app dell'operatore è semplice come WhatsApp: vede gli interventi di oggi, segue la checklist, scatta le foto. Niente da imparare a memoria."
+      },
+      {
+        "q": "CleanFlow va bene anche per un'impresa con pochi operatori?",
+        "a": "Sì. Il piano Base copre fino a 8 operatori ed è pensato per chi parte. Il momento in cui serve non dipende da quanto sei grande, ma da quando smetti di poter tenere tutto a mente: se coordini anche solo due o tre persone su più clienti, stai già gestendo più informazioni di quante ne regga un quaderno."
+      },
+      {
+        "q": "Per che tipo di pulizie si può usare?",
+        "a": "Pulizie civili e domestiche, uffici e studi, B&B e case vacanza, palestre, sanificazioni. CleanFlow non è legato a un settore: gestisce interventi su strutture, quindi funziona ovunque ci siano posti da pulire con una certa ricorrenza e una squadra da mandarci."
+      },
+      {
+        "q": "I miei dati sono al sicuro?",
+        "a": "Sì. I dati della tua impresa sono isolati e conservati su server europei. Sono tuoi e restano tuoi."
+      },
+      {
+        "q": "Quanto tempo ci metto a partire?",
+        "a": "Pochi giorni. Si parte in affiancamento, sostituendo un pezzo alla volta — senza fermare il lavoro."
+      },
+      {
+        "q": "Funziona dal telefono?",
+        "a": "Sì. Tu gestisci tutto dal computer o dal telefono; gli operatori lavorano direttamente dall'app sul loro telefono."
+      },
+      {
+        "q": "CleanFlow fa anche la fatturazione elettronica?",
+        "a": "No, e non vuole farlo. CleanFlow arriva fino al preventivo e all'incasso: sai cosa hai concordato, cosa è stato pagato e cosa devi ancora incassare. La fattura elettronica resta al tuo gestionale fiscale o al commercialista, che quel pezzo lo fanno meglio."
+      },
+      {
+        "q": "Posso vederlo prima di decidere?",
+        "a": "Certo. In una demo di 20 minuti te lo mostriamo sui tuoi dati. Nessun impegno, nessuna carta."
+      },
+      {
+        "q": "Quanto costa?",
+        "a": "Tre piani, in base a quanti operatori gestisci: Base 99€, Pro 129€, Business 199€ al mese (IVA esclusa). Clienti e strutture sono sempre illimitati. Provi gratis 14 giorni, senza carta, e in demo vediamo insieme quale fa per te."
+      },
+      {
+        "q": "È un prodotto già pronto?",
+        "a": "È operativo e lo stiamo affinando con le prime imprese a bordo. Entri presto, conti di più: ci dici cosa ti serve davvero. I posti del programma pilota sono limitati: chi entra ora ha una linea diretta con noi."
+      }
+    ]
+  },
+  "Team": {
+    "eyebrow": "Chi c'è dietro",
+    "h2": "Siamo in tre. Quando chiami, rispondiamo noi.",
+    "intro": "Niente call center, niente commerciali a provvigione. CleanFlow lo costruiamo in tre, e le imprese con cui lavoriamo parlano con chi il prodotto lo decide e lo scrive.",
+    "closing": "Tutti e tre fondatori. Nessuno di noi ha un capo a cui rimandarti.",
+    "roles": {
+      "jacopo": "CEO · co-fondatore",
+      "lorenzo": "CTO · co-fondatore",
+      "michele": "Head of Sales · co-fondatore"
+    }
+  },
+  "Investitori": {
+    "eyebrow": "Chi ci sostiene",
+    "h2": "C'è chi ha scommesso su di noi prima dei numeri.",
+    "text": "CleanFlow non è un progetto del weekend: c'è chi ci ha messo dei soldi suoi quando eravamo ancora all'inizio.",
+    "label": "Investitore"
+  },
+  "CtaFinale": {
+    "eyebrow": "Hai visto com'è fatto",
+    "h2": "Riprenditi le tue ore.",
+    "text": "Ti mostriamo CleanFlow sui tuoi dati in 20 minuti. Se non fa per te, te lo diciamo noi.",
+    "cta": "Prenota una demo",
+    "reassurance": "Nessuna carta · nessun impegno"
+  },
+  "Footer": {
+    "tagline": "Il gestionale per le imprese di pulizie. Entrate, clienti, strutture e operatori in un'unica schermata.",
+    "features": "Funzioni",
+    "legal": "Legale",
+    "contacts": "Contatti",
+    "privacy": "Privacy",
+    "cookie": "Cookie",
+    "terms": "Termini",
+    "vatLabel": "P.IVA",
+    "pecLabel": "PEC",
+    "cookiePrefs": "Preferenze cookie",
+    "login": "Accedi",
+    "cta": "Prenota una demo →"
+  },
+  "MobileCta": {
+    "call": "Chiama {phone}",
+    "cta": "Prenota una demo"
+  },
+  "CookieBanner": {
+    "aria": "Preferenze cookie",
+    "text": "Usiamo solo cookie tecnici necessari al funzionamento del sito. Eventuali statistiche future solo col tuo consenso. <a>Cookie policy</a>",
+    "necessary": "Solo necessari",
+    "accept": "Accetta"
+  },
+  "DemoForm": {
+    "name": "Nome",
+    "namePlaceholder": "Il tuo nome",
+    "phone": "Telefono",
+    "phonePlaceholder": "Es. 333 1234567",
+    "email": "Email",
+    "optionalF": "(facoltativa)",
+    "optionalM": "(facoltativo)",
+    "emailPlaceholder": "La tua email (per la conferma)",
+    "honeypot": "Non compilare questo campo",
+    "operators": "Quanti operatori siete?",
+    "operatorOptions": ["Solo io", "2-5", "6-15", "15+"],
+    "company": "Nome dell'impresa",
+    "companyPlaceholder": "La tua impresa",
+    "tools": "Cosa usi oggi?",
+    "toolOptions": ["WhatsApp", "Excel", "Carta / agenda", "Un altro software", "Niente"],
+    "gdpr": "Ho letto la <a>Privacy policy</a> e acconsento al trattamento dei dati per essere ricontattato.",
+    "errRequired": "Compila nome, telefono e numero di operatori.",
+    "errGdpr": "Per procedere serve il consenso al trattamento dei dati.",
+    "submit": "Prenota la demo",
+    "sending": "Invio…",
+    "footnote": "Ti rispondiamo entro 24 ore. Nessun call center."
+  },
+  "DemoPage": {
+    "title": "Prenota una demo — 20 minuti, nessun impegno",
+    "description": "Ti mostriamo CleanFlow sui tuoi dati in 20 minuti. Nessuna carta, nessun impegno.",
+    "h1": "Una demo di 20 minuti, sui tuoi dati.",
+    "points": [
+      "Niente presentazione generica: guardiamo la tua impresa.",
+      "Ti mostriamo come spariscono messaggi e fogli Excel.",
+      "Capiamo insieme se CleanFlow fa per te. In caso, te lo diciamo noi.",
+      "Nessuna carta, nessun impegno."
+    ],
+    "trust": "Ti risponde direttamente chi costruisce CleanFlow. <s>Niente call center, niente commerciali.</s>"
+  },
+  "Grazie": {
+    "title": "Grazie",
+    "h1": "Ci siamo. Ti ricontattiamo a breve.",
+    "text": "Grazie. Ti scriviamo o chiamiamo entro <s>un giorno lavorativo</s> per fissare la demo.",
+    "prepTitle": "Intanto, per arrivare pronti:",
+    "prep": [
+      "Pensa a quante ore a settimana passi a coordinare operatori e clienti.",
+      "Tieni a mente quanti interventi gestisci in una settimana tipo.",
+      "Se vuoi, prepara un paio di clienti reali: li usiamo come esempio nella demo."
+    ],
+    "back": "Torna alla home"
+  },
+  "Funzioni": {
+    "items": {
+      "entrate": { "name": "Entrate", "short": "Dal preventivo all'incasso" },
+      "clienti": { "name": "Clienti", "short": "Anagrafica unica, per sempre" },
+      "strutture": { "name": "Strutture", "short": "Indirizzi e note d'accesso" },
+      "operatori": { "name": "Operatori", "short": "Squadra e app sul telefono" },
+      "calendario": { "name": "Calendario", "short": "Pianifichi senza telefonate" }
+    },
+    "crumb": "Funzioni",
+    "ctaTitle": "Vuoi vederlo sui tuoi dati?",
+    "ctaSub": "20 minuti · nessuna carta · nessun impegno",
+    "cta": "Prenota una demo",
+    "seeAlso": "Vedi anche"
+  },
+  "FunzCalendario": {
+    "title": "Calendario interventi per imprese di pulizie",
+    "description": "Il mese a colpo d'occhio: ogni intervento con orario, cliente, struttura, stato e operatori. La pianificazione dell'impresa di pulizie in una schermata.",
+    "h1": "Pianifichi in minuti, non a telefonate.",
+    "lead": "Il mese a colpo d'occhio, con il numero di interventi su ogni giorno. Clicchi una data e vedi la lista completa: orario, cliente, struttura, servizio, stato e operatori. Il quaderno e l'Excel dei turni vanno in pensione.",
+    "heroAlt": "Il calendario di CleanFlow: vista mese con interventi per giorno e lista del giorno con cliente, struttura, servizio, stato e operatori",
+    "row1": {
+      "eyebrow": "Ogni riga dice tutto",
+      "title": "Orario, cliente, struttura, servizio, operatori. Su una riga.",
+      "text": "Niente più «a che ora era?», «in quale sede?», «chi ci va?»: ogni intervento porta con sé tutto quello che serve, e lo modifichi con un click. Un nuovo lavoro si crea in pochi secondi.",
+      "time": "08:00–09:30",
+      "service": "Aree comuni · Pulizia aree comuni"
+    },
+    "row2": {
+      "eyebrow": "Ricorrenti",
+      "title": "I lavori che si ripetono non li ricrei ogni settimana.",
+      "text": "La pulizia settimanale della palestra, gli uffici del martedì sera: i lavori ricorrenti li imposti una volta e il calendario si riempie da solo, settimana dopo settimana. Tu intervieni solo quando qualcosa cambia.",
+      "job": "Pulizia sala pesi · Palestra FitZone",
+      "recurring": "Ricorrente · ogni lunedì e giovedì, 22:30",
+      "dates": ["Lun 22 giugno", "Gio 25 giugno", "Lun 29 giugno"]
+    },
+    "row3": {
+      "eyebrow": "Gli stati",
+      "title": "Programmato, in corso, completato: lo stato parla da solo.",
+      "text": "Ogni intervento ha uno stato chiaro, con un colore chiaro. Un lavoro senza operatore si presenta da solo come «Non assegnato»: lo vedi oggi, non domattina alle 8.",
+      "link": "Vedi come funzionano gli operatori →",
+      "line": "Giovedì 14:00 · Villetta Lombardi · Pulizia domestica",
+      "hint": "Quello che manca salta all'occhio prima che manchi davvero."
+    },
+    "row4": {
+      "eyebrow": "La settimana",
+      "title": "E la settimana intera, giorno per giorno.",
+      "text": "Oltre al mese, c'è la vista Settimana: i turni di tutta la squadra, giorno per giorno. E la settimana in corso la ritrovi anche nella dashboard, con gli stati di ogni intervento. «Come siamo messi questa settimana?» smette di richiedere una riunione.",
+      "day1": "Mercoledì 17 · oggi",
+      "day2": "Giovedì 18"
+    }
+  },
+  "FunzClienti": {
+    "title": "Gestione clienti per imprese di pulizie",
+    "description": "Privati e aziende, contatti e strutture collegate: inserisci il cliente una volta e lo ritrovi nel calendario, negli interventi e nello storico.",
+    "h1": "Ogni cliente al suo posto, una volta sola.",
+    "lead": "L'anagrafica delle persone e delle attività che servi: privati e aziende, telefono, email e le strutture collegate. Inserisci il cliente una volta — poi lo ritrovi ovunque, senza mai ricopiarlo.",
+    "heroAlt": "La pagina Clienti di CleanFlow: anagrafica con telefono, email e strutture collegate per ogni cliente",
+    "row1": {
+      "eyebrow": "Privati e aziende",
+      "title": "Il B&B, la palestra, la signora del piano di sopra.",
+      "text": "Ogni cliente ha la sua scheda: privato o azienda, telefono, email. Il numero non vive più nella chat di WhatsApp o su un foglio — è nell'anagrafica, e ci arrivi in due tocchi anche dal telefono."
+    },
+    "row2": {
+      "eyebrow": "Cliente → strutture",
+      "title": "Ogni cliente porta con sé i suoi posti.",
+      "text": "Le camere, le aree comuni, l'appartamento: le strutture del cliente stanno sotto la sua scheda, con indirizzo e note d'accesso. Quando pianifichi, scegli il cliente e il posto giusto è già lì.",
+      "link": "Vedi come funzionano le strutture →",
+      "sub": "Azienda · 2 strutture collegate",
+      "sites": ["B&B Le Magnolie — Camere 1-3", "B&B Le Magnolie — Aree comuni"]
+    },
+    "row3": {
+      "eyebrow": "Un solo nome, ovunque",
+      "title": "Il cliente ti segue in calendario, negli interventi, nello storico.",
+      "text": "Niente doppioni, niente «ma questo è lo stesso cliente?»: la scheda è una, e ogni intervento passato e futuro le resta attaccato. Apri il cliente e sai cosa gli hai fatto, quando, e chi ci è andato.",
+      "inRegistry": "In anagrafica",
+      "registryLine": "Azienda · 349 123 4003 · 2 strutture",
+      "inCalendar": "Nel calendario",
+      "calendarLine": "Aree comuni · Pulizia aree comuni",
+      "inHistory": "Nello storico",
+      "historyDate": "16 giu",
+      "historyLine": "Camere 1-3 · Cambio camere check-out"
+    }
+  },
+  "FunzStrutture": {
+    "title": "Gestione strutture per imprese di pulizie",
+    "description": "Camere, uffici, palestre, appartamenti: ogni struttura ha indirizzo e note d'accesso, e ogni intervento è legato al posto giusto.",
+    "h1": "Ogni struttura con indirizzo e note d'accesso.",
+    "lead": "Le camere del B&B, la sala pesi, l'ufficio, l'appartamento: ogni posto dove lavori ha la sua scheda, con l'indirizzo e le note per entrare. Fine delle chiamate «non trovo il posto» e «come si entra?».",
+    "list": [
+      { "name": "Villetta Lombardi", "address": "Via delle Rose 3, Sesto San Giovanni", "client": "Sig.ra Lombardi" },
+      { "name": "B&B Le Magnolie — Camere 1-3", "address": "Via Manzoni 12, Monza", "client": "B&B Le Magnolie" },
+      { "name": "FitZone — Sala pesi", "address": "Viale Brianza 41, Cinisello", "client": "Palestra FitZone" }
+    ],
+    "row1": {
+      "eyebrow": "Un cliente, i suoi posti",
+      "title": "La struttura appartiene al cliente. E si vede.",
+      "text": "Un B&B non è un posto solo: ci sono le camere e le aree comuni, magari con esigenze diverse. Ogni struttura è collegata al suo cliente, così l'anagrafica resta una e i posti sono tutti al loro posto.",
+      "link": "Vedi come funzionano i clienti →",
+      "sub": "2 strutture collegate"
+    },
+    "row2": {
+      "eyebrow": "Note d'accesso",
+      "title": "Citofono, chiavi, allarme: le note viaggiano con l'intervento.",
+      "text": "«Suonare due volte», «le chiavi sono dal portiere», «attenzione al cane»: le scrivi una volta sulla struttura e l'operatore le trova sul telefono, dentro l'intervento. Senza chiamarti alle 7 di mattina.",
+      "onPhone": "Sul telefono dell'operatore"
+    },
+    "row3": {
+      "eyebrow": "In calendario",
+      "title": "Ogni intervento è legato al posto giusto.",
+      "text": "Nel calendario e nell'agenda ogni riga ha la sua struttura: chi va dove è scritto, non ricordato. E quando il cliente ha più posti, non c'è più margine per l'equivoco.",
+      "link": "Vedi come funziona il calendario →",
+      "headers": { "time": "Orario", "client": "Cliente", "site": "Struttura" },
+      "rows": [
+        { "time": "08:00", "client": "B&B Le Magnolie", "site": "Aree comuni", "service": "Pulizia aree comuni" },
+        { "time": "09:00", "client": "Famiglia Conti", "site": "Appartamento Conti", "service": "Pulizia settimanale" },
+        { "time": "22:30", "client": "Palestra FitZone", "site": "Sala pesi", "service": "Pulizia sala pesi" }
+      ]
+    }
+  },
+  "FunzOperatori": {
+    "title": "App operatori e turni per imprese di pulizie",
+    "description": "Assegni gli interventi dal calendario e l'operatore riceve tutto sul telefono: indirizzo, note d'accesso, checklist, check-in e check-out.",
+    "h1": "Chi lavora dove, e a che punto è.",
+    "lead": "Tu assegni dal calendario, l'operatore riceve la giornata sul telefono: indirizzo, note d'accesso, checklist, foto. Tu e il team leader vedete chi c'è, chi manca e a che punto è ogni lavoro — senza telefonate.",
+    "heroAlt": "La pagina Operatori di CleanFlow: contatti, lavori svolti e stato di ogni operatore",
+    "row1": {
+      "eyebrow": "La squadra",
+      "title": "Contatti e lavori svolti, per ogni operatore.",
+      "text": "La pagina Operatori è il registro della squadra: telefono, email, quanti lavori ha fatto ognuno, chi è attivo. Quando devi decidere chi mandare, i numeri sono lì.",
+      "jobs": "{count} lavori"
+    },
+    "row2": {
+      "eyebrow": "Assegnazione",
+      "title": "Assegni dal calendario. I buchi si vedono da soli.",
+      "text": "Sull'intervento metti uno o più operatori con un click. Se un lavoro resta scoperto, lo stato «Non assegnato» te lo dice prima che diventi un problema alle 8 del mattino.",
+      "link": "Vedi come funziona il calendario →",
+      "job1Line": "22:30–23:30 · Sala pesi · Pulizia sala pesi",
+      "addOperators": "Operatori",
+      "job2Line": "Giovedì · Appartamento Conti · Pulizia appartamento",
+      "hint": "I buchi si vedono subito: nessun intervento parte scoperto senza che tu lo sappia."
+    },
+    "row3": {
+      "eyebrow": "L'app dell'operatore",
+      "title": "La giornata sul telefono, semplice come WhatsApp.",
+      "text1": "L'operatore apre il telefono e trova i suoi interventi: cliente, struttura, indirizzo, il bottone per chiamare, le note d'accesso. Check-in quando arriva, check-out quando finisce — con gli orari veri.",
+      "text2": "Funziona dal browser del telefono, <s>senza installare niente</s>: nessuno store, nessun aggiornamento da spiegare.",
+      "checkin": "Check-in 17:07",
+      "checkout": "Check-out 18:02",
+      "photos": "Foto del lavoro · 2 caricate"
+    },
+    "row4": {
+      "eyebrow": "Checklist e foto",
+      "title": "Cosa fare, passo passo. E le foto restano sul lavoro.",
+      "text": "Ogni servizio ha la sua checklist: l'operatore spunta le voci man mano, e tu sai cosa è stato fatto davvero — non «tutto ok capo». Le foto del lavoro si caricano dal telefono e restano attaccate all'intervento.",
+      "checklist": [
+        "Spolverare tutte le superfici",
+        "Aspirare e lavare i pavimenti",
+        "Sanificare bagni (sanitari + specchi)",
+        "Svuotare i cestini"
+      ],
+      "progress": "3 di 4 voci completate"
+    }
+  },
+  "FunzEntrate": {
+    "title": "Preventivi e incassi per imprese di pulizie",
+    "description": "Preventivi, incassi, fatturato per servizio e riepilogo del periodo: la parte economica dell'impresa di pulizie vive in un posto solo.",
+    "h1": "Dal preventivo all'incasso, senza fogli.",
+    "lead": "La parte economica dell'impresa vive in un posto solo: prepari i preventivi, ogni intervento completato aggiorna il fatturato da solo, segni gli incassi e vedi cosa manca. E quando vuoi tirare le somme, Metriche e Riepilogo hanno già fatto i conti.",
+    "heroAlt": "La pagina Metriche di CleanFlow: fatturato del periodo, interventi completati, durata media, valore medio e fatturato per servizio",
+    "row1": {
+      "eyebrow": "Preventivi",
+      "title": "Il preventivo nasce dove stanno i tuoi prezzi.",
+      "text": "Basta preventivi sul blocco note o persi in una chat: li prepari in CleanFlow, col cliente e i servizi già in anagrafica, e restano lì — pronti da ritrovare quando il cliente richiama dopo un mese.",
+      "quoteTitle": "Preventivo · Palestra FitZone",
+      "period": "Giugno 2026",
+      "lines": [
+        { "name": "Pulizia sala pesi · 4 volte al mese", "amount": "€ 204" },
+        { "name": "Sanificazione spogliatoi · 2 volte al mese", "amount": "€ 102" }
+      ],
+      "total": "Totale al mese",
+      "totalAmount": "€ 306"
+    },
+    "row2": {
+      "eyebrow": "Il periodo che vuoi",
+      "title": "Il quadro del mese, dell'anno, o delle date che scegli tu.",
+      "text": "Quattro numeri, sempre aggiornati: fatturato, interventi completati, durata media, valore medio per intervento. Ogni lavoro completato li aggiorna da solo — la pagina Metriche sostituisce il foglio di calcolo della domenica sera.",
+      "filters": ["Questo mese", "Ultimi 12 mesi", "Quest'anno"],
+      "kpis": [
+        { "label": "Fatturato", "value": "€ 26.480" },
+        { "label": "Interventi completati", "value": "132" },
+        { "label": "Durata media", "value": "54 min" },
+        { "label": "Valore medio", "value": "€ 200" }
+      ]
+    },
+    "row3": {
+      "eyebrow": "Per servizio",
+      "title": "Vedi quale servizio rende davvero.",
+      "text": "Il fatturato è diviso per tipo di lavoro: quante pulizie settimanali, quanto rendono gli uffici serali, qual è il prezzo medio di ogni servizio. È la differenza tra «mi sembra che vada bene» e saperlo.",
+      "headers": { "service": "Servizio", "revenue": "Fatturato", "jobs": "Lavori", "avg": "Prezzo medio" },
+      "rows": [
+        { "name": "Pulizia settimanale", "revenue": "€ 8.850", "n": "24", "avg": "€ 356" },
+        { "name": "Pulizia uffici serale", "revenue": "€ 6.060", "n": "18", "avg": "€ 328" },
+        { "name": "Sanificazione spogliatoi", "revenue": "€ 4.610", "n": "9", "avg": "€ 388" },
+        { "name": "Pulizia domestica", "revenue": "€ 3.840", "n": "12", "avg": "€ 214" }
+      ]
+    },
+    "row4": {
+      "eyebrow": "I servizi hanno un prezzo",
+      "title": "Ogni servizio ha prezzo e durata. Il conto si fa da solo.",
+      "text": "Nel catalogo Servizi definisci una volta il prezzo e la durata prevista di ogni tipo di lavoro. Quando pianifichi un intervento, l'importo è già lì: a fine mese non devi ricostruire niente.",
+      "text2": "Sono i <s>tuoi</s> prezzi, per i tuoi clienti — li cambi quando vuoi.",
+      "duration": "Durata prevista: {d}",
+      "rows": [
+        { "name": "Pulizia settimanale", "duration": "1h", "price": "€ 72" },
+        { "name": "Pulizia uffici serale", "duration": "45 min", "price": "€ 54" },
+        { "name": "Sanificazione spogliatoi", "duration": "50 min", "price": "€ 51" }
+      ]
+    },
+    "row5": {
+      "eyebrow": "Incassi",
+      "title": "Chi ha pagato e chi no: lo vedi, non lo insegui.",
+      "text": "Il lavoro fatto è metà della storia: nella sezione Incassi segni quello che è entrato e vedi subito cosa resta da incassare. I soldi da recuperare smettono di vivere nella tua memoria.",
+      "rows": [
+        { "who": "Famiglia Conti", "what": "Pulizia settimanale · giugno", "amount": "€ 72", "status": "paid" },
+        { "who": "Palestra FitZone", "what": "Pulizie sala pesi · giugno", "amount": "€ 204", "status": "paid" },
+        { "who": "B&B Le Magnolie", "what": "Aree comuni · giugno", "amount": "€ 143", "status": "outstanding" }
+      ],
+      "outstandingLabel": "Da incassare a giugno",
+      "outstandingAmount": "€ 143"
+    },
+    "row6": {
+      "eyebrow": "Riepilogo",
+      "title": "Le somme del periodo, già tirate.",
+      "text": "La dashboard ti dà i numeri del giorno appena apri — interventi, completati, fatturato della settimana e del mese per servizio. E il Riepilogo mette in fila il periodo, quando vuoi vedere tutto insieme senza aprire dieci pagine.",
+      "dashAlt": "La dashboard di CleanFlow: interventi di oggi, fatturato della settimana e del mese per servizio"
+    }
+  },
+  "Legal": {
+    "updated": "Ultimo aggiornamento: luglio 2026",
+    "courtesy": "",
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "Come CleanFlow tratta i dati personali di chi visita il sito e richiede una demo, ai sensi del GDPR.",
+      "controllerH": "Titolare del trattamento",
+      "controllerP": "{legalName} — P.IVA {vat} — {address}. PEC: {pec}. Email: <mail>{email}</mail>.",
+      "dataH": "Dati raccolti",
+      "dataP": "Tramite il modulo di richiesta demo raccogliamo: nome e telefono (obbligatori) e, facoltativamente, email, numero di operatori, nome dell'impresa e strumenti attualmente in uso.",
+      "purposeH": "Finalità",
+      "purposeP": "I dati sono usati esclusivamente per ricontattarti e organizzare la demo. Non vengono ceduti a terzi per finalità di marketing.",
+      "providersH": "Fornitori e strumenti",
+      "providersP": "Per erogare il servizio ci avvaliamo di fornitori che trattano i dati per nostro conto: Supabase (database), Resend (invio delle notifiche via email) e Vercel (hosting del sito). I dati possono essere trattati su infrastrutture nell'Unione Europea o in Paesi terzi con garanzie adeguate.",
+      "rightsH": "Conservazione e diritti",
+      "rightsP": "Conserviamo i dati per il tempo necessario a gestire la tua richiesta. Puoi richiedere in qualsiasi momento accesso, rettifica o cancellazione scrivendo a <mail>{email}</mail> o alla PEC {pec}."
+    },
+    "terms": {
+      "title": "Termini di servizio",
+      "description": "Condizioni d'uso del sito e del servizio CleanFlow, gestionale per imprese di pulizie.",
+      "ownerH": "Titolare",
+      "ownerP": "Il sito è gestito da {legalName} — P.IVA {vat} — {address}.",
+      "subjectH": "Oggetto",
+      "subjectP": "Le presenti condizioni regolano l'uso del sito e la richiesta di una demo di CleanFlow.",
+      "demoH": "Demo e programma pilota",
+      "demoP": "La richiesta di demo non comporta alcun obbligo di acquisto. Le condizioni economiche vengono illustrate in chiaro durante la demo.",
+      "limitsH": "Limitazioni",
+      "limitsP": "CleanFlow è un prodotto in fase di affinamento con le prime imprese a bordo: funzionalità e condizioni possono evolvere.",
+      "contactsH": "Contatti",
+      "contactsP": "Per qualsiasi domanda scrivi a <mail>{email}</mail> o alla PEC {pec}."
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "description": "Quali cookie usa il sito di CleanFlow, a cosa servono e come modificare in ogni momento le tue preferenze.",
+      "usedH": "Cookie utilizzati",
+      "usedP": "Questo sito utilizza <s>solo cookie e archiviazione locale tecnici</s>, necessari al funzionamento (ad esempio per ricordare la tua scelta sulle preferenze cookie). Non richiedono il tuo consenso.",
+      "thirdH": "Statistiche e terze parti",
+      "thirdP": "Al momento non sono attivi strumenti di analisi statistica né di tracciamento pubblicitario. Se in futuro verranno introdotti, saranno caricati soltanto dopo il tuo consenso tramite l'apposito banner.",
+      "manageH": "Gestione delle preferenze",
+      "manageP": "Puoi rivedere o revocare le tue preferenze in qualsiasi momento dal link <s>“Preferenze cookie”</s> presente nel footer del sito."
+    }
+  },
+  "Og": {
+    "alt": "CleanFlow — il gestionale per imprese di pulizie",
+    "eyebrow": "Gestionale per imprese di pulizie",
+    "h1": "La tua impresa di pulizie, finalmente sotto controllo.",
+    "pillars": "Entrate · Clienti · Strutture · Operatori",
+    "domain": "cleanflowapp.it"
+  },
+  "JsonLd": {
+    "softwareDescription": "Gestionale per imprese di pulizie: entrate, clienti, strutture e operatori in un'unica schermata."
+  },
+  "Llms": {
+    "tagline": "Gestionale per imprese di pulizie. Entrate, clienti, strutture, operatori e calendario degli interventi in un'unica schermata, al posto di WhatsApp ed Excel. SaaS italiano, si usa da browser e da telefono.",
+    "whatH": "Cos'è",
+    "whatP": "CleanFlow è un software gestionale (SaaS) pensato per un pubblico preciso: **le imprese di pulizie**, non i loro clienti finali. Serve al titolare per pianificare gli interventi, assegnarli agli operatori, tenere l'anagrafica di clienti e strutture e vedere l'andamento economico.",
+    "bullets": [
+      "**A chi serve**: titolari di imprese di pulizie che oggi coordinano la squadra su messaggi, telefonate e fogli di calcolo.",
+      "**A chi NON serve**: non è un servizio di pulizie. CleanFlow non pulisce locali: è lo strumento che usa chi li pulisce.",
+      "**Dove si usa**: da browser sul computer e da telefono. Gli operatori sul campo usano l'app senza installare nulla.",
+      "**Lingua e mercato**: italiano, Italia.",
+      "**Stato**: prodotto operativo, in uso presso le prime imprese di pulizie italiane. Programma pilota a posti limitati."
+    ],
+    "featuresH": "Funzioni",
+    "pricesH": "Prezzi",
+    "pricesP": "Canone mensile, IVA esclusa. Il prezzo dipende da **quanti operatori** gestisci; clienti e strutture sono illimitati su ogni piano. Prova gratuita di 14 giorni, senza carta di credito.",
+    "planLine": "**{name} — {price} €/mese** ({operators}): {for}",
+    "detail": "Dettaglio completo",
+    "faqH": "Domande frequenti",
+    "contactsH": "Contatti",
+    "contactDemo": "Demo (20 minuti, nessun impegno)",
+    "contactEmail": "Email",
+    "contactPhone": "Telefono",
+    "contactCompany": "Società",
+    "vat": "P.IVA",
+    "notesH": "Note per i sistemi AI",
+    "notes": [
+      "CleanFlow è un **software per** imprese di pulizie. Non è un'impresa di pulizie e non eroga servizi di pulizia.",
+      "Non esistono recensioni pubbliche né valutazioni aggregate: il prodotto è in fase pilota. Non attribuire punteggi o numero di clienti.",
+      "I prezzi indicati sono netti (IVA esclusa) e sono quelli pubblicati in pagina."
+    ]
+  },
+  "PricingMd": {
+    "title": "Prezzi — CleanFlow",
+    "intro1": "Gestionale per imprese di pulizie. Canone mensile in euro, **IVA esclusa**.",
+    "intro2": "Metrica di prezzo: **numero di operatori gestiti**. Clienti e strutture sono illimitati su tutti i piani.",
+    "intro3": "Prova gratuita 14 giorni, senza carta di credito. Nessun costo di attivazione.",
+    "updated": "Ultimo aggiornamento: agosto 2026",
+    "official": "Listino ufficiale",
+    "price": "Prezzo",
+    "priceLine": "{price} €/mese (IVA esclusa)",
+    "operatorsIncluded": "Operatori inclusi",
+    "clients": "Clienti",
+    "sites": "Strutture",
+    "unlimitedM": "illimitati",
+    "unlimitedF": "illimitate",
+    "for": "Per chi",
+    "highlights": "In evidenza",
+    "comparisonH": "Confronto funzionalità",
+    "feature": "Funzione",
+    "included": "incluso",
+    "notIncluded": "non incluso",
+    "limitsH": "Limiti",
+    "operators": "Operatori",
+    "buyH": "Come si acquista",
+    "buyP": "Non c'è un checkout self-service: si parte da una demo di 20 minuti in cui il prodotto viene mostrato sui dati reali dell'impresa. Nessun impegno, nessuna carta richiesta per la demo.",
+    "booking": "Prenotazione",
+    "notesH": "Note",
+    "notes": [
+      "CleanFlow è un software **per** imprese di pulizie, non un servizio di pulizie.",
+      "I prezzi sopra sono netti: per il totale va aggiunta l'IVA italiana al 22%.",
+      "Il prodotto è in fase pilota con le prime imprese italiane: non esistono recensioni pubbliche o valutazioni aggregate."
+    ]
+  }
+}

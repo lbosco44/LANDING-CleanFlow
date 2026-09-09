@@ -1,14 +1,19 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/lib/utils";
-import { FAQS } from "@/components/site/faq-data";
 
-// v2: assorbe le vecchie sezioni Prezzo e Pilot (vedi faq-data). L'item aperto
-// ha lo sfondo tintato: micro-pattern a costo zero che guida l'occhio.
+// v2: assorbe le vecchie sezioni Prezzo e Pilot. La voce aperta ha lo sfondo
+// tintato: micro-pattern a costo zero che guida l'occhio.
+// Le voci vivono in messages/<locale>.json (`Faq.items`): la stessa sorgente
+// alimenta lo schema FAQPage e /llms.txt — requisito Google: lo structured
+// data deve coincidere col testo visibile.
 export function Faq() {
+  const t = useTranslations("Faq");
+  const items = t.raw("items") as { q: string; a: string }[];
   const [open, setOpen] = useState<number | null>(0);
 
   return (
@@ -18,13 +23,13 @@ export function Faq() {
     >
       <div className="mx-auto max-w-[69rem] px-5 sm:px-8">
         <div className="mx-auto max-w-3xl">
-          <p className="eyebrow text-accent-ink">Domande</p>
+          <p className="eyebrow text-accent-ink">{t("eyebrow")}</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Quello che i titolari ci chiedono.
+            {t("h2")}
           </h2>
 
           <div className="mt-10 divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card">
-            {FAQS.map((f, i) => {
+            {items.map((f, i) => {
               const isOpen = open === i;
               return (
                 <div

@@ -1,0 +1,776 @@
+{
+  "Meta": {
+    "title": "Cleaning business software | CleanFlow",
+    "description": "Revenue, clients, sites and staff: all on one screen. No more WhatsApp and spreadsheets. Book a 20-minute demo, no strings attached.",
+    "ogDescription": "Your cleaning business, finally under control. Book a 20-minute demo."
+  },
+  "Common": {
+    "cta": "Book a demo",
+    "status": {
+      "scheduled": "Scheduled",
+      "inProgress": "In progress",
+      "completed": "Completed",
+      "unassigned": "Unassigned",
+      "cancelled": "Cancelled",
+      "paid": "Paid",
+      "outstanding": "Outstanding",
+      "active": "Active"
+    }
+  },
+  "Demo": {
+    "magnolie": "Magnolia B&B",
+    "rooms": "Rooms 1-3",
+    "common": "Common areas",
+    "fitzone": "FitZone Gym",
+    "weights": "Weights room",
+    "marino": "Marlow Legal",
+    "offices": "Offices",
+    "conti": "The Bennett family",
+    "contiFlat": "Bennett apartment",
+    "lombardi": "Mrs Lambert",
+    "lombardiHouse": "Lambert house",
+    "lombardiAddress": "3 Rose Lane, Sutton",
+    "lombardiStreet": "3 Rose Lane",
+    "op1": "Emma Wright",
+    "op1First": "Emma",
+    "op2": "Ahmed Haddad",
+    "op3": "Daniel Cole",
+    "accessNotes": "Access notes",
+    "accessText": "Ring twice and wait. Small dog in the garden, harmless.",
+    "callClient": "Call the client",
+    "domesticClean": "Domestic clean",
+    "typeCompany": "Business",
+    "typePrivate": "Private",
+    "sites": "{count, plural, one {# site} other {# sites}}"
+  },
+  "Header": {
+    "nav": {
+      "what": "What it does",
+      "how": "How it works",
+      "pricing": "Pricing",
+      "faq": "FAQ"
+    },
+    "login": "Log in",
+    "cta": "Book a demo",
+    "langLabel": "Language"
+  },
+  "Hero": {
+    "eyebrow": "Software for cleaning companies",
+    "h1": "Your cleaning business, finally under control.",
+    "subhead": "<s>Revenue</s>, <s>clients</s>, <s>sites</s> and <s>staff</s>: all in order, in one place. No more WhatsApp, spreadsheets and phone calls.",
+    "cta": "Book a demo",
+    "ctaSecondary": "See how it's built",
+    "reassurance": "20 minutes · no card · we show you on your own data",
+    "trust": "Built with cleaning companies in Italy. Now in English.",
+    "kpiLabel": "Collected in June",
+    "currency": "€",
+    "agendaTitle": "Today's schedule",
+    "agendaCount": "3 jobs",
+    "liveChip": "2 cleaners on site right now"
+  },
+  "Problema": {
+    "eyebrow": "The day you know",
+    "h2": "You hold it all together by hand.",
+    "text": "A client texts you on WhatsApp. A cleaner calls because she can't find the address. You check the spreadsheet to see who's free on Thursday. You update the paper diary. And you still don't really know how the business is doing.",
+    "closing": "It isn't disorganisation. It's that you're holding everything together by hand.",
+    "chatIn": "Boss I can't find the gym address 🙏",
+    "chatInTime": "7:58",
+    "chatOut": "hang on, let me check the notebook",
+    "chatOutTime": "8:12",
+    "excelDay7": "THURSDAY",
+    "excelCell7": "emma?? ahmed?",
+    "excelDay8": "FRIDAY",
+    "excelCell8": "???",
+    "note1": "call Mrs Lambert back!!",
+    "note2": "B&B keys → ask Emma"
+  },
+  "Pilastri": {
+    "eyebrow": "The software",
+    "h2": "Everything in one control room.",
+    "lead": "CleanFlow puts revenue, clients, sites and staff in the same place. You see everything from above. Whoever is on site knows exactly what to do. No more word of mouth.",
+    "more": "See how it works",
+    "items": {
+      "entrate": {
+        "title": "Know what's coming in, without opening a spreadsheet.",
+        "text": "Monthly revenue, split by service, updates itself with every completed job. And with quotes and payments in the same place, you also know what's still owed, and you stop asking “how did it go?” at the end of the day."
+      },
+      "clienti": {
+        "title": "Every client in its place, entered once.",
+        "text": "Contact details and linked sites: enter the client once and find them everywhere: in the schedule, in the jobs, in the job history. No more digging for numbers on WhatsApp."
+      },
+      "strutture": {
+        "title": "Every site with an address and access notes.",
+        "text": "The B&B rooms, the weights room, the office: every site carries its address and access notes, and every job is tied to the right place. No more “I can't find it” and “how do I get in?” calls."
+      },
+      "operatori": {
+        "title": "Who's working where, and how far along.",
+        "text": "Assign the job from the schedule and the cleaner gets everything on their phone: address, step-by-step checklist, photos to upload, check-in and check-out. You and your supervisor see who's in, who's missing and how far along every job is, without a barrage of phone calls."
+      }
+    },
+    "wEntrate": {
+      "kpis": [
+        { "label": "Revenue this month", "value": "€26,480" },
+        { "label": "Jobs completed", "value": "132" },
+        { "label": "Average value", "value": "€200" }
+      ],
+      "perService": "By service",
+      "services": [
+        { "name": "Weekly clean", "amount": "€8,850" },
+        { "name": "Evening offices", "amount": "€6,060" },
+        { "name": "Deep cleans", "amount": "€4,610" }
+      ]
+    },
+    "wClienti": {
+      "title": "Clients",
+      "count": "6 on file",
+      "tel1": "07700 900403",
+      "tel2": "07700 900401",
+      "tel3": "020 7946 0005",
+      "tel4": "020 7946 0002"
+    },
+    "wOperatori": {
+      "greeting": "Hi,",
+      "checkin": "Check-in 17:07",
+      "checklist": [
+        "Dust all surfaces",
+        "Vacuum and mop the floors",
+        "Sanitise the bathrooms"
+      ],
+      "progress": "1 of 3 items done",
+      "op1Status": "On site now",
+      "op2Status": "2 jobs today · next at 14:00"
+    }
+  },
+  "ComeFunziona": {
+    "eyebrow": "How it works",
+    "h2": "From the client to the job done, in one flow.",
+    "steps": [
+      {
+        "title": "Create the client and their sites",
+        "text": "Contact details, addresses, access notes. Once: then it's always there."
+      },
+      {
+        "title": "Plan on the schedule",
+        "text": "Assign the job to the right cleaner. They get it on their phone.",
+        "link": "See the schedule"
+      },
+      {
+        "title": "The cleaner does the job from their phone",
+        "text": "Check-in on site, guided checklist, photos of the work. Step by step.",
+        "link": "See the cleaner's app"
+      },
+      {
+        "title": "You see everything, in real time",
+        "text": "Status of every job, real check-in and check-out times, history per client. You know what's been done without asking."
+      }
+    ],
+    "ctaText": "We'll show you on your own jobs.",
+    "cta": "Book a demo"
+  },
+  "Risultato": {
+    "eyebrow": "The result",
+    "h2": "Less time coordinating. More time growing the business.",
+    "stats": [
+      {
+        "value": "~10 hours",
+        "label": "a week you no longer spend on messages and spreadsheets",
+        "note": "estimate, calibrated in the demo"
+      },
+      { "value": "Zero", "label": "spreadsheets to keep updated by hand", "note": "" },
+      { "value": "1", "label": "place for revenue, clients, sites and staff", "note": "" }
+    ],
+    "closing": "We'll look at your numbers together, on your own data, during the demo."
+  },
+  "Prezzi": {
+    "eyebrow": "Plans",
+    "h2": "Three plans, one criterion.",
+    "lead": "The price depends on one thing only: how many cleaners you manage. Clients and sites are always unlimited. Prices per month, excl. VAT.",
+    "recommended": "Recommended",
+    "currency": "€",
+    "perMonth": "/month + VAT",
+    "cta": "Book a demo",
+    "compare": "Compare plans",
+    "limits": "Limits",
+    "included": "included",
+    "notIncluded": "not included",
+    "legend": "✓ included · — not included · ∞ unlimited",
+    "trial": "<s>14-day free trial</s>, no card. In the demo we'll work out together which plan fits, on your numbers, no strings attached."
+  },
+  "Piani": {
+    "unlimited": "unlimited",
+    "plans": [
+      {
+        "key": "base",
+        "name": "Base",
+        "price": "99",
+        "operators": "up to 8 cleaners",
+        "maxOperators": "8",
+        "for": "For those starting out who want to stop running everything on messages.",
+        "plus": "",
+        "points": [
+          "Schedule, clients and sites, all linked",
+          "Cleaner app with checklist and photos",
+          "Job history always at hand"
+        ],
+        "highlight": false
+      },
+      {
+        "key": "pro",
+        "name": "Pro",
+        "price": "129",
+        "operators": "up to 18 cleaners",
+        "maxOperators": "18",
+        "for": "For the established company that wants to see the numbers too.",
+        "plus": "Everything in Base, plus",
+        "points": ["Quotes and payments", "Metrics: know what's coming in", "Supervisor role"],
+        "highlight": true
+      },
+      {
+        "key": "business",
+        "name": "Business",
+        "price": "199",
+        "operators": "unlimited cleaners",
+        "maxOperators": "unlimited",
+        "for": "For the big team, with an extra hand when needed.",
+        "plus": "Everything in Pro, plus",
+        "points": ["Assisted onboarding", "Priority support", "Extended history and export"],
+        "highlight": false
+      }
+    ],
+    "groups": [
+      {
+        "name": "Operations",
+        "items": [
+          { "t": "Schedule and daily agenda", "base": true, "pro": true, "business": true },
+          { "t": "Clients and sites", "base": true, "pro": true, "business": true },
+          { "t": "Services and price list", "base": true, "pro": true, "business": true },
+          { "t": "Checklists and templates", "base": true, "pro": true, "business": true },
+          { "t": "Recurring jobs", "base": true, "pro": true, "business": true },
+          { "t": "Cleaner app (mobile)", "base": true, "pro": true, "business": true },
+          { "t": "Photos attached to the job", "base": true, "pro": true, "business": true },
+          { "t": "History and bin", "base": true, "pro": true, "business": true },
+          { "t": "Manuals and guides", "base": true, "pro": true, "business": true }
+        ]
+      },
+      {
+        "name": "Finances",
+        "items": [
+          { "t": "Quotes", "base": false, "pro": true, "business": true },
+          { "t": "Payments", "base": false, "pro": true, "business": true },
+          { "t": "Metrics and dashboard", "base": false, "pro": true, "business": true },
+          { "t": "Monthly summary", "base": false, "pro": true, "business": true }
+        ]
+      },
+      {
+        "name": "Team and support",
+        "items": [
+          { "t": "Supervisor role", "base": false, "pro": true, "business": true },
+          { "t": "Assisted onboarding", "base": false, "pro": false, "business": true },
+          { "t": "Priority support", "base": false, "pro": false, "business": true },
+          { "t": "Export and extended history", "base": false, "pro": false, "business": true }
+        ]
+      }
+    ],
+    "limitRows": [
+      { "t": "Cleaners", "base": "8", "pro": "18", "business": "∞" },
+      { "t": "Clients", "base": "∞", "pro": "∞", "business": "∞" },
+      { "t": "Sites", "base": "∞", "pro": "∞", "business": "∞" }
+    ]
+  },
+  "Faq": {
+    "eyebrow": "FAQ",
+    "h2": "What owners ask us.",
+    "items": [
+      {
+        "q": "What's the difference between CleanFlow and running everything on spreadsheets and WhatsApp?",
+        "a": "The information stops living in different places. On WhatsApp a client's address is buried in a chat from three months ago; the rota spreadsheet knows nothing about what you've been paid. In CleanFlow client, site, job and payment are one chain: open a job and you see who, where, when and how much. And when a cleaner asks “how do I get in?”, the answer is already inside the job."
+      },
+      {
+        "q": "My cleaners aren't tech-savvy. Will they manage?",
+        "a": "Yes. The cleaner's app is as simple as WhatsApp: they see today's jobs, follow the checklist, take the photos. Nothing to memorise."
+      },
+      {
+        "q": "Is CleanFlow right for a company with only a few cleaners?",
+        "a": "Yes. The Base plan covers up to 8 cleaners and is built for those starting out. The moment you need it doesn't depend on how big you are, but on when you can no longer keep it all in your head: if you coordinate even two or three people across several clients, you're already managing more information than a notebook can hold."
+      },
+      {
+        "q": "What kind of cleaning is it for?",
+        "a": "Domestic and commercial cleaning, offices and practices, B&Bs and holiday lets, gyms, deep cleans. CleanFlow isn't tied to one niche: it manages jobs on sites, so it works wherever there are places to clean on a regular basis and a team to send there."
+      },
+      {
+        "q": "Is my data safe?",
+        "a": "Yes. Your company's data is isolated and stored on servers in the EU. It's yours and it stays yours."
+      },
+      {
+        "q": "How long does it take to get started?",
+        "a": "A few days. We start alongside you, replacing one piece at a time, without stopping the work."
+      },
+      {
+        "q": "Does it work on the phone?",
+        "a": "Yes. You manage everything from your computer or phone; cleaners work straight from the app on their own phone."
+      },
+      {
+        "q": "Does CleanFlow do invoicing too?",
+        "a": "No, and it doesn't want to. CleanFlow goes as far as the quote and the payment: you know what was agreed, what's been paid and what's still owed. Invoicing stays with your accounting software or your accountant, who do that part better."
+      },
+      {
+        "q": "Can I see it before deciding?",
+        "a": "Of course. In a 20-minute demo we show it to you on your own data. No commitment, no card."
+      },
+      {
+        "q": "How much does it cost?",
+        "a": "Three plans, based on how many cleaners you manage: Base €99, Pro €129, Business €199 per month (excl. VAT). Clients and sites are always unlimited. Try it free for 14 days, no card, and in the demo we'll work out together which one fits."
+      },
+      {
+        "q": "Is it a finished product?",
+        "a": "It's up and running and we're refining it with the first companies on board. Join early and you count for more: you tell us what you really need. Pilot programme places are limited: whoever joins now has a direct line to us."
+      }
+    ]
+  },
+  "Team": {
+    "eyebrow": "Who's behind it",
+    "h2": "There are three of us. When you call, we answer.",
+    "intro": "No call centre, no commission-driven sales reps. CleanFlow is built by three people, and the companies we work with talk to the people who decide and write the product.",
+    "closing": "All three of us founders. None of us has a boss to pass you on to.",
+    "roles": {
+      "jacopo": "CEO · co-founder",
+      "lorenzo": "CTO · co-founder",
+      "michele": "Head of Sales · co-founder"
+    }
+  },
+  "Investitori": {
+    "eyebrow": "Who backs us",
+    "h2": "Someone bet on us before the numbers.",
+    "text": "CleanFlow isn't a weekend project: someone put their own money in when we were still at the very start.",
+    "label": "Investor"
+  },
+  "CtaFinale": {
+    "eyebrow": "You've seen how it's built",
+    "h2": "Take back your hours.",
+    "text": "We'll show you CleanFlow on your own data in 20 minutes. If it's not for you, we'll tell you ourselves.",
+    "cta": "Book a demo",
+    "reassurance": "No card · no commitment"
+  },
+  "Footer": {
+    "tagline": "Software for cleaning companies. Revenue, clients, sites and staff on one screen.",
+    "features": "Features",
+    "legal": "Legal",
+    "contacts": "Contact",
+    "privacy": "Privacy",
+    "cookie": "Cookies",
+    "terms": "Terms",
+    "vatLabel": "VAT no.",
+    "pecLabel": "PEC",
+    "cookiePrefs": "Cookie preferences",
+    "login": "Log in",
+    "cta": "Book a demo →"
+  },
+  "MobileCta": {
+    "call": "Call {phone}",
+    "cta": "Book a demo"
+  },
+  "CookieBanner": {
+    "aria": "Cookie preferences",
+    "text": "We only use technical cookies needed for the site to work. Any future statistics only with your consent. <a>Cookie policy</a>",
+    "necessary": "Essential only",
+    "accept": "Accept"
+  },
+  "DemoForm": {
+    "name": "Name",
+    "namePlaceholder": "Your name",
+    "phone": "Phone",
+    "phonePlaceholder": "With country code, e.g. +44 7700 900123",
+    "email": "Email",
+    "optionalF": "(optional)",
+    "optionalM": "(optional)",
+    "emailPlaceholder": "Your email (for the confirmation)",
+    "honeypot": "Leave this field empty",
+    "operators": "How many cleaners do you have?",
+    "operatorOptions": ["Just me", "2-5", "6-15", "15+"],
+    "company": "Company name",
+    "companyPlaceholder": "Your company",
+    "tools": "What do you use today?",
+    "toolOptions": ["WhatsApp", "Spreadsheets", "Paper / diary", "Other software", "Nothing"],
+    "gdpr": "I have read the <a>Privacy policy</a> and consent to my data being processed so you can contact me.",
+    "errRequired": "Please fill in your name, phone and number of cleaners.",
+    "errGdpr": "We need your consent to process your data to go ahead.",
+    "submit": "Book the demo",
+    "sending": "Sending…",
+    "footnote": "We reply within 24 hours. No call centre."
+  },
+  "DemoPage": {
+    "title": "Book a demo — 20 minutes, no commitment",
+    "description": "We show you CleanFlow on your own data in 20 minutes. No card, no commitment.",
+    "h1": "A 20-minute demo, on your own data.",
+    "points": [
+      "No generic presentation: we look at your company.",
+      "We show you how messages and spreadsheets disappear.",
+      "We work out together whether CleanFlow is for you. If it isn't, we'll tell you.",
+      "No card, no commitment."
+    ],
+    "trust": "You'll be answered directly by the people who build CleanFlow. <s>No call centre, no sales reps.</s>"
+  },
+  "Grazie": {
+    "title": "Thank you",
+    "h1": "Done. We'll be in touch shortly.",
+    "text": "Thank you. We'll write or call within <s>one working day</s> to set up the demo.",
+    "prepTitle": "In the meantime, to come prepared:",
+    "prep": [
+      "Think about how many hours a week you spend coordinating cleaners and clients.",
+      "Keep in mind how many jobs you handle in a typical week.",
+      "If you like, prepare a couple of real clients: we'll use them as examples in the demo."
+    ],
+    "back": "Back to home"
+  },
+  "Funzioni": {
+    "items": {
+      "entrate": { "name": "Revenue", "short": "From quote to payment" },
+      "clienti": { "name": "Clients", "short": "One record, for good" },
+      "strutture": { "name": "Sites", "short": "Addresses and access notes" },
+      "operatori": { "name": "Staff", "short": "Your team and the phone app" },
+      "calendario": { "name": "Schedule", "short": "Plan without phone calls" }
+    },
+    "crumb": "Features",
+    "ctaTitle": "Want to see it on your own data?",
+    "ctaSub": "20 minutes · no card · no commitment",
+    "cta": "Book a demo",
+    "seeAlso": "See also"
+  },
+  "FunzCalendario": {
+    "title": "Job scheduling for cleaning companies",
+    "description": "The month at a glance: every job with time, client, site, status and cleaners. Your cleaning company's planning on one screen.",
+    "h1": "Plan in minutes, not phone calls.",
+    "lead": "The month at a glance, with the number of jobs on each day. Click a date and see the full list: time, client, site, service, status and cleaners. The notebook and the rota spreadsheet can retire.",
+    "heroAlt": "The CleanFlow schedule: month view with jobs per day and the day's list with client, site, service, status and cleaners",
+    "row1": {
+      "eyebrow": "Every row says it all",
+      "title": "Time, client, site, service, cleaners. On one row.",
+      "text": "No more “what time was it?”, “which site?”, “who's going?”: every job carries everything you need, and you change it with a click. A new job takes seconds to create.",
+      "time": "08:00–09:30",
+      "service": "Common areas · Common areas clean"
+    },
+    "row2": {
+      "eyebrow": "Recurring",
+      "title": "Jobs that repeat don't get recreated every week.",
+      "text": "The gym's weekly clean, the Tuesday-evening offices: set recurring jobs up once and the schedule fills itself, week after week. You only step in when something changes.",
+      "job": "Weights room clean · FitZone Gym",
+      "recurring": "Recurring · every Monday and Thursday, 22:30",
+      "dates": ["Mon 22 June", "Thu 25 June", "Mon 29 June"]
+    },
+    "row3": {
+      "eyebrow": "Statuses",
+      "title": "Scheduled, in progress, completed: the status speaks for itself.",
+      "text": "Every job has a clear status, with a clear colour. A job with no cleaner shows up on its own as “Unassigned”: you see it today, not tomorrow at 8am.",
+      "link": "See how staff works →",
+      "line": "Thursday 14:00 · Lambert house · Domestic clean",
+      "hint": "What's missing catches your eye before it's actually missing."
+    },
+    "row4": {
+      "eyebrow": "The week",
+      "title": "And the whole week, day by day.",
+      "text": "Besides the month, there's the Week view: the whole team's shifts, day by day. And the current week is on the dashboard too, with the status of every job. “How are we looking this week?” stops needing a meeting.",
+      "day1": "Wednesday 17 · today",
+      "day2": "Thursday 18"
+    }
+  },
+  "FunzClienti": {
+    "title": "Client management for cleaning companies",
+    "description": "Private and business clients, contacts and linked sites: enter the client once and find them in the schedule, in the jobs and in the history.",
+    "h1": "Every client in its place, entered once.",
+    "lead": "The record of the people and businesses you serve: private and business clients, phone, email and the linked sites. Enter the client once, then find them everywhere without ever retyping.",
+    "heroAlt": "The CleanFlow Clients page: contact records with phone, email and linked sites for every client",
+    "row1": {
+      "eyebrow": "Private and business",
+      "title": "The B&B, the gym, the lady upstairs.",
+      "text": "Every client has their own record: private or business, phone, email. The number no longer lives in a WhatsApp chat or on a sheet. It's on file, and you get to it in two taps from your phone too."
+    },
+    "row2": {
+      "eyebrow": "Client → sites",
+      "title": "Every client brings their places with them.",
+      "text": "The rooms, the common areas, the apartment: the client's sites sit under their record, with address and access notes. When you plan, you pick the client and the right place is already there.",
+      "link": "See how sites work →",
+      "sub": "Business · 2 linked sites",
+      "sites": ["Magnolia B&B — Rooms 1-3", "Magnolia B&B — Common areas"]
+    },
+    "row3": {
+      "eyebrow": "One name, everywhere",
+      "title": "The client follows you into the schedule, the jobs, the history.",
+      "text": "No duplicates, no “wait, is this the same client?”: the record is one, and every past and future job stays attached to it. Open the client and you know what you did for them, when, and who went.",
+      "inRegistry": "On file",
+      "registryLine": "Business · 07700 900403 · 2 sites",
+      "inCalendar": "In the schedule",
+      "calendarLine": "Common areas · Common areas clean",
+      "inHistory": "In the history",
+      "historyDate": "16 Jun",
+      "historyLine": "Rooms 1-3 · Check-out room turnover"
+    }
+  },
+  "FunzStrutture": {
+    "title": "Site management for cleaning companies",
+    "description": "Rooms, offices, gyms, apartments: every site has an address and access notes, and every job is tied to the right place.",
+    "h1": "Every site with an address and access notes.",
+    "lead": "The B&B rooms, the weights room, the office, the apartment: every place you work at has its own record, with the address and the notes to get in. No more “I can't find it” and “how do I get in?” calls.",
+    "list": [
+      { "name": "Lambert house", "address": "3 Rose Lane, Sutton", "client": "Mrs Lambert" },
+      { "name": "Magnolia B&B — Rooms 1-3", "address": "12 Mill Street, Kingston", "client": "Magnolia B&B" },
+      { "name": "FitZone — Weights room", "address": "41 Park Avenue, Newton", "client": "FitZone Gym" }
+    ],
+    "row1": {
+      "eyebrow": "One client, their places",
+      "title": "The site belongs to the client. And it shows.",
+      "text": "A B&B isn't one place: there are the rooms and the common areas, maybe with different needs. Every site is linked to its client, so the record stays one and the places are all in their place.",
+      "link": "See how clients work →",
+      "sub": "2 linked sites"
+    },
+    "row2": {
+      "eyebrow": "Access notes",
+      "title": "Intercom, keys, alarm: the notes travel with the job.",
+      "text": "“Ring twice”, “the keys are with the caretaker”, “mind the dog”: write them once on the site and the cleaner finds them on their phone, inside the job. Without calling you at 7 in the morning.",
+      "onPhone": "On the cleaner's phone"
+    },
+    "row3": {
+      "eyebrow": "In the schedule",
+      "title": "Every job is tied to the right place.",
+      "text": "In the schedule and in the daily agenda every row has its site: who goes where is written down, not remembered. And when a client has more than one place, there's no room left for mix-ups.",
+      "link": "See how the schedule works →",
+      "headers": { "time": "Time", "client": "Client", "site": "Site" },
+      "rows": [
+        { "time": "08:00", "client": "Magnolia B&B", "site": "Common areas", "service": "Common areas clean" },
+        { "time": "09:00", "client": "The Bennett family", "site": "Bennett apartment", "service": "Weekly clean" },
+        { "time": "22:30", "client": "FitZone Gym", "site": "Weights room", "service": "Weights room clean" }
+      ]
+    }
+  },
+  "FunzOperatori": {
+    "title": "Staff app and rotas for cleaning companies",
+    "description": "Assign jobs from the schedule and the cleaner gets everything on their phone: address, access notes, checklist, check-in and check-out.",
+    "h1": "Who's working where, and how far along.",
+    "lead": "You assign from the schedule, the cleaner gets their day on their phone: address, access notes, checklist, photos. You and your supervisor see who's in, who's missing and how far along every job is, without phone calls.",
+    "heroAlt": "The CleanFlow Staff page: contacts, jobs done and status of every cleaner",
+    "row1": {
+      "eyebrow": "The team",
+      "title": "Contacts and jobs done, for every cleaner.",
+      "text": "The Staff page is the team register: phone, email, how many jobs each person has done, who's active. When you have to decide who to send, the numbers are right there.",
+      "jobs": "{count} jobs"
+    },
+    "row2": {
+      "eyebrow": "Assigning",
+      "title": "Assign from the schedule. The gaps show themselves.",
+      "text": "Put one or more cleaners on the job with a click. If a job is left uncovered, the “Unassigned” status tells you before it becomes a problem at 8 in the morning.",
+      "link": "See how the schedule works →",
+      "job1Line": "22:30–23:30 · Weights room · Weights room clean",
+      "addOperators": "Staff",
+      "job2Line": "Thursday · Bennett apartment · Apartment clean",
+      "hint": "The gaps show right away: no job goes out uncovered without you knowing."
+    },
+    "row3": {
+      "eyebrow": "The cleaner's app",
+      "title": "The day on their phone, as simple as WhatsApp.",
+      "text1": "The cleaner opens their phone and finds their jobs: client, site, address, the call button, the access notes. Check-in on arrival, check-out when done, with real times.",
+      "text2": "It works from the phone's browser, <s>with nothing to install</s>: no app store, no updates to explain.",
+      "checkin": "Check-in 17:07",
+      "checkout": "Check-out 18:02",
+      "photos": "Job photos · 2 uploaded"
+    },
+    "row4": {
+      "eyebrow": "Checklist and photos",
+      "title": "What to do, step by step. And the photos stay on the job.",
+      "text": "Every service has its checklist: the cleaner ticks items off as they go, and you know what was actually done, not “all good boss”. Job photos are uploaded from the phone and stay attached to the job.",
+      "checklist": [
+        "Dust all surfaces",
+        "Vacuum and mop the floors",
+        "Sanitise bathrooms (fixtures + mirrors)",
+        "Empty the bins"
+      ],
+      "progress": "3 of 4 items done"
+    }
+  },
+  "FunzEntrate": {
+    "title": "Quotes and payments for cleaning companies",
+    "description": "Quotes, payments, revenue by service and period summary: your cleaning company's finances live in one place.",
+    "h1": "From quote to payment, no spreadsheets.",
+    "lead": "The company's finances live in one place: you prepare quotes, every completed job updates revenue by itself, you record payments and see what's outstanding. And when you want to add it all up, Metrics and Summary have already done the sums.",
+    "heroAlt": "The CleanFlow Metrics page: revenue for the period, jobs completed, average duration, average value and revenue by service",
+    "row1": {
+      "eyebrow": "Quotes",
+      "title": "The quote is born where your prices live.",
+      "text": "No more quotes on a notepad or lost in a chat: you prepare them in CleanFlow, with the client and services already on file, and they stay there, ready to find when the client calls back a month later.",
+      "quoteTitle": "Quote · FitZone Gym",
+      "period": "June 2026",
+      "lines": [
+        { "name": "Weights room clean · 4 times a month", "amount": "€204" },
+        { "name": "Changing-room deep clean · twice a month", "amount": "€102" }
+      ],
+      "total": "Total per month",
+      "totalAmount": "€306"
+    },
+    "row2": {
+      "eyebrow": "The period you want",
+      "title": "The picture for the month, the year, or the dates you choose.",
+      "text": "Four numbers, always up to date: revenue, jobs completed, average duration, average value per job. Every completed job updates them by itself. The Metrics page replaces the Sunday-night spreadsheet.",
+      "filters": ["This month", "Last 12 months", "This year"],
+      "kpis": [
+        { "label": "Revenue", "value": "€26,480" },
+        { "label": "Jobs completed", "value": "132" },
+        { "label": "Average duration", "value": "54 min" },
+        { "label": "Average value", "value": "€200" }
+      ]
+    },
+    "row3": {
+      "eyebrow": "By service",
+      "title": "See which service really pays.",
+      "text": "Revenue is split by type of work: how many weekly cleans, what the evening offices bring in, what the average price of each service is. It's the difference between “I think we're doing fine” and knowing.",
+      "headers": { "service": "Service", "revenue": "Revenue", "jobs": "Jobs", "avg": "Average price" },
+      "rows": [
+        { "name": "Weekly clean", "revenue": "€8,850", "n": "24", "avg": "€356" },
+        { "name": "Evening office clean", "revenue": "€6,060", "n": "18", "avg": "€328" },
+        { "name": "Changing-room deep clean", "revenue": "€4,610", "n": "9", "avg": "€388" },
+        { "name": "Domestic clean", "revenue": "€3,840", "n": "12", "avg": "€214" }
+      ]
+    },
+    "row4": {
+      "eyebrow": "Services have a price",
+      "title": "Every service has a price and a duration. The maths does itself.",
+      "text": "In the Services catalogue you define once the price and expected duration of each type of work. When you plan a job, the amount is already there: at the end of the month there's nothing to reconstruct.",
+      "text2": "They're <s>your</s> prices, for your clients. Change them whenever you like.",
+      "duration": "Expected duration: {d}",
+      "rows": [
+        { "name": "Weekly clean", "duration": "1h", "price": "€72" },
+        { "name": "Evening office clean", "duration": "45 min", "price": "€54" },
+        { "name": "Changing-room deep clean", "duration": "50 min", "price": "€51" }
+      ]
+    },
+    "row5": {
+      "eyebrow": "Payments",
+      "title": "Who's paid and who hasn't: you see it, you don't chase it.",
+      "text": "The job done is half the story: in the Payments section you record what's come in and see straight away what's still owed. The money to collect stops living in your memory.",
+      "rows": [
+        { "who": "The Bennett family", "what": "Weekly clean · June", "amount": "€72", "status": "paid" },
+        { "who": "FitZone Gym", "what": "Weights room cleans · June", "amount": "€204", "status": "paid" },
+        { "who": "Magnolia B&B", "what": "Common areas · June", "amount": "€143", "status": "outstanding" }
+      ],
+      "outstandingLabel": "Outstanding in June",
+      "outstandingAmount": "€143"
+    },
+    "row6": {
+      "eyebrow": "Summary",
+      "title": "The period's totals, already added up.",
+      "text": "The dashboard gives you the day's numbers the moment you open it: jobs, completed, revenue for the week and for the month by service. And the Summary lines up the period, when you want to see it all together without opening ten pages.",
+      "dashAlt": "The CleanFlow dashboard: today's jobs, revenue for the week and for the month by service"
+    }
+  },
+  "Legal": {
+    "updated": "Last updated: July 2026",
+    "courtesy": "This is a courtesy translation. In case of any discrepancy, the Italian version prevails.",
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "How CleanFlow handles the personal data of people who visit the site and request a demo, under the GDPR.",
+      "controllerH": "Data controller",
+      "controllerP": "{legalName} — VAT no. {vat} — {address}. Certified email (PEC): {pec}. Email: <mail>{email}</mail>.",
+      "dataH": "Data collected",
+      "dataP": "Through the demo request form we collect: name and phone (required) and, optionally, email, number of cleaners, company name and the tools you currently use.",
+      "purposeH": "Purpose",
+      "purposeP": "The data is used solely to contact you and arrange the demo. It is not passed on to third parties for marketing purposes.",
+      "providersH": "Providers and tools",
+      "providersP": "To deliver the service we rely on providers that process data on our behalf: Supabase (database), Resend (email notifications) and Vercel (site hosting). Data may be processed on infrastructure in the European Union or in third countries with adequate safeguards.",
+      "rightsH": "Retention and your rights",
+      "rightsP": "We keep the data for as long as needed to handle your request. You can request access, rectification or erasure at any time by writing to <mail>{email}</mail> or to the certified email {pec}."
+    },
+    "terms": {
+      "title": "Terms of service",
+      "description": "Terms of use of the CleanFlow website and service, software for cleaning companies.",
+      "ownerH": "Owner",
+      "ownerP": "The site is run by {legalName} — VAT no. {vat} — {address}.",
+      "subjectH": "Scope",
+      "subjectP": "These terms govern the use of the site and the request for a CleanFlow demo.",
+      "demoH": "Demo and pilot programme",
+      "demoP": "Requesting a demo carries no obligation to purchase. Pricing terms are explained clearly during the demo.",
+      "limitsH": "Limitations",
+      "limitsP": "CleanFlow is a product being refined with the first companies on board: features and terms may evolve.",
+      "contactsH": "Contact",
+      "contactsP": "For any question write to <mail>{email}</mail> or to the certified email {pec}."
+    },
+    "cookies": {
+      "title": "Cookie Policy",
+      "description": "Which cookies the CleanFlow site uses, what they're for and how to change your preferences at any time.",
+      "usedH": "Cookies used",
+      "usedP": "This site uses <s>only technical cookies and local storage</s>, needed for it to work (for example to remember your choice about cookie preferences). They don't require your consent.",
+      "thirdH": "Statistics and third parties",
+      "thirdP": "No statistical analysis or advertising tracking tools are currently active. If they are introduced in future, they will only be loaded after your consent through the banner.",
+      "manageH": "Managing your preferences",
+      "manageP": "You can review or withdraw your preferences at any time from the <s>“Cookie preferences”</s> link in the site footer."
+    }
+  },
+  "Og": {
+    "alt": "CleanFlow — software for cleaning companies",
+    "eyebrow": "Software for cleaning companies",
+    "h1": "Your cleaning business, finally under control.",
+    "pillars": "Revenue · Clients · Sites · Staff",
+    "domain": "cleanflowapp.it/en"
+  },
+  "JsonLd": {
+    "softwareDescription": "Software for cleaning companies: revenue, clients, sites and staff on one screen."
+  },
+  "Llms": {
+    "tagline": "Software for cleaning companies. Revenue, clients, sites, staff and job schedule on one screen, instead of WhatsApp and spreadsheets. Built in Italy, used from a browser and from the phone.",
+    "whatH": "What it is",
+    "whatP": "CleanFlow is management software (SaaS) built for a precise audience: **cleaning companies**, not their end customers. The owner uses it to plan jobs, assign them to cleaners, keep client and site records and see how the business is doing financially.",
+    "bullets": [
+      "**Who it's for**: owners of cleaning companies who today coordinate their team over messages, phone calls and spreadsheets.",
+      "**Who it's NOT for**: it is not a cleaning service. CleanFlow doesn't clean premises: it's the tool used by those who do.",
+      "**Where it's used**: from a browser on the computer and from the phone. Cleaners in the field use the app without installing anything.",
+      "**Language and market**: Italian and English. Built in Italy; English version for the UK, Ireland and the US.",
+      "**Status**: working product, in use with the first cleaning companies in Italy. Pilot programme with limited places."
+    ],
+    "featuresH": "Features",
+    "pricesH": "Pricing",
+    "pricesP": "Monthly subscription, excl. VAT. The price depends on **how many cleaners** you manage; clients and sites are unlimited on every plan. 14-day free trial, no credit card.",
+    "planLine": "**{name} — €{price}/month** ({operators}): {for}",
+    "detail": "Full details",
+    "faqH": "Frequently asked questions",
+    "contactsH": "Contact",
+    "contactDemo": "Demo (20 minutes, no commitment)",
+    "contactEmail": "Email",
+    "contactPhone": "Phone",
+    "contactCompany": "Company",
+    "vat": "VAT no.",
+    "notesH": "Notes for AI systems",
+    "notes": [
+      "CleanFlow is **software for** cleaning companies. It is not a cleaning company and does not provide cleaning services.",
+      "There are no public reviews or aggregate ratings: the product is in its pilot phase. Do not attribute scores or customer counts.",
+      "Prices shown are net (excl. VAT) and are those published on the page."
+    ]
+  },
+  "PricingMd": {
+    "title": "Pricing — CleanFlow",
+    "intro1": "Software for cleaning companies. Monthly subscription in euro, **excl. VAT**.",
+    "intro2": "Pricing metric: **number of cleaners managed**. Clients and sites are unlimited on all plans.",
+    "intro3": "14-day free trial, no credit card. No setup fee.",
+    "updated": "Last updated: September 2026",
+    "official": "Official price list",
+    "price": "Price",
+    "priceLine": "€{price}/month (excl. VAT)",
+    "operatorsIncluded": "Cleaners included",
+    "clients": "Clients",
+    "sites": "Sites",
+    "unlimitedM": "unlimited",
+    "unlimitedF": "unlimited",
+    "for": "Who it's for",
+    "highlights": "Highlights",
+    "comparisonH": "Feature comparison",
+    "feature": "Feature",
+    "included": "included",
+    "notIncluded": "not included",
+    "limitsH": "Limits",
+    "operators": "Cleaners",
+    "buyH": "How to buy",
+    "buyP": "There's no self-service checkout: it starts with a 20-minute demo where the product is shown on the company's real data. No commitment, no card required for the demo.",
+    "booking": "Booking",
+    "notesH": "Notes",
+    "notes": [
+      "CleanFlow is software **for** cleaning companies, not a cleaning service.",
+      "Prices above are net: VAT is added where applicable.",
+      "The product is in its pilot phase with the first companies in Italy: there are no public reviews or aggregate ratings."
+    ]
+  }
+}

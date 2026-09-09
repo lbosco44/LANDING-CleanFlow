@@ -1,8 +1,9 @@
 "use client";
 
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Cookie } from "lucide-react";
 
+import { Link } from "@/i18n/navigation";
 import { useConsent, setConsent } from "@/lib/use-consent";
 
 // Banner cookie GDPR. Il sito usa oggi SOLO cookie tecnici, quindi il banner è
@@ -10,13 +11,14 @@ import { useConsent, setConsent } from "@/lib/use-consent";
 // si può caricare solo quando il valore salvato è "all"). Riapribile dal footer.
 // Stato letto da useConsent (external store): aperto ⇔ nessuna scelta salvata.
 export function CookieBanner() {
+  const t = useTranslations("CookieBanner");
   const consent = useConsent();
   if (consent !== null) return null;
 
   return (
     <div
       role="dialog"
-      aria-label="Preferenze cookie"
+      aria-label={t("aria")}
       aria-live="polite"
       className="animate-rise fixed inset-x-0 bottom-0 z-[70] px-3 pb-3 sm:px-6 sm:pb-6"
     >
@@ -28,14 +30,16 @@ export function CookieBanner() {
             aria-hidden
           />
           <p className="text-[13px] leading-snug text-muted-foreground sm:text-sm sm:leading-relaxed">
-            Usiamo solo cookie tecnici necessari al funzionamento del sito.
-            Eventuali statistiche future solo col tuo consenso.{" "}
-            <Link
-              href="/cookie"
-              className="font-medium text-accent-ink underline underline-offset-2"
-            >
-              Cookie policy
-            </Link>
+            {t.rich("text", {
+              a: (chunks) => (
+                <Link
+                  href="/cookie"
+                  className="font-medium text-accent-ink underline underline-offset-2"
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
           </p>
         </div>
         <div className="flex shrink-0 gap-2.5 sm:gap-3">
@@ -44,14 +48,14 @@ export function CookieBanner() {
             onClick={() => setConsent("necessary")}
             className="h-9 flex-1 rounded-lg border border-border px-3.5 text-[13px] font-semibold text-primary transition-colors duration-150 hover:bg-secondary sm:h-10 sm:flex-none sm:px-4 sm:text-sm"
           >
-            Solo necessari
+            {t("necessary")}
           </button>
           <button
             type="button"
             onClick={() => setConsent("all")}
             className="h-9 flex-1 rounded-lg bg-accent px-3.5 text-[13px] font-semibold text-accent-foreground shadow-sm transition-colors duration-150 hover:bg-accent-hover sm:h-10 sm:flex-none sm:px-4 sm:text-sm"
           >
-            Accetta
+            {t("accept")}
           </button>
         </div>
       </div>

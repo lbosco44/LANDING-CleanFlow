@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useLocale, useTranslations } from "next-intl";
 import { Phone } from "lucide-react";
 
+import { Link, usePathname } from "@/i18n/navigation";
 import { COMPANY } from "@/lib/site";
 import { useConsent } from "@/lib/use-consent";
 
@@ -12,9 +12,13 @@ import { useConsent } from "@/lib/use-consent";
 // Compare dopo un po' di scroll (non copre l'hero) e mai su /demo o /grazie.
 // Resta nascosta finché il banner cookie è aperto, per non sovrapporsi
 // (consenso letto dallo stesso external store del banner).
-const HIDDEN_ON = ["/demo", "/grazie"];
+// usePathname di next-intl restituisce il percorso INTERNO ("/grazie" anche
+// su /en/thank-you), quindi il confronto vale in entrambe le lingue.
+const HIDDEN_ON: string[] = ["/demo", "/grazie"];
 
 export function MobileCta() {
+  const t = useTranslations("MobileCta");
+  const locale = useLocale();
   const pathname = usePathname();
   const consent = useConsent();
   const [scrolled, setScrolled] = useState(false);
@@ -38,7 +42,9 @@ export function MobileCta() {
       <div className="flex gap-2.5 border-t border-border bg-background/90 p-3 backdrop-blur-md">
         <a
           href={COMPANY.phoneHref}
-          aria-label={`Chiama ${COMPANY.phoneDisplay}`}
+          aria-label={t("call", {
+            phone: locale === "it" ? COMPANY.phoneDisplay : COMPANY.phoneIntl,
+          })}
           className="flex size-12 shrink-0 items-center justify-center rounded-lg border border-border bg-card text-primary transition-colors active:bg-secondary"
         >
           <Phone className="size-5" />
@@ -47,7 +53,7 @@ export function MobileCta() {
           href="/demo"
           className="flex h-12 flex-1 items-center justify-center rounded-lg bg-accent text-[15px] font-semibold text-accent-foreground shadow-sm transition-colors active:bg-accent-hover"
         >
-          Prenota una demo
+          {t("cta")}
         </Link>
       </div>
     </div>

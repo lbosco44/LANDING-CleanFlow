@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import {
   ArrowRight,
   Building2,
@@ -7,6 +7,8 @@ import {
   Check,
 } from "lucide-react";
 
+import { Link } from "@/i18n/navigation";
+import { funzioneHref, type FunzioneSlug } from "@/lib/funzioni";
 import { cn } from "@/lib/utils";
 
 // v2 — Cuore della pagina: i 4 pilastri del controllo (Entrate, Clienti,
@@ -14,26 +16,22 @@ import { cn } from "@/lib/utils";
 // dell'app RICOSTRUITO in HTML: sempre leggibile, sempre on-brand — mai
 // screenshot compressi, mai fake browser chrome (Brief/DESIGN.md v2).
 // Assorbe le vecchie sezioni Svolta + Moduli; i benefici per ruolo vivono nel copy.
+// Testi e dati dimostrativi dei widget vengono dal dizionario della lingua.
 
 function WidgetEntrate() {
-  const SERVIZI = [
-    { nome: "Pulizia settimanale", importo: "8.850", w: "100%" },
-    { nome: "Uffici serali", importo: "6.060", w: "68%" },
-    { nome: "Sanificazioni", importo: "4.610", w: "52%" },
-  ];
+  const w = useTranslations("Pilastri.wEntrate");
+  const kpis = w.raw("kpis") as { label: string; value: string }[];
+  const servizi = w.raw("services") as { name: string; amount: string }[];
+  const widths = ["100%", "68%", "52%"];
   return (
     <div className="space-y-4">
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
-        {[
-          { label: "Fatturato del mese", value: "€ 26.480", wide: true },
-          { label: "Interventi completati", value: "132", wide: false },
-          { label: "Valore medio", value: "€ 200", wide: false },
-        ].map((k) => (
+        {kpis.map((k, i) => (
           <div
             key={k.label}
             className={cn(
               "rounded-xl bg-card p-3.5 shadow-(--shadow-soft) sm:p-4",
-              k.wide && "col-span-2 sm:col-span-1"
+              i === 0 && "col-span-2 sm:col-span-1"
             )}
           >
             <p className="text-[11px] font-medium leading-tight text-muted-foreground sm:text-xs">
@@ -47,22 +45,22 @@ function WidgetEntrate() {
       </div>
       <div className="rounded-xl bg-card p-4 shadow-(--shadow-soft) sm:p-5">
         <p className="text-xs font-semibold text-muted-foreground">
-          Per servizio
+          {w("perService")}
         </p>
         <ul className="mt-3 space-y-3">
-          {SERVIZI.map((s) => (
-            <li key={s.nome} className="flex items-center gap-3">
+          {servizi.map((s, i) => (
+            <li key={s.name} className="flex items-center gap-3">
               <span className="w-32 shrink-0 truncate text-sm text-foreground sm:w-36">
-                {s.nome}
+                {s.name}
               </span>
               <span className="h-2 flex-1 overflow-hidden rounded-full bg-secondary">
                 <span
                   className="block h-full rounded-full bg-accent"
-                  style={{ width: s.w }}
+                  style={{ width: widths[i] }}
                 />
               </span>
               <span className="w-16 shrink-0 text-right font-mono text-sm text-primary tabular">
-                € {s.importo}
+                {s.amount}
               </span>
             </li>
           ))}
@@ -73,19 +71,19 @@ function WidgetEntrate() {
 }
 
 function WidgetClienti() {
+  const w = useTranslations("Pilastri.wClienti");
+  const d = useTranslations("Demo");
   const CLIENTI = [
-    { nome: "B&B Le Magnolie", tipo: "Azienda", tel: "349 123 4003", str: 2 },
-    { nome: "Famiglia Conti", tipo: "Privato", tel: "348 123 4001", str: 1 },
-    { nome: "Palestra FitZone", tipo: "Azienda", tel: "02 555 0005", str: 2 },
-    { nome: "Studio Legale Marino", tipo: "Azienda", tel: "02 555 0002", str: 1 },
+    { nome: d("magnolie"), tipo: d("typeCompany"), tel: w("tel1"), str: 2 },
+    { nome: d("conti"), tipo: d("typePrivate"), tel: w("tel2"), str: 1 },
+    { nome: d("fitzone"), tipo: d("typeCompany"), tel: w("tel3"), str: 2 },
+    { nome: d("marino"), tipo: d("typeCompany"), tel: w("tel4"), str: 1 },
   ];
   return (
     <div className="rounded-xl bg-card shadow-(--shadow-soft)">
       <div className="flex items-baseline justify-between border-b border-border px-5 py-3.5">
-        <p className="font-display text-sm font-semibold">Clienti</p>
-        <p className="font-mono text-xs text-muted-foreground">
-          6 in anagrafica
-        </p>
+        <p className="font-display text-sm font-semibold">{w("title")}</p>
+        <p className="font-mono text-xs text-muted-foreground">{w("count")}</p>
       </div>
       <ul className="divide-y divide-border">
         {CLIENTI.map((c) => (
@@ -94,7 +92,7 @@ function WidgetClienti() {
               {c.nome
                 .split(" ")
                 .slice(0, 2)
-                .map((w) => w[0])
+                .map((word) => word[0])
                 .join("")}
             </span>
             <span className="min-w-0 flex-1">
@@ -109,7 +107,7 @@ function WidgetClienti() {
               {c.tel}
             </span>
             <span className="shrink-0 rounded-full bg-secondary px-2.5 py-1 text-xs font-semibold text-secondary-foreground tabular">
-              {c.str} {c.str === 1 ? "struttura" : "strutture"}
+              {d("sites", { count: c.str })}
             </span>
           </li>
         ))}
@@ -119,12 +117,13 @@ function WidgetClienti() {
 }
 
 function WidgetStrutture() {
+  const d = useTranslations("Demo");
   return (
     <div className="relative">
       {/* Card retrostante: l'archivio ordinato che "spunta" */}
       <div className="absolute -top-4 right-3 left-8 rounded-xl bg-card/70 px-5 py-3 shadow-(--shadow-soft)">
         <p className="truncate text-sm font-semibold text-muted-foreground">
-          B&amp;B Le Magnolie — Camere 1-3
+          {d("magnolie")} — {d("rooms")}
         </p>
       </div>
       <div className="relative rounded-xl bg-card p-5 shadow-(--shadow-soft) sm:p-6">
@@ -134,24 +133,24 @@ function WidgetStrutture() {
           </span>
           <div className="min-w-0">
             <p className="font-display text-base font-semibold">
-              Villetta Lombardi
+              {d("lombardiHouse")}
             </p>
             <p className="mt-0.5 flex items-center gap-1.5 text-sm text-muted-foreground">
               <MapPin className="size-3.5 shrink-0" />
-              Via delle Rose 3, Sesto San Giovanni
+              {d("lombardiAddress")}
             </p>
           </div>
           <span className="ml-auto hidden shrink-0 rounded-full bg-secondary px-2.5 py-1 text-xs font-semibold text-secondary-foreground sm:block">
-            Sig.ra Lombardi
+            {d("lombardi")}
           </span>
         </div>
         <div className="mt-4 rounded-lg bg-accent-soft p-4">
           <p className="flex items-center gap-2 text-xs font-semibold text-accent-ink">
             <KeyRound className="size-3.5" />
-            Note d&apos;accesso
+            {d("accessNotes")}
           </p>
           <p className="mt-1.5 text-sm leading-relaxed text-foreground">
-            Suonare due volte e attendere. Cane piccolo in giardino, innocuo.
+            {d("accessText")}
           </p>
         </div>
       </div>
@@ -160,61 +159,62 @@ function WidgetStrutture() {
 }
 
 function WidgetOperatori() {
-  const CHECKLIST = [
-    { voce: "Spolverare le superfici", fatta: true },
-    { voce: "Aspirare e lavare i pavimenti", fatta: false },
-    { voce: "Sanificare i bagni", fatta: false },
-  ];
+  const w = useTranslations("Pilastri.wOperatori");
+  const d = useTranslations("Demo");
+  const voci = w.raw("checklist") as string[];
+  const fatte = [true, false, false];
   return (
     <div className="flex flex-col items-center gap-5 sm:flex-row sm:justify-center sm:gap-6">
       {/* Telefono dell'operatore, ricostruito */}
       <div className="w-[240px] shrink-0 rounded-[2rem] bg-foreground p-2 shadow-(--shadow-widget)">
         <div className="rounded-[1.55rem] bg-card px-4 py-5">
-          <p className="text-xs text-muted-foreground">Ciao,</p>
-          <p className="font-display text-lg font-bold leading-tight">Elena</p>
+          <p className="text-xs text-muted-foreground">{w("greeting")}</p>
+          <p className="font-display text-lg font-bold leading-tight">
+            {d("op1First")}
+          </p>
           <div className="mt-3 rounded-lg border border-border p-3">
             <span className="rounded-full bg-accent-soft px-2 py-0.5 text-[10px] font-semibold text-accent-ink">
-              Pulizia domestica
+              {d("domesticClean")}
             </span>
-            <p className="mt-2 text-sm font-semibold">Sig.ra Lombardi</p>
+            <p className="mt-2 text-sm font-semibold">{d("lombardi")}</p>
             <p className="text-xs text-muted-foreground">
-              Villetta Lombardi · Via delle Rose 3
+              {d("lombardiHouse")} · {d("lombardiStreet")}
             </p>
             <p className="mt-2 w-fit rounded bg-secondary px-2 py-1 font-mono text-[10px] font-medium text-secondary-foreground tabular">
-              Check-in 17:07
+              {w("checkin")}
             </p>
           </div>
           <ul className="mt-3 space-y-1.5">
-            {CHECKLIST.map((c) => (
+            {voci.map((voce, i) => (
               <li
-                key={c.voce}
+                key={voce}
                 className="flex items-center gap-2 rounded-md border border-border px-2.5 py-1.5"
               >
                 <span
                   className={cn(
                     "flex size-4 shrink-0 items-center justify-center rounded",
-                    c.fatta
+                    fatte[i]
                       ? "bg-accent text-accent-foreground"
                       : "border border-border bg-card"
                   )}
                 >
-                  {c.fatta && <Check className="size-3" />}
+                  {fatte[i] && <Check className="size-3" />}
                 </span>
                 <span
                   className={cn(
                     "text-[11px] leading-tight",
-                    c.fatta
+                    fatte[i]
                       ? "text-muted-foreground line-through"
                       : "text-foreground"
                   )}
                 >
-                  {c.voce}
+                  {voce}
                 </span>
               </li>
             ))}
           </ul>
           <p className="mt-2 text-[10px] text-muted-foreground">
-            1 di 3 voci completate
+            {w("progress")}
           </p>
         </div>
       </div>
@@ -224,17 +224,15 @@ function WidgetOperatori() {
         <div className="flex items-center gap-2.5 rounded-xl bg-card px-4 py-3 shadow-(--shadow-soft)">
           <span className="animate-live size-2 shrink-0 rounded-full bg-accent" />
           <div>
-            <p className="text-sm font-semibold leading-tight">Elena Bianchi</p>
-            <p className="text-xs text-muted-foreground">In servizio ora</p>
+            <p className="text-sm font-semibold leading-tight">{d("op1")}</p>
+            <p className="text-xs text-muted-foreground">{w("op1Status")}</p>
           </div>
         </div>
         <div className="flex items-center gap-2.5 rounded-xl bg-card px-4 py-3 shadow-(--shadow-soft)">
           <span className="size-2 shrink-0 rounded-full bg-border" />
           <div>
-            <p className="text-sm font-semibold leading-tight">Ahmed Haddad</p>
-            <p className="text-xs text-muted-foreground">
-              2 interventi oggi · alle 14:00
-            </p>
+            <p className="text-sm font-semibold leading-tight">{d("op2")}</p>
+            <p className="text-xs text-muted-foreground">{w("op2Status")}</p>
           </div>
         </div>
       </div>
@@ -242,50 +240,22 @@ function WidgetOperatori() {
   );
 }
 
-const PILASTRI = [
-  {
-    n: "01",
-    href: "/funzioni/entrate",
-    nome: "Entrate",
-    titolo: "Sai quanto entra, senza aprire Excel.",
-    testo:
-      "Il fatturato del mese, diviso per servizio, si aggiorna da solo a ogni intervento completato. E con preventivi e incassi nello stesso posto, sai anche cosa deve ancora entrare — smetti di chiedere «com'è andata?» a fine giornata.",
-    tile: "bg-tile-entrate",
-    widget: <WidgetEntrate />,
-  },
-  {
-    n: "02",
-    href: "/funzioni/clienti",
-    nome: "Clienti",
-    titolo: "Ogni cliente al suo posto, una volta sola.",
-    testo:
-      "Anagrafica, contatti e strutture collegate: inserisci il cliente una volta e lo ritrovi ovunque — nel calendario, negli interventi, nello storico dei lavori. Basta cercare numeri su WhatsApp.",
-    tile: "bg-tile-clienti",
-    widget: <WidgetClienti />,
-  },
-  {
-    n: "03",
-    href: "/funzioni/strutture",
-    nome: "Strutture",
-    titolo: "Ogni struttura con indirizzo e note d'accesso.",
-    testo:
-      "Le camere del B&B, la sala pesi, l'ufficio: ogni struttura porta con sé indirizzo e note d'accesso, e ogni intervento è legato al posto giusto. Fine delle chiamate «non trovo il posto» e «come si entra?».",
-    tile: "bg-tile-strutture",
-    widget: <WidgetStrutture />,
-  },
-  {
-    n: "04",
-    href: "/funzioni/operatori",
-    nome: "Operatori",
-    titolo: "Chi lavora dove, e a che punto è.",
-    testo:
-      "Assegni l'intervento dal calendario e l'operatore riceve tutto sul telefono: indirizzo, checklist passo-passo, foto da caricare, check-in e check-out. Tu e il team leader vedete chi c'è, chi manca e a che punto è ogni lavoro — senza una raffica di telefonate.",
-    tile: "bg-tile-operatori",
-    widget: <WidgetOperatori />,
-  },
+const PILASTRI: {
+  n: string;
+  key: Exclude<FunzioneSlug, "calendario">;
+  tile: string;
+  widget: React.ReactNode;
+}[] = [
+  { n: "01", key: "entrate", tile: "bg-tile-entrate", widget: <WidgetEntrate /> },
+  { n: "02", key: "clienti", tile: "bg-tile-clienti", widget: <WidgetClienti /> },
+  { n: "03", key: "strutture", tile: "bg-tile-strutture", widget: <WidgetStrutture /> },
+  { n: "04", key: "operatori", tile: "bg-tile-operatori", widget: <WidgetOperatori /> },
 ];
 
 export function Pilastri() {
+  const t = useTranslations("Pilastri");
+  const tf = useTranslations("Funzioni");
+
   return (
     <section
       id="pilastri"
@@ -293,14 +263,12 @@ export function Pilastri() {
     >
       <div className="mx-auto max-w-[69rem] px-5 sm:px-8">
         <div className="max-w-2xl">
-          <p className="eyebrow text-accent-ink">Il gestionale</p>
+          <p className="eyebrow text-accent-ink">{t("eyebrow")}</p>
           <h2 className="mt-3 font-display text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Tutto in un&apos;unica sala di controllo.
+            {t("h2")}
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-muted-foreground">
-            CleanFlow mette entrate, clienti, strutture e operatori nello
-            stesso posto. Tu vedi tutto dall&apos;alto. Chi è sul campo sa
-            esattamente cosa fare. Niente più passaparola.
+            {t("lead")}
           </p>
         </div>
 
@@ -320,19 +288,19 @@ export function Pilastri() {
                 )}
               >
                 <p className="eyebrow text-accent-ink">
-                  {p.n} — {p.nome}
+                  {p.n} — {tf(`items.${p.key}.name`)}
                 </p>
                 <h3 className="mt-3 font-display text-2xl font-bold tracking-tight text-foreground sm:text-[1.75rem] sm:leading-snug">
-                  {p.titolo}
+                  {t(`items.${p.key}.title`)}
                 </h3>
                 <p className="mt-3 text-base leading-relaxed text-muted-foreground sm:text-lg">
-                  {p.testo}
+                  {t(`items.${p.key}.text`)}
                 </p>
                 <Link
-                  href={p.href}
+                  href={funzioneHref(p.key)}
                   className="mt-4 inline-flex items-center gap-1.5 text-[15px] font-semibold text-accent-ink underline-offset-4 hover:underline"
                 >
-                  Vedi come funziona
+                  {t("more")}
                   <ArrowRight className="size-4" />
                 </Link>
               </div>

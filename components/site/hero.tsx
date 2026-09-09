@@ -1,7 +1,8 @@
 import type { CSSProperties } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { CircleCheckBig, Clock3, CalendarClock } from "lucide-react";
 
+import { Link } from "@/i18n/navigation";
 import { buttonVariants } from "@/components/ui/button";
 import { KpiCounter } from "@/components/site/kpi-counter";
 import { cn } from "@/lib/utils";
@@ -11,51 +12,42 @@ import { cn } from "@/lib/utils";
 // screenshot compresso ma un cluster di widget ricostruiti in HTML, leggibili,
 // che sborda dal pannello verso la tela. Unico momento animato della pagina.
 
-const AGENDA: {
-  ora: string;
-  cliente: string;
-  struttura: string;
-  stato: "done" | "current" | "next";
-}[] = [
-  {
-    ora: "09:00",
-    cliente: "B&B Le Magnolie",
-    struttura: "Camere 1-3",
-    stato: "done",
-  },
-  {
-    ora: "11:30",
-    cliente: "Palestra FitZone",
-    struttura: "Sala pesi",
-    stato: "current",
-  },
-  {
-    ora: "14:00",
-    cliente: "Studio Legale Marino",
-    struttura: "Uffici",
-    stato: "next",
-  },
-];
-
 const STATO_UI = {
   done: {
-    label: "Completato",
+    key: "completed",
     cls: "bg-accent-soft text-accent-ink",
     icon: CircleCheckBig,
   },
   current: {
-    label: "In corso",
+    key: "inProgress",
     cls: "bg-amber-100 text-amber-700",
     icon: Clock3,
   },
   next: {
-    label: "Programmato",
+    key: "scheduled",
     cls: "bg-secondary text-muted-foreground",
     icon: CalendarClock,
   },
 } as const;
 
 export function Hero() {
+  const t = useTranslations("Hero");
+  const d = useTranslations("Demo");
+  const s = useTranslations("Common.status");
+
+  // Agenda dimostrativa: nomi e stati dal dizionario, così la versione inglese
+  // mostra clienti e luoghi credibili per chi la legge.
+  const AGENDA: {
+    ora: string;
+    cliente: string;
+    struttura: string;
+    stato: keyof typeof STATO_UI;
+  }[] = [
+    { ora: "09:00", cliente: d("magnolie"), struttura: d("rooms"), stato: "done" },
+    { ora: "11:30", cliente: d("fitzone"), struttura: d("weights"), stato: "current" },
+    { ora: "14:00", cliente: d("marino"), struttura: d("offices"), stato: "next" },
+  ];
+
   return (
     <section className="px-3 pt-3 sm:px-5 sm:pt-5">
       <div className="relative mx-auto max-w-[76rem] rounded-[1.75rem] bg-anchor text-on-dark sm:rounded-[2.25rem]">
@@ -76,27 +68,25 @@ export function Hero() {
               className="eyebrow hero-item text-[#5EE0E0]"
               style={{ "--d": "0ms" } as CSSProperties}
             >
-              Gestionale per imprese di pulizie
+              {t("eyebrow")}
             </p>
 
             <h1
               className="hero-item mt-5 font-display text-[2.5rem] font-bold leading-[1.04] tracking-tight sm:text-5xl lg:text-[3.3rem]"
               style={{ "--d": "70ms" } as CSSProperties}
             >
-              La tua impresa di pulizie, finalmente sotto controllo.
+              {t("h1")}
             </h1>
 
             <p
               className="hero-item mt-5 max-w-xl text-lg leading-relaxed text-on-dark-muted"
               style={{ "--d": "140ms" } as CSSProperties}
             >
-              <strong className="font-semibold text-on-dark">Entrate</strong>,{" "}
-              <strong className="font-semibold text-on-dark">clienti</strong>,{" "}
-              <strong className="font-semibold text-on-dark">strutture</strong>{" "}
-              e{" "}
-              <strong className="font-semibold text-on-dark">operatori</strong>
-              : tutto in ordine, in un posto solo. Senza più WhatsApp, Excel e
-              telefonate.
+              {t.rich("subhead", {
+                s: (chunks) => (
+                  <strong className="font-semibold text-on-dark">{chunks}</strong>
+                ),
+              })}
             </p>
 
             <div
@@ -104,13 +94,13 @@ export function Hero() {
               style={{ "--d": "210ms" } as CSSProperties}
             >
               <Link href="/demo" className={cn(buttonVariants({ size: "lg" }))}>
-                Prenota una demo
+                {t("cta")}
               </Link>
               <a
                 href="#pilastri"
                 className={cn(buttonVariants({ variant: "ghostDark", size: "lg" }))}
               >
-                Guarda com&apos;è fatto
+                {t("ctaSecondary")}
               </a>
             </div>
 
@@ -118,7 +108,7 @@ export function Hero() {
               className="hero-item mt-4 text-sm text-on-dark-muted"
               style={{ "--d": "260ms" } as CSSProperties}
             >
-              20 minuti · nessuna carta · te lo mostriamo sui tuoi dati
+              {t("reassurance")}
             </p>
 
             <p
@@ -126,7 +116,7 @@ export function Hero() {
               style={{ "--d": "320ms" } as CSSProperties}
             >
               <span className="mt-1.5 size-1.5 shrink-0 rounded-full bg-accent" />
-              In prova con le prime imprese di pulizie italiane
+              {t("trust")}
             </p>
           </div>
 
@@ -139,10 +129,11 @@ export function Hero() {
                 style={{ "--d": "260ms" } as CSSProperties}
               >
                 <p className="text-xs font-medium text-muted-foreground">
-                  Incassato a giugno
+                  {t("kpiLabel")}
                 </p>
                 <p className="mt-1 font-mono text-2xl font-semibold tracking-tight text-primary tabular">
-                  € <KpiCounter to={26480} />
+                  {t("currency")}
+                  <KpiCounter to={26480} />
                 </p>
                 <span className="absolute inset-y-3 left-0 w-1 rounded-full bg-accent" />
               </div>
@@ -154,15 +145,15 @@ export function Hero() {
               >
                 <div className="flex items-baseline justify-between border-b border-border px-5 py-4">
                   <p className="font-display text-base font-semibold">
-                    Agenda di oggi
+                    {t("agendaTitle")}
                   </p>
                   <p className="font-mono text-xs text-muted-foreground">
-                    3 interventi
+                    {t("agendaCount")}
                   </p>
                 </div>
                 <ul className="divide-y divide-border">
                   {AGENDA.map((r) => {
-                    const s = STATO_UI[r.stato];
+                    const st = STATO_UI[r.stato];
                     return (
                       <li
                         key={r.ora}
@@ -182,11 +173,11 @@ export function Hero() {
                         <span
                           className={cn(
                             "inline-flex shrink-0 items-center gap-1 rounded-full px-2 py-1 text-[11px] font-semibold sm:gap-1.5 sm:px-2.5 sm:text-xs",
-                            s.cls
+                            st.cls
                           )}
                         >
-                          <s.icon className="size-3.5" />
-                          {s.label}
+                          <st.icon className="size-3.5" />
+                          {s(st.key)}
                         </span>
                       </li>
                     );
@@ -200,9 +191,7 @@ export function Hero() {
                 style={{ "--d": "340ms" } as CSSProperties}
               >
                 <span className="animate-live size-2 rounded-full bg-accent" />
-                <p className="text-sm font-semibold">
-                  2 operatori in servizio ora
-                </p>
+                <p className="text-sm font-semibold">{t("liveChip")}</p>
               </div>
             </div>
           </div>

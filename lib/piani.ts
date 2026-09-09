@@ -3,105 +3,44 @@
 // di confronto, offers dello schema JSON-LD): bastava aggiornarne uno e lo
 // structured data avrebbe dichiarato a Google un prezzo diverso da quello in pagina.
 //
-// Da qui leggono: la sezione Prezzi, lo schema SoftwareApplication, e i file
-// machine-readable /llms.txt e /pricing.md che le AI (ChatGPT, Perplexity, Claude)
-// interrogano per confrontare i prodotti. Cambiare un prezzo QUI li aggiorna tutti.
+// Con le due lingue i dati stanno in messages/<locale>.json sotto `Piani`
+// (nomi, "per chi", punti sono testo visibile). Da lì leggono: la sezione Prezzi,
+// lo schema SoftwareApplication e i file machine-readable /llms.txt e
+// /pricing.md. Cambiare un prezzo nei DUE json li aggiorna tutti.
 //
-// Prezzi NETTI, IVA esclusa. Value metric = numero di operatori; clienti e
-// strutture sono illimitati su ogni piano.
+// Prezzi NETTI, IVA esclusa, in euro in entrambe le lingue finché non arriva la
+// multivaluta (punto 3b del piano). Value metric = numero di operatori.
 
 export type PianoKey = "base" | "pro" | "business";
 
-export const PIANI: {
+export type Piano = {
   key: PianoKey;
-  nome: string;
-  prezzo: string;
-  operatori: string;
+  name: string;
+  price: string;
+  operators: string;
   /** Tetto operatori in forma numerica, per i file machine-readable. */
-  maxOperatori: string;
-  per: string;
-  piu?: string;
-  punti: string[];
-  evidenza: boolean;
-}[] = [
-  {
-    key: "base",
-    nome: "Base",
-    prezzo: "99",
-    operatori: "fino a 8 operatori",
-    maxOperatori: "8",
-    per: "Per chi parte e vuole smettere di gestire tutto sui messaggi.",
-    punti: [
-      "Agenda, clienti e strutture, tutto collegato",
-      "App operatore con checklist e foto",
-      "Storico dei lavori sempre a portata",
-    ],
-    evidenza: false,
-  },
-  {
-    key: "pro",
-    nome: "Pro",
-    prezzo: "129",
-    operatori: "fino a 18 operatori",
-    maxOperatori: "18",
-    per: "Per l'impresa strutturata che vuole vedere anche i numeri.",
-    piu: "Tutto di Base, più",
-    punti: ["Preventivi e incassi", "Metriche: sai quanto entra", "Ruolo caposquadra"],
-    evidenza: true,
-  },
-  {
-    key: "business",
-    nome: "Business",
-    prezzo: "199",
-    operatori: "operatori illimitati",
-    maxOperatori: "illimitati",
-    per: "Per la squadra grande, con una mano in più quando serve.",
-    piu: "Tutto di Pro, più",
-    punti: ["Onboarding assistito", "Supporto prioritario", "Storico esteso ed export"],
-    evidenza: false,
-  },
-];
+  maxOperators: string;
+  for: string;
+  /** Vuoto sul piano base ("Tutto di X, più" solo dal secondo in poi). */
+  plus: string;
+  points: string[];
+  highlight: boolean;
+};
 
-export const GRUPPI: {
-  nome: string;
-  voci: { t: string; base: boolean; pro: boolean; business: boolean }[];
-}[] = [
-  {
-    nome: "Operativo",
-    voci: [
-      { t: "Calendario e agenda", base: true, pro: true, business: true },
-      { t: "Clienti e strutture", base: true, pro: true, business: true },
-      { t: "Servizi e listino", base: true, pro: true, business: true },
-      { t: "Checklist e template", base: true, pro: true, business: true },
-      { t: "Interventi ricorrenti", base: true, pro: true, business: true },
-      { t: "App operatore (mobile)", base: true, pro: true, business: true },
-      { t: "Foto a corredo dell'intervento", base: true, pro: true, business: true },
-      { t: "Storico e cestino", base: true, pro: true, business: true },
-      { t: "Manuali e guide", base: true, pro: true, business: true },
-    ],
-  },
-  {
-    nome: "Gestione economica",
-    voci: [
-      { t: "Preventivi", base: false, pro: true, business: true },
-      { t: "Incassi", base: false, pro: true, business: true },
-      { t: "Metriche e dashboard", base: false, pro: true, business: true },
-      { t: "Riepilogo mensile", base: false, pro: true, business: true },
-    ],
-  },
-  {
-    nome: "Squadra e supporto",
-    voci: [
-      { t: "Ruolo caposquadra", base: false, pro: true, business: true },
-      { t: "Onboarding assistito", base: false, pro: false, business: true },
-      { t: "Supporto prioritario", base: false, pro: false, business: true },
-      { t: "Export e storico esteso", base: false, pro: false, business: true },
-    ],
-  },
-];
+export type Gruppo = {
+  name: string;
+  items: { t: string; base: boolean; pro: boolean; business: boolean }[];
+};
 
-export const LIMITI: { t: string; base: string; pro: string; business: string }[] = [
-  { t: "Operatori", base: "8", pro: "18", business: "∞" },
-  { t: "Clienti", base: "∞", pro: "∞", business: "∞" },
-  { t: "Strutture", base: "∞", pro: "∞", business: "∞" },
-];
+export type Limite = { t: string; base: string; pro: string; business: string };
+
+type PianiRaw = (key: "plans" | "groups" | "limitRows") => unknown;
+
+/** Legge piani, gruppi di confronto e limiti dal namespace `Piani` (t.raw). */
+export function readPiani(raw: PianiRaw) {
+  return {
+    piani: raw("plans") as Piano[],
+    gruppi: raw("groups") as Gruppo[],
+    limiti: raw("limitRows") as Limite[],
+  };
+}

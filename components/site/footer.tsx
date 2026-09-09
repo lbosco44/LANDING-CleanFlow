@@ -1,24 +1,26 @@
-import Link from "next/link";
 import Image from "next/image";
+import { useLocale, useTranslations } from "next-intl";
 
+import { Link } from "@/i18n/navigation";
 import { APP_URL, COMPANY } from "@/lib/site";
 import { FUNZIONI, funzioneHref } from "@/lib/funzioni";
 import { CookiePreferencesLink } from "@/components/site/cookie-preferences-link";
 
 // La colonna "Funzioni" linka le pagine di approfondimento /funzioni/*
 // (le ancore di sezione restano nell'header).
-const NAV = FUNZIONI.map((f) => ({
-  href: funzioneHref(f.slug),
-  label: f.nome,
-}));
-
 const LEGAL = [
-  { href: "/privacy", label: "Privacy" },
-  { href: "/cookie", label: "Cookie" },
-  { href: "/termini", label: "Termini" },
-];
+  { href: "/privacy", key: "privacy" },
+  { href: "/cookie", key: "cookie" },
+  { href: "/termini", key: "terms" },
+] as const;
 
 export function SiteFooter() {
+  const t = useTranslations("Footer");
+  const tf = useTranslations("Funzioni");
+  const locale = useLocale();
+  // In inglese il numero va mostrato col prefisso internazionale.
+  const phone = locale === "it" ? COMPANY.phoneDisplay : COMPANY.phoneIntl;
+
   return (
     <footer className="border-t border-on-dark/10 bg-anchor-deep text-on-dark-muted">
       <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6">
@@ -39,46 +41,43 @@ export function SiteFooter() {
                 <span className="text-accent">Flow</span>
               </span>
             </div>
-            <p className="mt-4 text-sm leading-relaxed">
-              Il gestionale per le imprese di pulizie. Entrate, clienti,
-              strutture e operatori in un&apos;unica schermata.
-            </p>
+            <p className="mt-4 text-sm leading-relaxed">{t("tagline")}</p>
           </div>
 
           {/* 3 colonne solo da lg: a 768 l'email di dominio (26 char, senza wrap)
               non ci sta e sfonderebbe il viewport — Contatti scende di riga */}
           <div className="grid grid-cols-2 gap-10 sm:gap-12 lg:grid-cols-3 lg:gap-16">
             <nav className="flex flex-col gap-3 text-sm">
-              <span className="font-semibold text-on-dark">Funzioni</span>
-              {NAV.map((n) => (
+              <span className="font-semibold text-on-dark">{t("features")}</span>
+              {FUNZIONI.map((f) => (
                 <Link
-                  key={n.href}
-                  href={n.href}
+                  key={f.slug}
+                  href={funzioneHref(f.slug)}
                   className="transition-colors hover:text-on-dark"
                 >
-                  {n.label}
+                  {tf(`items.${f.slug}.name`)}
                 </Link>
               ))}
             </nav>
             <nav className="flex flex-col gap-3 text-sm">
-              <span className="font-semibold text-on-dark">Legale</span>
+              <span className="font-semibold text-on-dark">{t("legal")}</span>
               {LEGAL.map((n) => (
                 <Link
                   key={n.href}
                   href={n.href}
                   className="transition-colors hover:text-on-dark"
                 >
-                  {n.label}
+                  {t(n.key)}
                 </Link>
               ))}
             </nav>
             <div className="flex flex-col gap-3 text-sm">
-              <span className="font-semibold text-on-dark">Contatti</span>
+              <span className="font-semibold text-on-dark">{t("contacts")}</span>
               <a
                 href={COMPANY.phoneHref}
                 className="transition-colors hover:text-on-dark"
               >
-                {COMPANY.phoneDisplay}
+                {phone}
               </a>
               <a
                 href={`mailto:${COMPANY.publicEmail}`}
@@ -93,7 +92,8 @@ export function SiteFooter() {
         <div className="mt-12 flex flex-col gap-4 border-t border-on-dark/10 pt-8 text-xs sm:flex-row sm:items-center sm:justify-between">
           <p>
             © <span className="tabular">2026</span> CleanFlow · {COMPANY.legalName}{" "}
-            · P.IVA {COMPANY.vat} · {COMPANY.address} · PEC {COMPANY.pec}
+            · {t("vatLabel")} {COMPANY.vat} · {COMPANY.address} · {t("pecLabel")}{" "}
+            {COMPANY.pec}
           </p>
           <div className="flex flex-wrap items-center gap-x-5 gap-y-2">
             <CookiePreferencesLink />
@@ -101,13 +101,13 @@ export function SiteFooter() {
               href={APP_URL}
               className="font-medium text-on-dark transition-colors hover:text-accent"
             >
-              Accedi
+              {t("login")}
             </a>
             <Link
               href="/demo"
               className="font-medium text-on-dark transition-colors hover:text-accent"
             >
-              Prenota una demo →
+              {t("cta")}
             </Link>
           </div>
         </div>

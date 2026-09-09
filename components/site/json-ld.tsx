@@ -1,15 +1,38 @@
-import { COMPANY } from "@/lib/site";
-import { FAQS } from "@/components/site/faq-data";
+import { useLocale, useTranslations } from "next-intl";
+
+import { getPathname } from "@/i18n/navigation";
+import type { Locale } from "@/i18n/routing";
 import { FUNZIONI, funzioneHref, type FunzioneSlug } from "@/lib/funzioni";
-import { PIANI } from "@/lib/piani";
+import { readPiani } from "@/lib/piani";
+import { LANG, SITE_URL } from "@/lib/seo";
+import { COMPANY } from "@/lib/site";
 
-const SITE_URL = "https://cleanflowapp.it";
+// Paese servito per lingua: la versione italiana resta IT (SaaS nazionale,
+// NON LocalBusiness — vedi Brief/SEO.md: niente areaServed di comuni, niente
+// Google Business Profile); quella inglese dichiara i mercati a cui parla.
+const AREA_SERVED: Record<Locale, string | string[]> = {
+  it: "IT",
+  en: ["GB", "IE", "US"],
+};
 
-// Structured data (schema.org) per la home: Organization + SoftwareApplication +
-// FAQPage. NON LocalBusiness (CleanFlow è un software, non un negozio fisico).
-// `offers`: i 3 piani esposti in sezione PREZZI (prezzi netti, IVA esclusa) —
-// tenere allineati a components/site/prezzi.tsx e alla FAQ "Quanto costa?".
+// Radice degli URL della lingua: "https://cleanflowapp.it" in italiano (gli
+// @id restano identici a prima), "https://cleanflowapp.it/en" in inglese.
+const baseFor = (locale: Locale) =>
+  locale === "it" ? SITE_URL : `${SITE_URL}/${locale}`;
+
+// Structured data (schema.org) per la home: Organization + WebSite +
+// SoftwareApplication + FAQPage. `offers`: i 3 piani esposti in sezione PREZZI
+// (prezzi netti, IVA esclusa) letti dalla stessa sorgente della pagina;
+// le FAQ sono le stesse stringhe visibili (requisito Google).
 export function JsonLd() {
+  const locale = useLocale();
+  const t = useTranslations("JsonLd");
+  const tq = useTranslations("Faq");
+  const tp = useTranslations("Piani");
+  const faqs = tq.raw("items") as { q: string; a: string }[];
+  const { piani } = readPiani(tp.raw);
+  const base = baseFor(locale);
+
   const data = {
     "@context": "https://schema.org",
     "@graph": [
@@ -31,43 +54,40 @@ export function JsonLd() {
           addressRegion: "SS",
           addressCountry: "IT",
         },
-        // Paese servito: CleanFlow è un SaaS nazionale, NON una LocalBusiness
-        // (vedi Brief/SEO.md — niente areaServed di comuni, niente GBP).
-        areaServed: "IT",
+        areaServed: AREA_SERVED[locale],
       },
       {
         "@type": "WebSite",
-        "@id": `${SITE_URL}/#website`,
+        "@id": `${base}/#website`,
         name: "CleanFlow",
-        url: SITE_URL,
-        inLanguage: "it-IT",
+        url: base,
+        inLanguage: LANG[locale].schema,
         publisher: { "@id": `${SITE_URL}/#organization` },
       },
       {
         "@type": "SoftwareApplication",
-        "@id": `${SITE_URL}/#software`,
+        "@id": `${base}/#software`,
         name: "CleanFlow",
         applicationCategory: "BusinessApplication",
         operatingSystem: "Web, iOS, Android (PWA)",
-        url: SITE_URL,
-        inLanguage: "it-IT",
-        description:
-          "Gestionale per imprese di pulizie: entrate, clienti, strutture e operatori in un'unica schermata.",
+        url: base,
+        inLanguage: LANG[locale].schema,
+        description: t("softwareDescription"),
         publisher: { "@id": `${SITE_URL}/#organization` },
-        offers: PIANI.map((p) => ({
+        offers: piani.map((p) => ({
           "@type": "Offer",
-          name: `CleanFlow ${p.nome}`,
-          price: p.prezzo,
+          name: `CleanFlow ${p.name}`,
+          price: p.price,
           priceCurrency: "EUR",
-          url: `${SITE_URL}/#prezzi`,
+          url: `${base}/#prezzi`,
           availability: "https://schema.org/InStock",
-          description: p.per,
+          description: p.for,
         })),
       },
       {
         "@type": "FAQPage",
-        "@id": `${SITE_URL}/#faq`,
-        mainEntity: FAQS.map((f) => ({
+        "@id": `${base}/#faq`,
+        mainEntity: faqs.map((f) => ({
           "@type": "Question",
           name: f.q,
           acceptedAnswer: { "@type": "Answer", text: f.a },
@@ -88,6 +108,8 @@ export function JsonLd() {
 // (in SERP sostituisce l'URL nudo). Due livelli soli: "Funzioni" non è una
 // pagina reale ma un'ancora della home, e un breadcrumb deve puntare a URL veri.
 export function FunzioneJsonLd({ slug }: { slug: FunzioneSlug }) {
+  const locale = useLocale();
+  const tf = useTranslations("Funzioni");
   const f = FUNZIONI.find((x) => x.slug === slug)!;
   const data = {
     "@context": "https://schema.org",
@@ -97,13 +119,13 @@ export function FunzioneJsonLd({ slug }: { slug: FunzioneSlug }) {
         "@type": "ListItem",
         position: 1,
         name: "CleanFlow",
-        item: SITE_URL,
+        item: baseFor(locale),
       },
       {
         "@type": "ListItem",
         position: 2,
-        name: f.nome,
-        item: `${SITE_URL}${funzioneHref(f.slug)}`,
+        name: tf(`items.${slug}.name`),
+        item: `${SITE_URL}${getPathname({ locale, href: funzioneHref(f.slug) })}`,
       },
     ],
   };

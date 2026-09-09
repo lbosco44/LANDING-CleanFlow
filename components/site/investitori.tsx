@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 
 // v2.5 — "Chi ci sostiene". Con UN solo investitore una griglia larga
 // resterebbe vuota: qui il peso sta nel copy a sinistra e la voce a destra è
@@ -10,27 +11,18 @@ import Image from "next/image";
 // Vale il vincolo di _ANALISI.md: nessun numero da investitore in pagina
 // (importi, valutazione, TAM). Qui si dice CHI, mai QUANTO.
 
-type Investitore = {
-  nome: string;
-  etichetta: string;
-  iniziali: string;
-  foto: string | null;
-};
-
 // La foto di Marco non è un headshot su fondo chiaro come quelle dei tre
 // fondatori: è ambientata (scrivania, mezzo busto). In un riquadro quadrato un
 // crop centrato gli taglierebbe la testa → object-top. Originale non
 // pre-compresso: ci pensa next/image (vedi nota in team.tsx).
-const INVESTITORI: Investitore[] = [
-  {
-    nome: "Marco",
-    etichetta: "Investitore",
-    iniziali: "M",
-    foto: "/team/marco.png",
-  },
-];
+const INVESTITORI = [
+  { nome: "Marco", iniziali: "M", foto: "/team/marco.png" },
+] as const;
 
 export function Investitori() {
+  const t = useTranslations("Investitori");
+  const etichetta = t("label");
+
   return (
     <section
       id="investitori"
@@ -39,13 +31,12 @@ export function Investitori() {
       <div className="mx-auto max-w-[69rem] px-5 sm:px-8">
         <div className="grid gap-10 sm:grid-cols-2 sm:items-center sm:gap-16">
           <div>
-            <p className="eyebrow text-accent-ink">Chi ci sostiene</p>
+            <p className="eyebrow text-accent-ink">{t("eyebrow")}</p>
             <h2 className="mt-3 font-display text-3xl font-bold leading-tight tracking-tight text-foreground sm:text-4xl">
-              C&apos;è chi ha scommesso su di noi prima dei numeri.
+              {t("h2")}
             </h2>
             <p className="mt-5 text-lg leading-relaxed text-muted-foreground">
-              CleanFlow non è un progetto del weekend: c&apos;è chi ci ha messo
-              dei soldi suoi quando eravamo ancora all&apos;inizio.
+              {t("text")}
             </p>
           </div>
 
@@ -58,7 +49,7 @@ export function Investitori() {
                   {i.foto ? (
                     <Image
                       src={i.foto}
-                      alt={`${i.nome}, ${i.etichetta.toLowerCase()}`}
+                      alt={`${i.nome}, ${etichetta.toLowerCase()}`}
                       fill
                       sizes="4rem"
                       className="object-cover object-top"
@@ -76,7 +67,7 @@ export function Investitori() {
                   <p className="font-display text-lg font-semibold tracking-tight text-foreground">
                     {i.nome}
                   </p>
-                  <p className="eyebrow mt-1 text-accent-ink">{i.etichetta}</p>
+                  <p className="eyebrow mt-1 text-accent-ink">{etichetta}</p>
                 </div>
               </li>
             ))}

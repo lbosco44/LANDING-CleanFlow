@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLocale } from "next-intl";
 
 // Odometro del widget hero: il numero "lavora" una volta sola, al load.
 // È un dato dimostrativo della UI ricostruita (come nell'app), non una metrica
@@ -12,6 +13,7 @@ export function KpiCounter({
   to: number;
   duration?: number;
 }) {
+  const locale = useLocale();
   const [v, setV] = useState(0);
 
   useEffect(() => {
@@ -30,7 +32,9 @@ export function KpiCounter({
     return () => cancelAnimationFrame(raf);
   }, [to, duration]);
 
-  // Separatore migliaia manuale: toLocaleString("it-IT") non è affidabile
-  // ovunque (build di browser senza dati ICU completi restituiscono "4280").
-  return <>{String(v).replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</>;
+  // Separatore migliaia manuale: toLocaleString non è affidabile ovunque
+  // (build di browser senza dati ICU completi restituiscono "4280").
+  // Italiano "26.480", inglese "26,480".
+  const sep = locale === "it" ? "." : ",";
+  return <>{String(v).replace(/\B(?=(\d{3})+(?!\d))/g, sep)}</>;
 }

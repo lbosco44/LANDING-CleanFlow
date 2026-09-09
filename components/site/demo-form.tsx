@@ -1,16 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useLocale, useTranslations } from "next-intl";
 
+import { Link, useRouter } from "@/i18n/navigation";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
-const OPERATORI = ["Solo io", "2-5", "6-15", "15+"];
-const TOOLS = ["WhatsApp", "Excel", "Carta / agenda", "Un altro software", "Niente"];
-
 export function DemoForm() {
+  const t = useTranslations("DemoForm");
+  const locale = useLocale();
   const router = useRouter();
+  const OPERATORI = t.raw("operatorOptions") as string[];
+  const TOOLS = t.raw("toolOptions") as string[];
+
   const [nome, setNome] = useState("");
   const [email, setEmail] = useState("");
   const [tel, setTel] = useState("");
@@ -23,17 +26,17 @@ export function DemoForm() {
   const [err, setErr] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const toggleTool = (t: string) =>
-    setTools((p) => (p.includes(t) ? p.filter((x) => x !== t) : [...p, t]));
+  const toggleTool = (x: string) =>
+    setTools((p) => (p.includes(x) ? p.filter((y) => y !== x) : [...p, x]));
 
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!nome.trim() || !tel.trim() || !op) {
-      setErr("Compila nome, telefono e numero di operatori.");
+      setErr(t("errRequired"));
       return;
     }
     if (!gdpr) {
-      setErr("Per procedere serve il consenso al trattamento dei dati.");
+      setErr(t("errGdpr"));
       return;
     }
     setErr("");
@@ -50,6 +53,8 @@ export function DemoForm() {
           azienda,
           tools,
           website, // honeypot
+          // Lingua della pagina: in HQ si vede se il lead va ricontattato in inglese.
+          lingua: locale,
         }),
       });
     } catch {
@@ -73,7 +78,7 @@ export function DemoForm() {
     <form onSubmit={onSubmit} className="space-y-5" noValidate>
       <div>
         <label htmlFor="nome" className={labelCls}>
-          Nome <span className="text-accent-ink">*</span>
+          {t("name")} <span className="text-accent-ink">*</span>
         </label>
         <input
           id="nome"
@@ -81,13 +86,13 @@ export function DemoForm() {
           value={nome}
           onChange={(e) => setNome(e.target.value)}
           className={inputCls}
-          placeholder="Il tuo nome"
+          placeholder={t("namePlaceholder")}
         />
       </div>
 
       <div>
         <label htmlFor="tel" className={labelCls}>
-          Telefono <span className="text-accent-ink">*</span>
+          {t("phone")} <span className="text-accent-ink">*</span>
         </label>
         <input
           id="tel"
@@ -97,14 +102,14 @@ export function DemoForm() {
           value={tel}
           onChange={(e) => setTel(e.target.value)}
           className={inputCls}
-          placeholder="Es. 333 1234567"
+          placeholder={t("phonePlaceholder")}
         />
       </div>
 
       <div>
         <label htmlFor="email" className={labelCls}>
-          Email{" "}
-          <span className="font-normal text-muted-foreground">(facoltativa)</span>
+          {t("email")}{" "}
+          <span className="font-normal text-muted-foreground">{t("optionalF")}</span>
         </label>
         <input
           id="email"
@@ -114,13 +119,13 @@ export function DemoForm() {
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           className={inputCls}
-          placeholder="La tua email (per la conferma)"
+          placeholder={t("emailPlaceholder")}
         />
       </div>
 
       {/* Honeypot: fuori schermo, ignorato dagli umani, riempito dai bot. */}
       <div aria-hidden className="absolute left-[-9999px] top-[-9999px] h-0 w-0 overflow-hidden">
-        <label htmlFor="website">Non compilare questo campo</label>
+        <label htmlFor="website">{t("honeypot")}</label>
         <input
           id="website"
           type="text"
@@ -133,7 +138,7 @@ export function DemoForm() {
 
       <div>
         <span className={labelCls}>
-          Quanti operatori siete? <span className="text-accent-ink">*</span>
+          {t("operators")} <span className="text-accent-ink">*</span>
         </span>
         <div className="mt-2 flex flex-wrap gap-2">
           {OPERATORI.map((o) => (
@@ -151,8 +156,8 @@ export function DemoForm() {
 
       <div>
         <label htmlFor="azienda" className={labelCls}>
-          Nome dell&apos;impresa{" "}
-          <span className="font-normal text-muted-foreground">(facoltativo)</span>
+          {t("company")}{" "}
+          <span className="font-normal text-muted-foreground">{t("optionalM")}</span>
         </label>
         <input
           id="azienda"
@@ -160,24 +165,24 @@ export function DemoForm() {
           value={azienda}
           onChange={(e) => setAzienda(e.target.value)}
           className={inputCls}
-          placeholder="La tua impresa"
+          placeholder={t("companyPlaceholder")}
         />
       </div>
 
       <div>
         <span className={labelCls}>
-          Cosa usi oggi?{" "}
-          <span className="font-normal text-muted-foreground">(facoltativo)</span>
+          {t("tools")}{" "}
+          <span className="font-normal text-muted-foreground">{t("optionalM")}</span>
         </span>
         <div className="mt-2 flex flex-wrap gap-2">
-          {TOOLS.map((t) => (
+          {TOOLS.map((x) => (
             <button
-              key={t}
+              key={x}
               type="button"
-              onClick={() => toggleTool(t)}
-              className={cn(chip(tools.includes(t)), "h-9")}
+              onClick={() => toggleTool(x)}
+              className={cn(chip(tools.includes(x)), "h-9")}
             >
-              {t}
+              {x}
             </button>
           ))}
         </div>
@@ -191,14 +196,16 @@ export function DemoForm() {
           className="mt-0.5 size-4 rounded border-input accent-accent"
         />
         <span>
-          Ho letto la{" "}
-          <a
-            href="/privacy"
-            className="font-medium text-accent-ink underline underline-offset-2"
-          >
-            Privacy policy
-          </a>{" "}
-          e acconsento al trattamento dei dati per essere ricontattato.
+          {t.rich("gdpr", {
+            a: (chunks) => (
+              <Link
+                href="/privacy"
+                className="font-medium text-accent-ink underline underline-offset-2"
+              >
+                {chunks}
+              </Link>
+            ),
+          })}
         </span>
       </label>
 
@@ -209,11 +216,9 @@ export function DemoForm() {
       )}
 
       <Button type="submit" size="lg" disabled={loading} className="w-full">
-        {loading ? "Invio…" : "Prenota la demo"}
+        {loading ? t("sending") : t("submit")}
       </Button>
-      <p className="text-center text-sm text-muted-foreground">
-        Ti rispondiamo entro 24 ore. Nessun call center.
-      </p>
+      <p className="text-center text-sm text-muted-foreground">{t("footnote")}</p>
     </form>
   );
 }

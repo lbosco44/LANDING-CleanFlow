@@ -11,6 +11,9 @@ export const COMPANY = {
   // resta come recapito del titolare nelle pagine legali.
   publicEmail: "marketing@cleanflowapp.it",
   phoneDisplay: "333 807 4768",
+  // Formato internazionale per la versione inglese: chi chiama da UK o USA
+  // senza prefisso non arriva da nessuna parte.
+  phoneIntl: "+39 333 807 4768",
   phoneHref: "tel:+393338074768",
 } as const;
 

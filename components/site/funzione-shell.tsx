@@ -1,7 +1,8 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
 
+import { Link } from "@/i18n/navigation";
 import { SiteHeader } from "@/components/site/header";
 import { SiteFooter } from "@/components/site/footer";
 import { FunzioneJsonLd } from "@/components/site/json-ld";
@@ -27,6 +28,7 @@ export function FunzioneShell({
   hero?: ReactNode;
   children: ReactNode;
 }) {
+  const t = useTranslations("Funzioni");
   const f = FUNZIONI.find((x) => x.slug === slug)!;
   const altre = FUNZIONI.filter((x) => x.slug !== slug);
 
@@ -40,12 +42,12 @@ export function FunzioneShell({
           <div className="mx-auto max-w-[69rem] px-5 pb-12 pt-14 sm:px-8 sm:pb-16 sm:pt-20">
             <p className="eyebrow text-accent-ink">
               <Link
-                href="/#pilastri"
+                href={{ pathname: "/", hash: "pilastri" }}
                 className="transition-colors hover:text-primary"
               >
-                Funzioni
+                {t("crumb")}
               </Link>{" "}
-              · {f.numero} — {f.nome}
+              · {f.numero} — {t(`items.${slug}.name`)}
             </p>
             <h1 className="mt-4 max-w-3xl font-display text-4xl font-bold leading-[1.08] tracking-tight text-foreground sm:text-5xl">
               {titolo}
@@ -65,11 +67,9 @@ export function FunzioneShell({
             <div className="flex flex-col items-start gap-4 rounded-2xl bg-secondary/60 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-7">
               <div>
                 <p className="font-display text-lg font-semibold text-foreground">
-                  Vuoi vederlo sui tuoi dati?
+                  {t("ctaTitle")}
                 </p>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  20 minuti · nessuna carta · nessun impegno
-                </p>
+                <p className="mt-1 text-sm text-muted-foreground">{t("ctaSub")}</p>
               </div>
               <Link
                 href="/demo"
@@ -78,7 +78,7 @@ export function FunzioneShell({
                   "w-full sm:w-auto"
                 )}
               >
-                Prenota una demo
+                {t("cta")}
               </Link>
             </div>
           </div>
@@ -87,7 +87,7 @@ export function FunzioneShell({
         {/* Le altre funzioni */}
         <section>
           <div className="mx-auto max-w-[69rem] px-5 py-14 sm:px-8 sm:py-16">
-            <p className="eyebrow text-accent-ink">Vedi anche</p>
+            <p className="eyebrow text-accent-ink">{t("seeAlso")}</p>
             <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
               {altre.map((a) => (
                 <Link
@@ -99,11 +99,11 @@ export function FunzioneShell({
                     {a.numero}
                   </p>
                   <p className="mt-1.5 flex items-center gap-1.5 font-display text-base font-semibold text-foreground">
-                    {a.nome}
+                    {t(`items.${a.slug}.name`)}
                     <ArrowRight className="size-4 text-accent-ink opacity-0 transition-opacity duration-150 group-hover:opacity-100" />
                   </p>
                   <p className="mt-1 text-sm text-muted-foreground">
-                    {a.short}
+                    {t(`items.${a.slug}.short`)}
                   </p>
                 </Link>
               ))}
