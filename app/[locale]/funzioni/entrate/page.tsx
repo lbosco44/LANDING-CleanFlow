@@ -8,6 +8,7 @@ import {
   FeatureRow,
   Screenshot,
 } from "@/components/site/funzione-shell";
+import { productShot } from "@/lib/product-shots";
 import { alternatesFor, ensureLocale } from "@/lib/seo";
 
 type Props = { params: Promise<{ locale: string }> };
@@ -205,7 +206,7 @@ export default async function EntratePage({ params }: Props) {
       hero={
         <Screenshot aspect="aspect-[16/10]" tile="bg-tile-entrate">
           <Image
-            src="/product/metriche.png"
+            src={productShot(locale, "metriche")}
             alt={t("heroAlt")}
             fill
             sizes="(min-width: 1104px) 1040px, 100vw"
@@ -293,7 +294,7 @@ export default async function EntratePage({ params }: Props) {
           visual={
             <Screenshot aspect="aspect-[16/11]" tile="bg-secondary/60">
               <Image
-                src="/product/dashboard-2.png"
+                src={productShot(locale, "dashboard-2")}
                 alt={t("row6.dashAlt")}
                 fill
                 sizes="(min-width: 1104px) 600px, 100vw"

@@ -8,6 +8,7 @@ import {
   FeatureRow,
   Screenshot,
 } from "@/components/site/funzione-shell";
+import { productShot } from "@/lib/product-shots";
 import { alternatesFor, ensureLocale } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
@@ -140,7 +141,7 @@ export default async function CalendarioPage({ params }: Props) {
       hero={
         <Screenshot aspect="aspect-[16/10]" tile="bg-tile-clienti">
           <Image
-            src="/product/calendario.png"
+            src={productShot(locale, "calendario")}
             alt={t("heroAlt")}
             fill
             sizes="(min-width: 1104px) 1040px, 100vw"

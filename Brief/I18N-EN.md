@@ -36,6 +36,15 @@
   viene chiamata da Next senza `locale` e andava in 500. Immagine per lingua.
 - **Tipizzazione**: `global.d.ts` collega `messages/it.json` a next-intl, così
   un refuso in una chiave è un errore di compilazione.
+- **Screenshot del prodotto** (`public/product/*.png`, helper `lib/product-shots.ts`):
+  la versione inglese usa `<nome>-en.png`, scatti dell'app vera (account demo
+  BrillaCasa, 09/09/2026) con i testi dell'interfaccia tradotti nel DOM e i
+  numeri in formato inglese. In ENTRAMBE le lingue nomi ed email sono demo:
+  la `operatori.png` di giugno conteneva una riga con nome/email razzisti (dato
+  inserito a mano nella demo, oggi non più nel DB) ed è stata rifatta; le altre
+  quattro italiane restano quelle di giugno (dati più ricchi, nessun problema).
+  Nota: a settembre la demo è quasi vuota (0 lavori oggi, «Richiede attenzione
+  35»): le schermate inglesi lo mostrano. Da rifare dopo un re-seed della demo.
 
 ## Checklist (1:1)
 

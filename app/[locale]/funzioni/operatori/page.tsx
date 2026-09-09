@@ -9,6 +9,7 @@ import {
   FeatureRow,
   Screenshot,
 } from "@/components/site/funzione-shell";
+import { productShot } from "@/lib/product-shots";
 import { alternatesFor, ensureLocale } from "@/lib/seo";
 import { cn } from "@/lib/utils";
 
@@ -222,7 +223,7 @@ export default async function OperatoriPage({ params }: Props) {
       hero={
         <Screenshot aspect="aspect-[16/9]" tile="bg-tile-operatori">
           <Image
-            src="/product/operatori.png"
+            src={productShot(locale, "operatori")}
             alt={t("heroAlt")}
             fill
             sizes="(min-width: 1104px) 1040px, 100vw"
