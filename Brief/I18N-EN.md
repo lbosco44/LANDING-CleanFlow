@@ -87,7 +87,9 @@
       allargata a ≥44px con pseudo-elemento; `localeDetection: false` perché
       un browser in inglese che apriva `/` veniva reindirizzato su /en.
 - [x] Lista sostituzioni Italia-centriche approvata da Lorenzo («ok tutte», 09/09/2026)
-- [ ] Deploy preview Vercel → OK esplicito → merge in main
+- [x] Deploy preview Vercel → OK di Lorenzo → merge fast-forward in main
+      (`e161d32`) → produzione su cleanflowapp.it il 09/09/2026 (dominio
+      verificato: `/` italiano, `/en` inglese, `/it` → `/`)
 
 ## Sostituzioni Italia-centriche proposte (da approvare)
 
