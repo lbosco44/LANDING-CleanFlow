@@ -198,7 +198,7 @@
     "included": "incluso",
     "notIncluded": "non incluso",
     "legend": "✓ incluso · — non incluso · ∞ illimitati",
-    "trial": "<s>30 giorni di prova gratuita</s>, nessuna carta. In demo vediamo insieme quale piano fa per te — sui tuoi numeri, senza impegno."
+    "trial": "<s>30 giorni di prova gratuita</s>. Il primo addebito arriva a fine prova e 3 giorni prima ti scriviamo. Preferisci vederlo prima? In demo scegliamo insieme il piano, sui tuoi numeri."
   },
   "Piani": {
     "unlimited": "illimitati",
@@ -323,7 +323,7 @@
       },
       {
         "q": "Quanto costa?",
-        "a": "Tre piani, in base a quanti operatori gestisci: Base 99€, Pro 129€, Business 199€ al mese (IVA esclusa). Clienti e strutture sono sempre illimitati. Provi gratis 30 giorni, senza carta, e in demo vediamo insieme quale fa per te."
+        "a": "Tre piani, in base a quanti operatori gestisci: Base 99€, Pro 129€, Business 199€ al mese (IVA esclusa). Clienti e strutture sono sempre illimitati. Provi gratis 30 giorni: il primo addebito parte a fine prova. Se preferisci, in demo vediamo insieme quale piano fa per te."
       },
       {
         "q": "È un prodotto già pronto?",
@@ -732,7 +732,7 @@
     ],
     "featuresH": "Funzioni",
     "pricesH": "Prezzi",
-    "pricesP": "Canone mensile, IVA esclusa. Il prezzo dipende da **quanti operatori** gestisci; clienti e strutture sono illimitati su ogni piano. Prova gratuita di 30 giorni, senza carta di credito.",
+    "pricesP": "Canone mensile, IVA esclusa. Il prezzo dipende da **quanti operatori** gestisci; clienti e strutture sono illimitati su ogni piano. Prova gratuita di 30 giorni: primo addebito alla fine della prova, disdetta in qualsiasi momento.",
     "planLine": "**{name} — {price} €/mese** ({operators}): {for}",
     "detail": "Dettaglio completo",
     "faqH": "Domande frequenti",
@@ -753,7 +753,7 @@
     "title": "Prezzi — CleanFlow",
     "intro1": "Gestionale per imprese di pulizie. Canone mensile in euro, **IVA esclusa**.",
     "intro2": "Metrica di prezzo: **numero di operatori gestiti**. Clienti e strutture sono illimitati su tutti i piani.",
-    "intro3": "Prova gratuita 30 giorni, senza carta di credito. Nessun costo di attivazione.",
+    "intro3": "Prova gratuita 30 giorni, primo addebito alla fine della prova. Nessun costo di attivazione.",
     "updated": "Ultimo aggiornamento: settembre 2026",
     "official": "Listino ufficiale",
     "price": "Prezzo",
@@ -772,7 +772,7 @@
     "limitsH": "Limiti",
     "operators": "Operatori",
     "buyH": "Come si acquista",
-    "buyP": "Non c'è un checkout self-service: si parte da una demo di 20 minuti in cui il prodotto viene mostrato sui dati reali dell'impresa. Nessun impegno, nessuna carta richiesta per la demo.",
+    "buyP": "Due strade. In autonomia: ti registri su app.cleanflowapp.it/registrati, scegli il piano e attivi la prova di 30 giorni (pagamento gestito da Stripe). Con noi: una demo di 20 minuti sui dati reali dell'impresa, senza carta, e l'attivazione la seguiamo noi.",
     "booking": "Prenotazione",
     "notesH": "Note",
     "notes": [

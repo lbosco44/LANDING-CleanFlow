@@ -194,7 +194,7 @@
     "included": "included",
     "notIncluded": "not included",
     "legend": "✓ included · — not included · ∞ unlimited",
-    "trial": "<s>30-day free trial</s>, no card. In the demo we'll work out together which plan fits, on your numbers, no strings attached."
+    "trial": "<s>30-day free trial</s>. The first payment comes at the end, and we email you 3 days before. Rather see it first? In the demo we'll pick the plan together, on your numbers."
   },
   "Piani": {
     "unlimited": "unlimited",
@@ -319,7 +319,7 @@
       },
       {
         "q": "How much does it cost?",
-        "a": "Three plans, based on how many cleaners you manage: Base €99, Pro €129, Business €199 per month (excl. VAT). Clients and sites are always unlimited. Try it free for 30 days, no card, and in the demo we'll work out together which one fits."
+        "a": "Three plans, based on how many cleaners you manage: Base €99, Pro €129, Business €199 per month (excl. VAT). Clients and sites are always unlimited. Try it free for 30 days: the first payment is taken when the trial ends. If you'd rather, in the demo we'll work out together which plan fits."
       },
       {
         "q": "Is it a finished product?",
@@ -728,7 +728,7 @@
     ],
     "featuresH": "Features",
     "pricesH": "Pricing",
-    "pricesP": "Monthly subscription in euro, US dollars or pounds sterling, excl. VAT (excl. sales tax in the US). The price depends on **how many cleaners** you manage; clients and sites are unlimited on every plan. 30-day free trial, no credit card.",
+    "pricesP": "Monthly subscription in euro, US dollars or pounds sterling, excl. VAT (excl. sales tax in the US). The price depends on **how many cleaners** you manage; clients and sites are unlimited on every plan. 30-day free trial: first charge when the trial ends, cancel any time.",
     "planLine": "**{name} — €{eur} · ${usd} · £{gbp} per month** ({operators}): {for}",
     "detail": "Full details",
     "faqH": "Frequently asked questions",
@@ -749,7 +749,7 @@
     "title": "Pricing — CleanFlow",
     "intro1": "Software for cleaning companies. Monthly subscription in euro, US dollars or pounds sterling, **excl. VAT** (excl. sales tax in the US).",
     "intro2": "Pricing metric: **number of cleaners managed**. Clients and sites are unlimited on all plans.",
-    "intro3": "30-day free trial, no credit card. No setup fee.",
+    "intro3": "30-day free trial, first charge when the trial ends. No setup fee.",
     "updated": "Last updated: September 2026",
     "official": "Official price list",
     "price": "Price",
@@ -768,7 +768,7 @@
     "limitsH": "Limits",
     "operators": "Cleaners",
     "buyH": "How to buy",
-    "buyP": "There's no self-service checkout: it starts with a 20-minute demo where the product is shown on the company's real data. No commitment, no card required for the demo.",
+    "buyP": "It starts with a 20-minute demo where the product is shown on the company's real data. No commitment, no card required for the demo.",
     "booking": "Booking",
     "notesH": "Notes",
     "notes": [

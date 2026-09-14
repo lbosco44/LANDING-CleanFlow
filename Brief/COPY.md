@@ -204,6 +204,29 @@ Il prezzo giusto dipende da quanti operatori gestisci e da come lavori. Per ques
 
 ---
 
+# Prova gratuita e acquisto — al go-live della registrazione self-serve
+
+> Approvato da Lorenzo il 14/09/2026. Branch `feat/prova-self-serve`, da unire lo stesso
+> giorno in cui `app.cleanflowapp.it/registrati` va in produzione (app: `stripe-abbonamento`).
+> Fino ad allora in produzione resta «senza carta», che oggi è vero: si passa solo dalla demo.
+> **Vincolo di Lorenzo:** mai scrivere che la carta si lascia all'iscrizione, in nessuna frase
+> e in nessuna lingua. Le rassicurazioni «nessuna carta» della demo restano: lì è vero.
+
+| Chiave | Italiano | Inglese |
+|---|---|---|
+| `Pricing.trial` | **30 giorni di prova gratuita.** Il primo addebito arriva a fine prova e 3 giorni prima ti scriviamo. Preferisci vederlo prima? In demo scegliamo insieme il piano, sui tuoi numeri. | **30-day free trial.** The first payment comes at the end, and we email you 3 days before. Rather see it first? In the demo we'll pick the plan together, on your numbers. |
+| FAQ «Quanto costa?» (coda) | Provi gratis 30 giorni: il primo addebito parte a fine prova. Se preferisci, in demo vediamo insieme quale piano fa per te. | Try it free for 30 days: the first payment is taken when the trial ends. If you'd rather, in the demo we'll work out together which plan fits. |
+| `llms.txt` · `pricesP` (coda) | Prova gratuita di 30 giorni: primo addebito alla fine della prova, disdetta in qualsiasi momento. | 30-day free trial: first charge when the trial ends, cancel any time. |
+| `pricing.md` · `intro3` | Prova gratuita 30 giorni, primo addebito alla fine della prova. Nessun costo di attivazione. | 30-day free trial, first charge when the trial ends. No setup fee. |
+| `pricing.md` · `buyP` | Due strade. In autonomia: ti registri su app.cleanflowapp.it/registrati, scegli il piano e attivi la prova di 30 giorni (pagamento gestito da Stripe). Con noi: una demo di 20 minuti sui dati reali dell'impresa, senza carta, e l'attivazione la seguiamo noi. | It starts with a 20-minute demo where the product is shown on the company's real data. No commitment, no card required for the demo. *(Solo demo finché l'app non è in inglese.)* |
+
+Fatti su cui poggiano le frasi (verificati nel codice dell'app il 14/09/2026): la prova la passa
+il Checkout Stripe con `TRIAL_DAYS = 30`; l'email «La tua prova finisce il …» parte con
+`customer.subscription.trial_will_end`, 3 giorni prima; la disdetta si fa dal portale Stripe
+aperto dalla pagina Abbonamento.
+
+---
+
 # Pagina `/demo`
 
 **Colonna sinistra — cosa aspettarsi**
